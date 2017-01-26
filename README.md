@@ -1,7 +1,7 @@
 
 # VIRTUALCOACH
 ## Diseño de Aplicaciones Distribuidas  
-- - -
+
 
 ### **Descripción:  ** 
   
