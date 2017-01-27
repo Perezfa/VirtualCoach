@@ -25,9 +25,11 @@
   1. **Usuarios.**    
 
   Los usuarios se pueden dividir en diferentes roles:  
+
    * Entrenador.  
    * Usuario Registrado.
    * Usuario No Registrado.
+
 
   2. **Entrenamientos.**  
     
