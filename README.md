@@ -3,7 +3,7 @@
 ## Diseño de Aplicaciones Distribuidas  
 
 
-### **Descripción:  ** 
+### **Descripción:** 
   
   **VirtualCoach** es una herramienta de seguimiento para profesionales de la Salud Física, mediante  
   la aplicación puedes monitorizar a tus clientes el desarrollo y avance en sus entrenamientos.  
