@@ -11,8 +11,11 @@ This template currently is slighly outdated but withing few weeks we are going t
 ## TOC
 
 * [Download](#download)
+
   - [Demo](#demo)
+
   - [Credits](#credits)
+
   - [License](#license)
 
 ## Download

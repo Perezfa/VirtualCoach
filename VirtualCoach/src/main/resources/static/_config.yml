@@ -3,7 +3,7 @@
 # =============================================
 
 dest: public
-assets: src/main/static/assets
+assets: src/main/resources/static/assets
 
 src: src
 templates: src/templates
