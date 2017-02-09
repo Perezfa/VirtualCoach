@@ -1,12 +1,11 @@
-
+﻿
 # VIRTUALCOACH
 ## Diseño de Aplicaciones Distribuidas  
 
 
 ### **Descripción:** 
   
-  **VirtualCoach** es una herramienta de seguimiento para profesionales de la Salud Física, mediante  
-  la aplicación puedes monitorizar a tus clientes el desarrollo y avance en sus entrenamientos.  
+  **VirtualCoach** es una herramienta para la gestión y optimización del rendimiento deportivo, en la cual el entrenador podrá monitorizar tus entrenamientos y adaptarlos para conseguir nuestros objetivos de forma más eficiente.
 
   Para el uso de la herramienta el Coach debe introducir los datos necesarios de cada entrenamiento.  
 
@@ -26,9 +25,8 @@
 
   Los usuarios se pueden dividir en diferentes roles:  
 
-   * Entrenador.  
-   * Usuario Registrado.
-   * Usuario No Registrado.
+   * Entrenador: dispondrá de un grupo de clientes, con los que podrá contactar, ajustando la rutina para que se adecue a cada cliente. Además puede ver todos los datos guardados por parte del cliente referentes al entrenamiento.
+   * Cliente: dispondrá de una rutina, la cual es enviada por el entrenador. Puede preguntar y contar experiencias, sensaciones al entrenador. Puede ver las gráficas de su propio rendimiento, pudiendo visualizar en qué momentos está mejorando y en cuales no.
 
 
   2. **Entrenamientos.**  
@@ -37,13 +35,13 @@
 
   3. **Estadisticas.**
       
-      - Seguimiento personalizado de las estadisticas de los usuarios.  
+      - Seguimiento diario de los entrenamientos del cliente, problemas encontrados, records personales, etc.  
 
-      - Visualización de gráficas desarrolladas por el servicio interno  
+      - Visualización del progreso deportivo a lo largo del tiempo mediante gráficas desarrolladas por el servicio interno  
        y pintadas mediante una API de procesamiento de Gráficas.  
 
-  4.  **Máquinas**  
-      Tipo de máquinas usadas en cada entrenamiento.  
+  4.  **Rutina**  
+      Diferentes tipos de rutina, dependiendo del objetivo deseado, puediendo diferenciar entre rutinas de fuerza, resistencia, etc.
 
       
 
