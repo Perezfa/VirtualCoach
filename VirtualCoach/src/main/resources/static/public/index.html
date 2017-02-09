@@ -8,7 +8,7 @@
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Metis</title>
+    <title>Dashboard</title>
     
     <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
     <meta name="author" content="">
@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="assets/lib/animate.css/animate.css">
 
 
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.min.css">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -127,7 +128,7 @@
                     
                                 <!-- .nav -->
                                 <ul class="nav navbar-nav">
-                                    <li><a href="dashboard.html">Dashboard</a></li>
+                                    <li class="active"><a href="dashboard.html">Dashboard</a></li>
                                     <li><a href="table.html">Tables</a></li>
                                     <li><a href="file.html">File Manager</a></li>
                                     <li class='dropdown '>
@@ -163,8 +164,8 @@
                                 <!-- /.search-bar -->
                             <div class="main-bar">
                                 <h3>
-              <i class="fa fa-home"></i>&nbsp;
-            Metis
+              <i class="fa fa-dashboard"></i>&nbsp;
+            Dashboard
           </h3>
                             </div>
                             <!-- /.main-bar -->
@@ -510,117 +511,157 @@
                 <div id="content">
                     <div class="outer">
                         <div class="inner bg-light lter">
-<div class="col-lg-12">
-<h1>bootstrap-admin-template</h1>
-<p>Metis is a simple yet powerful free Bootstrap admin dashboard template that you can feel free to use for any app, service, software or anything else. Feel free to share and fork it.</p>
-<p>This template currently is slighly outdated but withing few weeks we are going to make a major overhaul making ot the best free admin template you have seen on Github or elsehwere on the web.</p>
-<ul>
-<li><a href="https://travis-ci.org/Osman%20Nuri%20Okumus/bootstrap-admin-template"><img src="https://img.shields.io/travis/Osman%20Nuri%20Okumus/bootstrap-admin-template.svg?style=flat" alt="Build Status"></a></li>
-<li><a href="https://david-dm.org/puikinsh/Bootstrap-Admin-Template"><img src="https://david-dm.org/puikinsh/Bootstrap-Admin-Template.svg?theme=shields.io" alt="Dependency Status"></a></li>
-<li><a href="https://david-dm.org/puikinsh/Bootstrap-Admin-Template#info=devDependencies"><img src="https://david-dm.org/puikinsh/Bootstrap-Admin-Template/dev-status.svg?theme=shields.io" alt="devDependency Status"></a></li>
-</ul>
-<h2>TOC</h2>
-<ul>
-<li><p><a href="#download">Download</a></p>
-<ul>
-<li><p><a href="#demo">Demo</a></p></li>
-<li><p><a href="#credits">Credits</a></p></li>
-<li><p><a href="#license">License</a></p></li>
-</ul></li>
-</ul>
-<h2>Download</h2>
-<ul>
-<li>Bootstrap 2.3.2 <a href="https://github.com/puikinsh/Bootstrap-Admin-Template/archive/v1.2.zip">v1.2</a>
-ready for use</li>
-<li>Bootstrap 3.3.7 <a href="https://puikinsh.com/puikinsh/Bootstrap-Admin-Template/archive/master.zip">v2.3.2</a>
-ready <code>public</code> folder your use</li>
-</ul>
-<h4>2.3.2 Version</h4>
-<p>required <a href="http://nodejs.org/">node.js</a> & <a href="http://bower.io/">bower</a> & <a href="http://gulpjs.com/">gulp</a></p>
-<pre><code class="lang-shell">    $ git clone https://github.com/puikinsh/Bootstrap-Admin-Template.git yourfoldername
-    $ cd yourfoldername
-    $ npm install
-    $ bower install
-    $ npm run build
-    $ gulp serve
-</code></pre>
-<h4>2.3.2 RTL Version</h4>
-<p>required <a href="http://nodejs.org/">node.js</a> & <a href="http://bower.io/">bower</a> & <a href="http://gulpjs.com/">gulp</a></p>
-<pre><code class="lang-shell">    $ git clone https://github.com/puikinsh/Bootstrap-Admin-Template.git yourfoldername
-    $ cd yourfoldername
-    $ npm install
-    $ bower install
-    $ npm run buildrtl
-    $ gulp serve
-</code></pre>
-<h4>1.2 Version</h4>
-<pre><code class="lang-shell">    $ git clone -b v1.2 https://github.com/puikinsh/Bootstrap-Admin-Template.git yourfoldername
-    $ cd yourfoldername
-    $ git submodule init
-    $ git submodule update
-    $ open index.html
-</code></pre>
-<h2>Demo</h2>
-<ul>
-<li><a href="https://colorlib.com/polygon/metis/">Demo v2.3.2</a></li>
-<li><a href="https://colorlib.com/polygon/metis/rtl/">RTL v2.3.2</a></li>
-</ul>
-<h2>Credits</h2>
-<ul>
-<li><a href="http://nodejs.org/">node.js</a></li>
-<li><a href="http://bower.io/">bower</a></li>
-<li><a href="http://gulpjs.com/">gulp</a></li>
-<li><a href="http://assemble.io/">Assemble</a></li>
-<li><a href="http://jquery.com/">jQuery</a></li>
-<li><a href="http://getbootstrap.com/">Bootstrap</a></li>
-<li><a href="http://lesscss.org/">LESS</a></li>
-<li><a href="http://momentjs.com/">Moment.js</a></li>
-<li><a href="https://github.com/subtlepatterns/SubtlePatterns">SubtlePatterns</a></li>
-<li><a href="http://arshaw.com/fullcalendar/">FullCalendar</a></li>
-<li><a href="https://github.com/harvesthq/chosen">Chosen</a></li>
-<li><a href="http://ckeditor.com/">CKEditor</a></li>
-<li><a href="http://www.eyecon.ro/bootstrap-colorpicker/">Colorpicker for Bootstrap</a></li>
-<li><a href="http://www.datatables.net">Data Tables</a></li>
-<li><a href="http://www.eyecon.ro/bootstrap-datepicker">Datepicker for Bootstrap</a></li>
-<li><a href="http://elfinder.org">elFinder</a></li>
-<li><a href="http://rustyjeans.com/jquery-plugins/input-limiter">Input Limiter</a></li>
-<li><a href="http://jasny.github.com/bootstrap">Jasny Bootstrap</a></li>
-<li><a href="http://jqueryvalidation.org/">jQuery Validation</a></li>
-<li><a href="http://omnipotent.net/jquery.sparkline">jQuery Sparklines</a></li>
-<li><a href="http://daneden.github.io/animate.css/">Animate</a></li>
-<li><a href="http://www.jacklmoore.com/autosize">Autosize</a></li>
-<li><a href="http://keith-wood.name/countdown.html">Countdown</a></li>
-<li><a href="https://github.com/dangrossman/bootstrap-daterangepicker">Date range picker</a></li>
-<li><a href="http://www.flotcharts.org">Flot</a></li>
-<li><a href="http://jquery.malsup.com/form/">jQuery Form</a></li>
-<li><a href="http://thecodemine.org">Form Wizard</a></li>
-<li><a href="http://boedesign.com/blog/2009/07/11/growl-for-jquery-gritter/">Gritter</a></li>
-<li><a href="https://github.com/brandonaaron/jquery-mousewheel">Mouse Wheel</a></li>
-<li><a href="https://github.com/kevinoconnor7/pagedown-bootstrap">PageDown-Bootstrap</a></li>
-<li><a href="https://github.com/moxiecode/plupload">Plupload</a></li>
-<li><a href="http://www.larentis.eu/switch/">Bootstrap Switch</a></li>
-<li><a href="http://tablesorter.com/">tablesorter</a></li>
-<li><a href="http://xoxco.com/projects/code/tagsinput/">tagsinput</a></li>
-<li><a href="http://jdewit.github.io/bootstrap-timepicker/">Bootstrap Timepicker</a></li>
-<li><a href="http://touchpunch.furf.com/">Touch Punch</a></li>
-<li><a href="http://uniformjs.com/">Uniform</a></li>
-<li><a href="http://www.position-relative.net/">Validation Engine</a></li>
-<li><a href="http://validval.frebsite.nl/">jquery.validVal</a></li>
-<li><a href="https://github.com/Waxolunist/bootstrap3-wysihtml5-bower">bootstrap3-wysihtml5-bower</a></li>
-<li><a href="https://github.com/sindresorhus/screenfull.js">screenfull.js</a></li>
-<li><a href="https://github.com/onokumus/metisMenu">metisMenu</a></li>
-</ul>
-<h2>About Authors</h2>
-<ul>
-<li><a href="https://colorlib.com/">Colorlib</a> - Colorlib is the most popular source for free WordPress themes and HTML templates.</li>
-<li><a href="https://twitter.com/AigarsSilkalns">Aigars Silkalns</a> - Aigars maintains this project and is also the idea author behind Colorlib and everythiwn you will find on that website.</li>
-</ul>
-<h2>License</h2>
-<p>Copyright (c) 2016 Aigars Silkalns & Colorlib</p>
-<p>Released under the MIT license. This free Bootstrap admin template is distributed as as it with no support. You can feeel free to use it, share it, tweakit it, workin it, sell it or do whatver you want as long as you keep the original license in plce.</p>
+                            <div class="text-center">
+    <ul class="stats_box">
+	<li>
+	    <div class="sparkline bar_week"></div>
+	    <div class="stat_text">
+		<strong>2.345</strong>Weekly Visit
+		<span class="percent down"> <i class="fa fa-caret-down"></i> -16%</span>
+	    </div>
+	</li>
+	<li>
+	    <div class="sparkline line_day"></div>
+	    <div class="stat_text">
+		<strong>165</strong>Daily Visit
+		<span class="percent up"> <i class="fa fa-caret-up"></i> +23%</span>
+	    </div>
+	</li>
+	<li>
+	    <div class="sparkline pie_week"></div>
+	    <div class="stat_text">
+		<strong>$2 345.00</strong>Weekly Sale
+		<span class="percent"> 0%</span>
+	    </div>
+	</li>
+	<li>
+	    <div class="sparkline stacked_month"></div>
+	    <div class="stat_text">
+		<strong>$678.00</strong>Monthly Sale
+		<span class="percent down"> <i class="fa fa-caret-down"></i> -10%</span>
+	    </div>
+	</li>
+    </ul>
+</div>
 <hr>
-<p><em>This file was generated by <a href="https://github.com/verbose/verb">verb</a>, v0.9.0, on July 31, 2016.</em></p>
+<div class="text-center">
 
+    <a class="quick-btn" href="#">
+	<i class="fa fa-bolt fa-2x"></i>
+	<span>default</span>
+	<span class="label label-default">2</span>
+    </a>
+    <a class="quick-btn" href="#">
+	<i class="fa fa-check fa-2x"></i>
+	<span>danger</span>
+	<span class="label label-danger">2</span>
+    </a>
+    <a class="quick-btn" href="#">
+	<i class="fa fa-building-o fa-2x"></i>
+	<span>No Label</span>
+    </a>
+    <a class="quick-btn" href="#">
+	<i class="fa fa-envelope fa-2x"></i>
+	<span>success</span>
+	<span class="label label-success">-456</span>
+    </a>
+    <a class="quick-btn" href="#">
+	<i class="fa fa-signal fa-2x"></i>
+	<span>warning</span>
+	<span class="label label-warning">+25</span>
+    </a>
+    <a class="quick-btn" href="#">
+	<i class="fa fa-external-link fa-2x"></i>
+	<span>π</span>
+	<span class="label btn-metis-2">3.14159265</span>
+    </a>
+    <a class="quick-btn" href="#">
+	<i class="fa fa-lemon-o fa-2x"></i>
+	<span>é</span>
+	<span class="label btn-metis-4">2.71828</span>
+    </a>
+    <a class="quick-btn" href="#">
+	<i class="fa fa-glass fa-2x"></i>
+	<span>φ</span>
+	<span class="label btn-metis-3">1.618</span>
+    </a>
+
+</div>
+<hr>
+<div class="row">
+    <div class="col-lg-8">
+	<div class="box">
+	    <header>
+		<h5>Line Chart</h5>
+	    </header>
+	    <div class="body" id="trigo" style="height: 250px;"></div>
+	</div>
+    </div>
+    <div class="col-lg-4">
+	<div class="box">
+	    <div class="body">
+		<table class="table table-condensed table-hovered sortableTable">
+		    <thead>
+			<tr>
+			    <th>Country <i class="fa sort"></i></th>
+			    <th>Visit <i class="fa sort"></i></th>
+			    <th>Time <i class="fa sort"></i></th>
+			</tr>
+		    </thead>
+		    <tbody>
+			<tr class="active">
+			    <td>Andorra</td>
+			    <td>1126</td>
+			    <td>00:00:15</td>
+			</tr>
+			<tr>
+			    <td>Belarus</td>
+			    <td>350</td>
+			    <td>00:01:20</td>
+			</tr>
+			<tr class="danger">
+			    <td>Paraguay</td>
+			    <td>43</td>
+			    <td>00:00:30</td>
+			</tr>
+			<tr class="warning">
+			    <td>Malta</td>
+			    <td>547</td>
+			    <td>00:10:20</td>
+			</tr>
+			<tr>
+			    <td>Australia</td>
+			    <td>560</td>
+			    <td>00:00:10</td>
+			</tr>
+			<tr>
+			    <td>Kenya</td>
+			    <td>97</td>
+			    <td>00:20:00</td>
+			</tr>
+			<tr class="success">
+			    <td>Italy</td>
+			    <td>2450</td>
+			    <td>00:10:00</td>
+			</tr>
+		    </tbody>
+		</table>
+	    </div>
+	</div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-lg-12">
+	<div class="box">
+	    <header>
+		<h5>Calendar</h5>
+	    </header>
+	    <div id="calendar_content" class="body">
+		<div id='calendar'></div>
+	    </div>
+	</div>
+    </div>
 </div>
 
                         </div>
@@ -721,6 +762,14 @@ ready <code>public</code> folder your use</li>
             <!--jQuery -->
             <script src="assets/lib/jquery/jquery.js"></script>
 
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.4/js/jquery.tablesorter.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.selection.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.resize.min.js"></script>
 
             <!--Bootstrap -->
             <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
@@ -735,6 +784,11 @@ ready <code>public</code> folder your use</li>
             <!-- Metis demo scripts -->
             <script src="assets/js/app.js"></script>
 
+                <script>
+                    $(function() {
+                      Metis.dashboard();
+                    });
+                </script>
 
             <script src="assets/js/style-switcher.js"></script>
         </body>
