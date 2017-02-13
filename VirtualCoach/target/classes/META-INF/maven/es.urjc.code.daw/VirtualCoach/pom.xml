@@ -47,7 +47,6 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
      <dependency>
         <groupId>com.h2database</groupId>
         <artifactId>h2</artifactId>
-        <version>1.4.182</version>
     </dependency>
 	</dependencies>
 	</project>
