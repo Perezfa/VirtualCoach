@@ -43,14 +43,29 @@
   4.  **Rutina**  
       Diferentes tipos de rutina, dependiendo del objetivo deseado, puediendo diferenciar entre rutinas de fuerza, resistencia, etc.
 
-      
+  - - -
+### **Diagrama de Clases:**  
 
+  Adjuntamos un pequeño Diagrama de Clases de la Aplicación, aunque lo dejamos abierto para posibles modificaciones en el futuro como puede ser agregar metodos,
+  clases o eliminar alguno de los anteriores.
+  
+  ![](imagenes/Diagrama.png "Diagrama")
+
+  - - -
+### **Diagrama Entidad/Relación:**  
+
+- - -
+### **Mapa Navegación:** 
+
+El mapa de navegación se ha realizado mediante la herramienta de FluidUi, una herramienta para generación de Mockups, por lo tanto esta aplicación pude 
+generar un flujo de pantallas enlazando unas con otras.
+
+[VirtualCoach MockUp](https://marvelapp.com/50ihf00)
 - - -
 ### **Integrantes del equipo de desarrollo:**
 
   - Adrián Pérez Fernández. [a.perezfernandez@alumnos.urjc.es](a.perezfernandez@alumnos.urjc.es)
-  - Óscar Repiso Bravo. [o.repiso@alumnos.urjc.es](o.repiso@alumnos.urjc.es)
-  - Guille Abrego Vargas. [w.abrego@alumnos.urjc.es](w.abrego@alumnos.urjc.es)   
+  - Óscar Repiso Bravo. [o.repiso@alumnos.urjc.es](o.repiso@alumnos.urjc.es) 
   - [VirtualCoach DashBoard]( https://trello.com/b/UXnlMufa)
 
 - - -
