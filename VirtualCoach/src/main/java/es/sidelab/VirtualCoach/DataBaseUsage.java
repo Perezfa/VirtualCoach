@@ -43,7 +43,7 @@ public class DataBaseUsage{
 	@RequestMapping("/login")
 	public String cliente(Model model){
 		//No se muestra por que?
-		model.addAttribute("name",cliente_repository.findBynombre("Oscar"));
+		model.addAttribute("user",cliente_repository.findBynombre("Oscar"));
 		
 		
 		return "/public/login";
