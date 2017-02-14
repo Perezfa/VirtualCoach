@@ -52,8 +52,9 @@
   ![](imagenes/Diagrama.png "Diagrama")
 
   - - -
-### **Diagrama Entidad/Relación:**  
+### **Diagrama Entidad/Relación:**
 
+![](imagenes/Entidad_Relacion.png "Entidad_Relacion")
 - - -
 ### **Mapa Navegación:** 
 
