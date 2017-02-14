@@ -1,4 +1,4 @@
-package model;
+package es.sidelab.VirtualCoach;
 
 import java.sql.Date;
 

@@ -1,21 +1,38 @@
-package model;
+package es.sidelab.VirtualCoach;
 
-public class Usuario {
-	
+import java.util.List;
+
+import javax.persistence.*;
+
+
+
+@Entity
+public class Entrenador{
 	private String rol;
 	private String nombre;
 	private String apellido;
 	private String edad;
 	
-	protected Usuario(){
-		
-	}
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id_coach;
+	//Un entrenador tiene varios clientes. Se guarda en cliente
+	@OneToMany(mappedBy="entrenador")
+	private List <Cliente> clientes;
 	
-	public Usuario(String nombre, String apellido, String edad, String rol){
+
+	public Entrenador(){
+	}
+	public Entrenador(String nombre, String apellido, String edad, String rol){
 		this.nombre=nombre;
 		this.apellido=apellido;
 		this.edad=edad;
 		this.rol=rol;
+		
+	}
+	
+	public long getId(){
+		return id_coach;
 	}
 	
 	public void setNombre(String nombre){
@@ -43,6 +60,5 @@ public class Usuario {
 		return apellido;
 	}
 	
-
 
 }

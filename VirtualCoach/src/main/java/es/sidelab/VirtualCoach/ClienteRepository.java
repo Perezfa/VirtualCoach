@@ -1,6 +1,7 @@
-package model;
+package es.sidelab.VirtualCoach;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -8,10 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 	
-	ArrayList <Cliente> findBynombre(String nombre);
-	ArrayList <Cliente> findByapellido(String apellido);
-	ArrayList <Cliente> findByrol(String rol);
-
+	List<Cliente> findBynombre(String nombre);
 	
 
 }
