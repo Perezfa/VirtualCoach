@@ -44,7 +44,7 @@ public class VirtualCoachController {
 	@RequestMapping("/login")
 	public String cliente(Model model){
 		
-		model.addAttribute("name",cliente_repository.findBynombre("Oscar"));
+		model.addAttribute("user",cliente_repository.findBynombre("Oscar"));
 		
 		
 		return "/public/login";
