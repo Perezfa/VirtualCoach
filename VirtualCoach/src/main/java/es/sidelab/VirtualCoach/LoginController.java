@@ -12,18 +12,10 @@ import model.EstadisticasRepository;
 @Controller
 public class LoginController {
 	
-	@Autowired
-	private EstadisticasRepository repository;
-	
-	@PostConstruct
-	public void  init(){
-		
-		repository.save(new Estadisticas());
-	}
 	@RequestMapping("/login")
 	public String cliente(Model model){
 		
-		model.addAttribute("cliente", repository.findAll());
+		model.addAttribute("name", "World");
 		
 		return "/public/login";
 	}

@@ -12,6 +12,7 @@ public class Estadisticas {
 	
 	private Date fecha;
 	private float marca;
+	private float grafico;
 	
 	public Estadisticas(){
 		
@@ -32,5 +33,9 @@ public class Estadisticas {
 	}
 	public float getMarca(){
 		return marca;
+	}
+	public float dibujarGraficos(){
+		return grafico;
+		
 	}
 }

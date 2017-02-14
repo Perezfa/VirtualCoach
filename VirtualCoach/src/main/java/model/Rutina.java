@@ -13,19 +13,21 @@ public class Rutina {
 	private String ejercicio;
 	private String tipo;
 	private int duracion;//semanas
+	private float rm;
 	
 
 	public Rutina(){
 		
 	}
 	
-	public Rutina(String tipo,int id_entrenamiento,float peso,int repeticiones, int series, String ejercicio, int duracion){
+	public Rutina(String tipo,int id_entrenamiento,float peso,int repeticiones, int series, String ejercicio, int duracion, float rm){
 		this.tipo=tipo;
 		this.peso=peso;
 		this.repeticiones=repeticiones;
 		this.series=series;
 		this.ejercicio=ejercicio;
 		this.duracion=duracion;
+		this.rm=rm;
 	}
 	public void setDuracion(int duracion){
 		this.duracion=duracion;
@@ -65,6 +67,15 @@ public class Rutina {
 	public String getEjercicio(){
 		return ejercicio;
 	}
-	
+	public void setRm(float rm){
+		this.rm=rm;
+	}
+	public float getRm(){
+		return rm;
+	}
+	public float calcularRm(){
+		
+		return rm;
+	}
 
 }

@@ -44,4 +44,7 @@ public class Cliente extends Usuario{
 	public Entrenador getEntrenador(){
 		return entrenador;
 	}
+	public Entrenador mostrarEntrenador(){
+		return entrenador;
+	}
 }
