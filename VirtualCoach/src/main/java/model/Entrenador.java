@@ -1,8 +1,10 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.*;
+
 
 
 @Entity
@@ -13,7 +15,7 @@ public class Entrenador extends Usuario{
 	private long id_coach;
 	//Un entrenador tiene varios clientes. Se guarda en cliente
 	@OneToMany(mappedBy="entrenador")
-	private ArrayList <Cliente> clientes;
+	private List <Cliente> clientes;
 	
 
 	public Entrenador(){
