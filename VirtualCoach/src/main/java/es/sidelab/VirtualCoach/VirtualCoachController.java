@@ -2,12 +2,11 @@ package es.sidelab.VirtualCoach;
 
 import javax.annotation.PostConstruct;
 
-import java.util.List;
 
-import javax.annotation.PostConstruct;
+
+
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,13 +16,12 @@ public class VirtualCoachController {
 
 	@Autowired
 	private ClienteRepository cliente_repository;
-	@Autowired 
-	private EstadisticasRepository estadistica_repository;
 	
 	@Autowired
 	private RutinaRepository rutina_repository;
 	@Autowired
 	private EntrenadorRepository entrenador_repository;
+	
 	
 	
 	
@@ -55,7 +53,6 @@ public class VirtualCoachController {
 		@RequestMapping("/index")
 		public String greeting(Model model) {
 			
-				model.addAttribute("name", "World");
 				
 				return "/public/index";
 	 }
@@ -63,3 +60,6 @@ public class VirtualCoachController {
 
 	
 }
+
+	
+

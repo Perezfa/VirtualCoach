@@ -8,8 +8,8 @@ import javax.persistence.*;
 public class Estadisticas {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id_estadisticas;
 	
+	private String id_estadisticas;	
 	private Date fecha;
 	private float marca;
 	private float grafico;
@@ -17,9 +17,12 @@ public class Estadisticas {
 	public Estadisticas(){
 		
 	}
-	public Estadisticas(Date fecha, float marca){
+	public Estadisticas(String id_estadisticas, Date fecha, float marca, float grafico){
+		
+		this.id_estadisticas=id_estadisticas;
 		this.fecha=fecha;
 		this.marca=marca;
+		this.grafico=grafico;
 	}
 	
 	public void setFecha(Date fecha){
@@ -37,5 +40,14 @@ public class Estadisticas {
 	public float dibujarGraficos(){
 		return grafico;
 		
+	}
+	public void setId_estadisticas(String id_estadisticas){
+		
+		this.id_estadisticas=id_estadisticas;
+	}
+	
+	public String getId_estadisticas(){
+		
+		return id_estadisticas;
 	}
 }
