@@ -1,7 +1,7 @@
 ---
-topTitle: Dashboard
-title: Dashboard
-icon: fa fa-dashboard
+topTitle: VirtualCoach
+title: Principal
+icon: fa fa-line-chart
 cdncss:
 - //cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.min.css
 cdnjs:
@@ -21,28 +21,22 @@ scripts:
 	<li>
 	    <div class="sparkline bar_week"></div>
 	    <div class="stat_text">
-		<strong>2.345</strong>Weekly Visit
+		<strong>2.345</strong>Avance Semanal
 		<span class="percent down"> <i class="fa fa-caret-down"></i> -16%</span>
 	    </div>
 	</li>
 	<li>
 	    <div class="sparkline line_day"></div>
 	    <div class="stat_text">
-		<strong>165</strong>Daily Visit
+		<strong>165</strong>Hoy
 		<span class="percent up"> <i class="fa fa-caret-up"></i> +23%</span>
 	    </div>
 	</li>
-	<li>
-	    <div class="sparkline pie_week"></div>
-	    <div class="stat_text">
-		<strong>$2 345.00</strong>Weekly Sale
-		<span class="percent"> 0%</span>
-	    </div>
-	</li>
+
 	<li>
 	    <div class="sparkline stacked_month"></div>
 	    <div class="stat_text">
-		<strong>$678.00</strong>Monthly Sale
+		<strong>$678.00</strong>Avance Mensual
 		<span class="percent down"> <i class="fa fa-caret-down"></i> -10%</span>
 	    </div>
 	</li>
@@ -53,51 +47,35 @@ scripts:
 
     <a class="quick-btn" href="#">
 	<i class="fa fa-bolt fa-2x"></i>
-	<span>default</span>
+	<span>Rutina 1</span>
 	<span class="label label-default">2</span>
     </a>
     <a class="quick-btn" href="#">
 	<i class="fa fa-check fa-2x"></i>
-	<span>danger</span>
+	<span>Rutina 2</span>
 	<span class="label label-danger">2</span>
     </a>
     <a class="quick-btn" href="#">
 	<i class="fa fa-building-o fa-2x"></i>
-	<span>No Label</span>
+	<span>Rutina 3</span>
     </a>
     <a class="quick-btn" href="#">
 	<i class="fa fa-envelope fa-2x"></i>
-	<span>success</span>
+	<span>Rutina 4</span>
 	<span class="label label-success">-456</span>
     </a>
     <a class="quick-btn" href="#">
 	<i class="fa fa-signal fa-2x"></i>
-	<span>warning</span>
+	<span>Rutina 5</span>
 	<span class="label label-warning">+25</span>
     </a>
-    <a class="quick-btn" href="#">
-	<i class="fa fa-external-link fa-2x"></i>
-	<span>π</span>
-	<span class="label btn-metis-2">3.14159265</span>
-    </a>
-    <a class="quick-btn" href="#">
-	<i class="fa fa-lemon-o fa-2x"></i>
-	<span>é</span>
-	<span class="label btn-metis-4">2.71828</span>
-    </a>
-    <a class="quick-btn" href="#">
-	<i class="fa fa-glass fa-2x"></i>
-	<span>φ</span>
-	<span class="label btn-metis-3">1.618</span>
-    </a>
-
 </div>
 <hr>
 <div class="row">
     <div class="col-lg-8">
 	<div class="box">
 	    <header>
-		<h5>Line Chart</h5>
+		<h5>Estadisticas</h5>
 	    </header>
 	    <div class="body" id="trigo" style="height: 250px;"></div>
 	</div>
@@ -108,62 +86,59 @@ scripts:
 		<table class="table table-condensed table-hovered sortableTable">
 		    <thead>
 			<tr>
-			    <th>Country <i class="fa sort"></i></th>
-			    <th>Visit <i class="fa sort"></i></th>
-			    <th>Time <i class="fa sort"></i></th>
+				<th>Usuario <i class="fa sort"></i></th>
+			    <th>Ejercicio <i class="fa sort"></i></th>
+			    <th>Peso (Kg) <i class="fa sort"></i></th>
+			    <th>Repeticiones<i class="fa sort"></i></th>
+				<th>Tiempo(Serie)<i class="fa sort"></i></th>
+
 			</tr>
 		    </thead>
 		    <tbody>
-			<tr class="active">
-			    <td>Andorra</td>
-			    <td>1126</td>
-			    <td>00:00:15</td>
+			<tr class="succes">
+			    <td>Cliente 1</td>
+				<td>Press Banca</td>
+			    <td>45</td>
+				<td>8</td>
+			    <td>00:00:45</td>
+			</tr>
+			<tr class="succes">
+			    <td>Cliente 2</td>
+				<td>Sentadilla</td>
+			    <td>100</td>
+				<td>8</td>
+			    <td>00:00:45</td>
+			</tr>
+			<tr class="succes">
+			    <td>Cliente 3</td>
+				<td>Peso muerto</td>
+			    <td>90</td>
+				<td>8</td>
+			    <td>00:01:00</td>
 			</tr>
 			<tr>
-			    <td>Belarus</td>
-			    <td>350</td>
-			    <td>00:01:20</td>
-			</tr>
-			<tr class="danger">
-			    <td>Paraguay</td>
-			    <td>43</td>
-			    <td>00:00:30</td>
+			    <td>Cliente 4</td>
+			    <td>Press Banca</td>
+				<td>35</td>
+				<td>8</td>
+			    <td>00:01:15</td>
 			</tr>
 			<tr class="warning">
-			    <td>Malta</td>
-			    <td>547</td>
-			    <td>00:10:20</td>
+			    <td>Cliente 5</td>
+				<td>Sentadilla</td>
+			    <td>80</td>
+				<td>8</td>
+			    <td>00:00:55</td>
 			</tr>
-			<tr>
-			    <td>Australia</td>
-			    <td>560</td>
-			    <td>00:00:10</td>
-			</tr>
-			<tr>
-			    <td>Kenya</td>
-			    <td>97</td>
-			    <td>00:20:00</td>
-			</tr>
-			<tr class="success">
-			    <td>Italy</td>
-			    <td>2450</td>
-			    <td>00:10:00</td>
+			<tr class="warning">
+			    <td>Cliente 6</td>
+				<td>Biceps</td>
+			    <td>25</td>
+				<td>8</td>
+			    <td>00:00:40</td>
 			</tr>
 		    </tbody>
 		</table>
-	    </div>
-	</div>
-    </div>
-</div>
-<hr>
-<div class="row">
-    <div class="col-lg-12">
-	<div class="box">
-	    <header>
-		<h5>Calendar</h5>
-	    </header>
-	    <div id="calendar_content" class="body">
-		<div id='calendar'></div>
 	    </div>
 	</div>
     </div>
