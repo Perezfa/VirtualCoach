@@ -11,11 +11,9 @@ public class Estadisticas {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	
-<<<<<<< HEAD
+
 	private int id_estadisticas;	
-=======
-	private String id_estadisticas;	
->>>>>>> 2aa78c82fc12bf0bb0651a45055dbaf31629cb90
+
 	private Date fecha;
 	private float marca;
 	private float grafico;
@@ -23,13 +21,8 @@ public class Estadisticas {
 	@Autowired
 	
 	public Estadisticas(int id_estadisticas, Date fecha, float marca, float grafico){
-		
-<<<<<<< HEAD
-=======
-	}
-	public Estadisticas(String id_estadisticas, Date fecha, float marca, float grafico){
-		
->>>>>>> 2aa78c82fc12bf0bb0651a45055dbaf31629cb90
+
+
 		this.id_estadisticas=id_estadisticas;
 		this.fecha=fecha;
 		this.marca=marca;
@@ -52,16 +45,15 @@ public class Estadisticas {
 		return grafico;
 		
 	}
-<<<<<<< HEAD
+
 	public void setId_estadisticas(int id_estadisticas){
-=======
-	public void setId_estadisticas(String id_estadisticas){
->>>>>>> 2aa78c82fc12bf0bb0651a45055dbaf31629cb90
+
+
 		
 		this.id_estadisticas=id_estadisticas;
 	}
 	
-<<<<<<< HEAD
+
 	public int getId_estadisticas(){
 		
 		return id_estadisticas;
@@ -71,10 +63,5 @@ public class Estadisticas {
 	        SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
 	        return formateador.format(actual);
 	    }
-=======
-	public String getId_estadisticas(){
-		
-		return id_estadisticas;
-	}
->>>>>>> 2aa78c82fc12bf0bb0651a45055dbaf31629cb90
+
 }
