@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class VirtualCoachController {
+<<<<<<< HEAD
+=======
 
 	@Autowired
 	private ClienteRepository cliente_repository;
@@ -38,16 +40,20 @@ public class VirtualCoachController {
 	//	entrenador_repository.save(new Entrenador("Óscar", "Repiso", "2", "E"));
 		
 	}
+>>>>>>> 2aa78c82fc12bf0bb0651a45055dbaf31629cb90
 	
-	@RequestMapping("/login")
-	public String cliente(Model model){
+	@RequestMapping("/index")
+	public String index() {
 		
-		model.addAttribute("user",cliente_repository.findBynombre("Oscar"));
-		
-		
-		return "/public/login";
-	}
+	return "/public/index";
+ }
+}
+
 	
+<<<<<<< HEAD
+
+	
+=======
 	@Controller
 	public class GreetingController {
 		@RequestMapping("/index")
@@ -62,4 +68,5 @@ public class VirtualCoachController {
 }
 
 	
+>>>>>>> 2aa78c82fc12bf0bb0651a45055dbaf31629cb90
 
