@@ -9,6 +9,7 @@ public class Cliente {
 	private String rol;
 	private String nombre;
 	private String apellido;
+	private String email;
 	private String edad;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,16 +27,24 @@ public class Cliente {
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Estadisticas> estadisticas;
 	
+	
 	public Cliente(){
 		
 	}
-	public Cliente(String nombre, String apellido, String edad, String rol){
+	public Cliente(String nombre, String apellido, String email, String edad, String rol){
 		this.nombre=nombre;
 		this.apellido=apellido;
+		this.email=email;
 		this.edad=edad;
 		this.rol=rol;
 		
 	}
+	public String getEmail(){
+		return email;
+	}
+	public void setEmail(String email){
+		this.email=email;
+	} 
 	
 	public long getId(){
 		return id_cliente;
