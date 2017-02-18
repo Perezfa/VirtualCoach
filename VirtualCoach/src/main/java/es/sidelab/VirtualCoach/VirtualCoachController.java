@@ -10,7 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class VirtualCoachController {
@@ -49,17 +52,16 @@ public class VirtualCoachController {
 		
 		return "/public/login";
 	}
-	
-	@Controller
-	public class GreetingController {
-		@RequestMapping("/index")
-		public String greeting(Model model) {
-			
-				model.addAttribute("name", "World");
-				
-				return "/public/index";
-	 }
+	@PostMapping("/index")
+	public String Entrar(Model model, @RequestParam String new_usu_username){
+		
+		model.addAttribute("name_usu",new_usu_username);
+		
+		
+		return "/public/index";
 	}
+	
+
 
 	
 }
