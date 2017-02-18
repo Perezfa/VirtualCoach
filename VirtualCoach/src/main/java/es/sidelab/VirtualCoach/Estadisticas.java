@@ -1,25 +1,30 @@
 package es.sidelab.VirtualCoach;
 
-import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.persistence.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 public class Estadisticas {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id_estadisticas;
 	
+
+	private int id_estadisticas;	
+
 	private Date fecha;
 	private float marca;
 	private float grafico;
 	
-	public Estadisticas(){
-		
-	}
-	public Estadisticas(Date fecha, float marca){
+	@Autowired
+	
+	public Estadisticas(int id_estadisticas, Date fecha, float marca, float grafico){
+		this.id_estadisticas=id_estadisticas;
 		this.fecha=fecha;
 		this.marca=marca;
+		this.grafico=grafico;
 	}
 	
 	public void setFecha(Date fecha){
@@ -38,4 +43,23 @@ public class Estadisticas {
 		return grafico;
 		
 	}
+
+	public void setId_estadisticas(int id_estadisticas){
+
+		this.id_estadisticas=id_estadisticas;
+	}
+	
+
+
+
+	public int getId_estadisticas(){
+		
+		return id_estadisticas;
+	}
+	 public static String getFechaActual() {
+		 	Date actual = new Date();
+	        SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
+	        return formateador.format(actual);
+	    }
+
 }

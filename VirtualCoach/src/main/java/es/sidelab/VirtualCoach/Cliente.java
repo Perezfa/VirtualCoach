@@ -8,8 +8,8 @@ import javax.persistence.*;
 public class Cliente {
 	private String rol;
 	private String nombre;
-	private String apellido;
 	private String edad;
+	private String contraseña;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id_cliente;
@@ -29,10 +29,10 @@ public class Cliente {
 	public Cliente(){
 		
 	}
-	public Cliente(String nombre, String apellido, String edad, String rol){
+	public Cliente(String nombre, String edad, String contraseña, String rol){
 		this.nombre=nombre;
-		this.apellido=apellido;
 		this.edad=edad;
+		this.contraseña=contraseña;
 		this.rol=rol;
 		
 	}
@@ -59,9 +59,10 @@ public class Cliente {
 	public void setNombre(String nombre){
 		this.nombre=nombre;
 	}
-	public void setApellido(String apellido){
-		this.apellido=apellido;
+	public void setContraseña(String contraseña){
+		this.contraseña=contraseña;
 	}
+	
 	public void setEdad(String edad){
 		this.edad=edad;
 	}
@@ -77,13 +78,15 @@ public class Cliente {
 	public String getEdad(){
 		return edad;
 	}
-	public String getApellido(){
-		return apellido;
+	public String getContraseña(){
+		return contraseña;
 	}
+	
+	
 	
 
 	@Override
 	public String toString(){
-		return "Cliente: "+getNombre()+" "+getApellido();
+		return getNombre();
 	}
 }
