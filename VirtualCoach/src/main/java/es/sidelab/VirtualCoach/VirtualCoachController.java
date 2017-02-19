@@ -9,40 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class VirtualCoachController {
 
-
-	@Autowired
-	private ClienteRepository cliente_repository;
-	
-	@Autowired
-	private RutinaRepository rutina_repository;
-	@Autowired
-	private EntrenadorRepository entrenador_repository;
-	
-	
-	
-	
-	@PostConstruct
-	public void cliente(){
-		cliente_repository.save(new Cliente("Adrián", "Pérez","perezoner@gmail.com", "22", "C"));
-		cliente_repository.save(new Cliente("Oscar", "Repiso","org@gmail.com", "21", "C"));
-
-		
-	}
-	
-	@PostConstruct
-	public void entrenador(){
-	//	entrenador_repository.save(new Entrenador("Óscar", "Repiso", "2", "E"));
-		
-	}
-
-	
-	@RequestMapping("/index")
 	public String index() {
 		
-	return "public/index";
-	}
+	return "/public/index";
+ }
 }
 
 	
-
+>>>>>>> 9fe0ba3e3a2a1540f54c55122d8e91692edd6e49
 

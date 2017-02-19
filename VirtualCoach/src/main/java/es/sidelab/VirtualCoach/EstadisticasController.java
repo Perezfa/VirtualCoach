@@ -59,4 +59,5 @@ public class EstadisticasController {
 		model.addAttribute("rutina",rutina_repository.findByEstadisticas(estadisticas));
 		return "index";
 	}
+
 }

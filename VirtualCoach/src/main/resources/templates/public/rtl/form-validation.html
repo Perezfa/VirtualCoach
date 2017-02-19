@@ -8,7 +8,7 @@
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Principal - RTL</title>
+    <title>Form Validation - RTL</title>
     
     <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
     <meta name="author" content="">
@@ -37,7 +37,9 @@
         }
     </style>
 
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.min.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.theme.min.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/validationEngine.jquery.min.css">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -136,7 +138,7 @@
                                     <li><a href="dashboard.html">Dashboard</a></li>
                                     <li><a href="table.html">Tables</a></li>
                                     <li><a href="file.html">File Manager</a></li>
-                                    <li class='dropdown '>
+                                    <li class='dropdown active'>
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                             Form Elements <b class="caret"></b>
                                         </a>
@@ -169,8 +171,8 @@
                                 <!-- /.search-bar -->
                             <div class="main-bar">
                                 <h3>
-              <i class="fa fa-line-chart"></i>&nbsp;
-            Principal
+              <i class="fa fa-filter"></i>&nbsp;
+            Form Validation
           </h3>
                             </div>
                             <!-- /.main-bar -->
@@ -209,18 +211,32 @@
                                       <i class="fa fa-line-chart"></i><span class="link-title">&nbsp;Principal</span>
                                     </a>
                                   </li>
-<<<<<<< HEAD
-                                  <li>
-                                    <a href="estadisticas.html">
-=======
                                   <li class="">
                                     <a href="javascript:;">
->>>>>>> 9fe0ba3e3a2a1540f54c55122d8e91692edd6e49
                                       <i class="fa fa-hand-rock-o"></i>
                                       <span class="link-title">
-                                    Estadisticas
+                                    Ejercicios
                         	  </span>
+                                      <span class="fa arrow"></span>
                                     </a>
+                                    <ul class="collapse">
+                                      <li>
+                                        <a href="form-general.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Form General </a>
+                                      </li>
+                                      <li>
+                                        <a href="form-validation.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Form Validation </a>
+                                      </li>
+                                      <li>
+                                        <a href="form-wizard.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Form Wizard </a>
+                                      </li>
+                                      <li>
+                                        <a href="form-wysiwyg.html">
+                                          <i class="fa fa-angle-right"></i>&nbsp; Form WYSIWYG </a>
+                                      </li>
+                                    </ul>
                                   </li>
                                   <li>
                                     <a href="table.html">
@@ -245,133 +261,384 @@
                 <div id="content">
                     <div class="outer">
                         <div class="inner bg-light lter">
-                            <div class="text-center">
-    <ul class="stats_box">
-	<li>
-	    <div class="sparkline bar_week"></div>
-	    <div class="stat_text">
-		<strong>2.345</strong>Avance Semanal
-		<span class="percent down"> <i class="fa fa-caret-down"></i> -16%</span>
-	    </div>
-	</li>
-	<li>
-	    <div class="sparkline line_day"></div>
-	    <div class="stat_text">
-		<strong>165</strong>Hoy
-		<span class="percent up"> <i class="fa fa-caret-up"></i> +23%</span>
-	    </div>
-	</li>
-
-	<li>
-	    <div class="sparkline stacked_month"></div>
-	    <div class="stat_text">
-		<strong>$678.00</strong>Avance Mensual
-		<span class="percent down"> <i class="fa fa-caret-down"></i> -10%</span>
-	    </div>
-	</li>
-    </ul>
-</div>
-<hr>
-<div class="text-center">
-
-    <a class="quick-btn" href="#">
-	<i class="fa fa-bolt fa-2x"></i>
-	<span>Rutina 1</span>
-	<span class="label label-default">2</span>
-    </a>
-    <a class="quick-btn" href="#">
-	<i class="fa fa-check fa-2x"></i>
-	<span>Rutina 2</span>
-	<span class="label label-danger">2</span>
-    </a>
-    <a class="quick-btn" href="#">
-	<i class="fa fa-building-o fa-2x"></i>
-	<span>Rutina 3</span>
-    </a>
-    <a class="quick-btn" href="#">
-	<i class="fa fa-envelope fa-2x"></i>
-	<span>Rutina 4</span>
-	<span class="label label-success">-456</span>
-    </a>
-    <a class="quick-btn" href="#">
-	<i class="fa fa-signal fa-2x"></i>
-	<span>Rutina 5</span>
-	<span class="label label-warning">+25</span>
-    </a>
-</div>
-<hr>
+                            <style>
+    .form-control.col-lg-6 {
+        width: 50% !important;
+    }
+</style>
 <div class="row">
-    <div class="col-lg-8">
-	<div class="box">
-	    <header>
-		<h5>Estadisticas</h5>
-	    </header>
-	    <div class="body" id="trigo" style="height: 250px;"></div>
-	</div>
-    </div>
-    <div class="col-lg-4">
-	<div class="box">
-	    <div class="body">
-		<table class="table table-condensed table-hovered sortableTable">
-		    <thead>
-			<tr>
-				<th>Usuario <i class="fa sort"></i></th>
-			    <th>Ejercicio <i class="fa sort"></i></th>
-			    <th>Peso (Kg) <i class="fa sort"></i></th>
-			    <th>Repeticiones<i class="fa sort"></i></th>
-				<th>Tiempo(Serie)<i class="fa sort"></i></th>
+    <div class="col-lg-12">
+        <div class="box">
+            <header class="dark">
+                <div class="icons"><i class="fa fa-check"></i></div>
+                <h5>Popup Validation</h5>
+                <!-- .toolbar -->
+            <div class="toolbar">
+              <nav style="padding: 8px;">
+                  <a href="javascript:;" class="btn btn-default btn-xs collapse-box">
+                      <i class="fa fa-minus"></i>
+                  </a>
+                  <a href="javascript:;" class="btn btn-default btn-xs full-box">
+                      <i class="fa fa-expand"></i>
+                  </a>
+                  <a href="javascript:;" class="btn btn-danger btn-xs close-box">
+                      <i class="fa fa-times"></i>
+                  </a>
+              </nav>
+            </div>            <!-- /.toolbar -->
 
-			</tr>
-		    </thead>
-		    <tbody>
-			<tr class="succes">
-			    <td>Cliente 1</td>
-				<td>Press Banca</td>
-			    <td>45</td>
-				<td>8</td>
-			    <td>00:00:45</td>
-			</tr>
-			<tr class="succes">
-			    <td>Cliente 2</td>
-				<td>Sentadilla</td>
-			    <td>100</td>
-				<td>8</td>
-			    <td>00:00:45</td>
-			</tr>
-			<tr class="succes">
-			    <td>Cliente 3</td>
-				<td>Peso muerto</td>
-			    <td>90</td>
-				<td>8</td>
-			    <td>00:01:00</td>
-			</tr>
-			<tr>
-			    <td>Cliente 4</td>
-			    <td>Press Banca</td>
-				<td>35</td>
-				<td>8</td>
-			    <td>00:01:15</td>
-			</tr>
-			<tr class="warning">
-			    <td>Cliente 5</td>
-				<td>Sentadilla</td>
-			    <td>80</td>
-				<td>8</td>
-			    <td>00:00:55</td>
-			</tr>
-			<tr class="warning">
-			    <td>Cliente 6</td>
-				<td>Biceps</td>
-			    <td>25</td>
-				<td>8</td>
-			    <td>00:00:40</td>
-			</tr>
-		    </tbody>
-		</table>
-	    </div>
-	</div>
+            </header>
+            <div id="collapse2" class="body">
+                <form class="form-horizontal" id="popup-validation">
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Required</label>
+                        <div class="col-lg-4">
+                            <input type="text" class="validate[required] form-control" name="req" id="req">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Select</label>
+                        <div class="col-lg-4">
+                            <select name="sport" id="sport" class="validate[required] form-control">
+                                <option value="">Choose a sport</option>
+                                <option value="option1">Tennis</option>
+                                <option value="option2">Football</option>
+                                <option value="option3">Golf</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Multiple Select</label>
+
+                        <div class="col-lg-4">
+                            <select name="sport2" id="sport2" multiple class="validate[required] form-control">
+                                <option value="">Choose a sport</option>
+                                <option value="option1">Tennis</option>
+                                <option value="option2">Football</option>
+                                <option value="option3">Golf</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Url</label>
+
+                        <div class=" col-lg-4">
+                            <input value="http://" class="validate[required,custom[url]] form-control" type="text"
+                                   name="url1" id="url1"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">E-mail</label>
+
+                        <div class=" col-lg-4">
+                            <input class="validate[required,custom[email]] form-control" type="text" name="email1"
+                                   id="email1"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Password</label>
+
+                        <div class=" col-lg-4">
+                            <input class="validate[required] form-control" type="password" name="pass1" id="pass1"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Confirm Password</label>
+
+                        <div class=" col-lg-4">
+                            <input class="validate[required,equals[pass1]] form-control" type="password" name="pass2"
+                                   id="pass2"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Minimum field size (6)</label>
+
+                        <div class=" col-lg-4">
+                            <input value="" class="validate[required,minSize[6]] form-control" type="text" name="minsize1"
+                                   id="minsize1"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Maximum field size, optional</label>
+
+                        <div class=" col-lg-4">
+                            <input value="0123456789" class="validate[optional,maxSize[6]] form-control" type="text"
+                                   name="maxsize1" id="maxsize1"/>
+                            <span class="help-block">note that the field is optional - it won't fail if it has no value</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Number</label>
+
+                        <div class=" col-lg-4">
+                            <input value="-33.87a" class="validate[required,custom[number]] form-control" type="text"
+                                   name="numbe2r" id="number2"/>
+                            <span class="help-block">a signed floating number, ie: -3849.354, 38.00, 38, .77</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">IP</label>
+
+                        <div class=" col-lg-4">
+                            <input value="192.168.3." class="validate[required,custom[ipv4]] form-control" type="text"
+                                   name="ip" id="ip"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Date</label>
+
+                        <div class=" col-lg-4">
+                            <input value="201-12-01" class="validate[required,custom[date]] form-control" type="text"
+                                   name="date3" id="date3"/>
+                            <span class="help-block">ISO 8601 dates only YYYY-mm-dd</span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Date Earlier</label>
+
+                        <div class=" col-lg-4">
+                            <input value="2012/12/16" class="validate[custom[date],past[2012/09/13]] form-control"
+                                   type="text" name="past" id="past"/>
+                            <span class="help-block">Please enter a date ealier than 2012/09/13</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions no-margin-bottom">
+                        <input type="submit" value="Validate" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+    <!-- /.col-lg-12 -->
 </div>
+<!-- /.row -->
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box">
+            <header>
+                <div class="icons"><i class="fa fa-th-large"></i></div>
+                <h5>Block Validation</h5>
+                <!-- .toolbar -->
+            <div class="toolbar">
+              <nav style="padding: 8px;">
+                  <a href="javascript:;" class="btn btn-default btn-xs collapse-box">
+                      <i class="fa fa-minus"></i>
+                  </a>
+                  <a href="javascript:;" class="btn btn-default btn-xs full-box">
+                      <i class="fa fa-expand"></i>
+                  </a>
+                  <a href="javascript:;" class="btn btn-danger btn-xs close-box">
+                      <i class="fa fa-times"></i>
+                  </a>
+              </nav>
+            </div>            <!-- /.toolbar -->
+
+            </header>
+            <div id="collapseOne" class="body">
+                <form action="#" class="form-horizontal" id="block-validate">
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Required</label>
+                        <div class="col-lg-4">
+                            <input type="text" id="required2" name="required2" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">E-mail</label>
+
+                        <div class="col-lg-4">
+                            <input type="email" id="email2" name="email2" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Password</label>
+
+                        <div class="col-lg-4">
+                            <input type="password" id="password2" name="password2" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Confirm Password</label>
+
+                        <div class="col-lg-4">
+                            <input type="password" id="confirm_password2" name="confirm_password2" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Date</label>
+
+                        <div class="col-lg-4">
+                            <input type="date" id="date2" name="date2" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Url</label>
+
+                        <div class="col-lg-4">
+                            <input type="url" id="url2" name="url2" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Digits Only</label>
+
+                        <div class="col-lg-4">
+                            <input type="text" id="digits" name="digits" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Range [6,16]</label>
+
+                        <div class="col-lg-4">
+                            <input type="text" id="range" name="range" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Please agree to our policy</label>
+
+                        <div class="col-lg-4">
+                            <input type="checkbox" id="agree2" name="agree2" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-actions no-margin-bottom">
+                        <input type="submit" value="Validate" class="btn btn-primary">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box">
+            <header>
+                <div class="icons"><i class="fa fa-ellipsis-h"></i></div>
+                <h5>Inline Validation</h5>
+                <!-- .toolbar -->
+            <div class="toolbar">
+              <nav style="padding: 8px;">
+                  <a href="javascript:;" class="btn btn-default btn-xs collapse-box">
+                      <i class="fa fa-minus"></i>
+                  </a>
+                  <a href="javascript:;" class="btn btn-default btn-xs full-box">
+                      <i class="fa fa-expand"></i>
+                  </a>
+                  <a href="javascript:;" class="btn btn-danger btn-xs close-box">
+                      <i class="fa fa-times"></i>
+                  </a>
+              </nav>
+            </div>            <!-- /.toolbar -->
+
+            </header>
+            <div id="collapse3" class="body">
+                <form action="#" class="form-horizontal" id="inline-validate">
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Required</label>
+
+                        <div class="col-lg-8">
+                            <input type="text" id="required" name="required" class="form-control col-lg-6">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">E-mail</label>
+
+                        <div class="col-lg-8">
+                            <input type="email" id="email" name="email" class="form-control col-lg-6">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Password</label>
+
+                        <div class="col-lg-8">
+                            <input type="password" id="password" name="password" class="form-control col-lg-6">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Confirm Password</label>
+
+                        <div class="col-lg-8">
+                            <input type="password" id="confirm_password" name="confirm_password" class="form-control col-lg-6">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Date</label>
+
+                        <div class="col-lg-8">
+                            <input type="date" id="date" name="date" class="form-control col-lg-6">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Url</label>
+
+                        <div class="col-lg-8">
+                            <input type="url" id="url" name="url" class="form-control col-lg-6">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Please agree to our policy</label>
+
+                        <div class="col-lg-8">
+                            <input type="checkbox" id="agree" name="agree" class="form-control col-lg-6">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Minimum 3 Chars</label>
+
+                        <div class="col-lg-8">
+                            <input type="text" id="minsize" name="minsize" class="form-control col-lg-6">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Maximum 6 Chars</label>
+
+                        <div class="col-lg-8">
+                            <input type="text" id="maxsize" name="maxsize" class="form-control col-lg-6">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Minimum 3 </label>
+
+                        <div class="col-lg-8">
+                            <input type="text" id="minNum" name="minNum" class="form-control col-lg-6">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-4">Maximum 16 </label>
+
+                        <div class="col-lg-8">
+                            <input type="text" id="maxNum" name="maxNum" class="form-control col-lg-6">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <input type="submit" value="Validate" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
 
                         </div>
                         <!-- /.inner -->
@@ -471,14 +738,9 @@
             <!--jQuery -->
             <script src="../assets/lib/jquery/jquery.js"></script>
 
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
                     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.4/js/jquery.tablesorter.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.selection.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.resize.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery.validationEngine.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/languages/jquery.validationEngine-en.min.js"></script>
 
             <!--Bootstrap -->
             <script src="../assets/lib/bootstrap/js/bootstrap.js"></script>
@@ -487,6 +749,7 @@
             <!-- Screenfull -->
             <script src="../assets/lib/screenfull/screenfull.js"></script>
 
+                    <script src="/assets/lib/jquery-validation/jquery.validate.js"></script>
 
             <!-- Metis core scripts -->
             <script src="../assets/js/core.js"></script>
@@ -495,7 +758,7 @@
 
                 <script>
                     $(function() {
-                      Metis.dashboard();
+                      Metis.formValidation();
                     });
                 </script>
 
