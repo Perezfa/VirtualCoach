@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+@Controller
 public class ClienteController {
 	
 	
@@ -43,21 +44,21 @@ public class ClienteController {
 		}
 		
 		
-		return "/public/login";
+		return "/public/index";
 	}
 	
 
-	@PostMapping("/Entrar")
-	public String Entrar(Model model, 
-			@RequestParam String username,@RequestParam String password){
+	@PostMapping("/index")
+	public String Entrar(Model model,@RequestParam String username,@RequestParam String password){
 		
-		//Chequeamos si existe el usuario
+		/*//Chequeamos si existe el usuario
 		Cliente user=cliente_repository.findByNombreAndContraseña(username,password);
 		if(user!=null){
 				
 			//Lo enseñamos donde ponga nombre_usu
 			model.addAttribute("nombre_usu",user.toString());
-		}
+		}*/
+	//	model.addAttribute("nombre_usu",username);
 		
 		
 		return "/public/index";
