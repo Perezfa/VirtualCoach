@@ -1,29 +1,59 @@
 package es.sidelab.VirtualCoach;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import es.sidelab.VirtualCoach.Cliente;
+import es.sidelab.VirtualCoach.ClienteRepository;
+
+
 @Controller
 public class EstadisticasController {
 	@Autowired 
 	private EstadisticasRepository estadisticas_repository;
+	@Autowired
+	private ClienteRepository cliente_repository;
+	@Autowired
+	private RutinaRepository rutina_repository;
+	
+	@GetMapping("/estadisticas/{id_estadisticas}/añadido")
+	public String nuevaEstadisticaCliente(Model model, @PathVariable long id_estadisticas, @RequestParam float marca, Estadisticas estadistica, HttpSession sesion){
+		
+		Estadisticas estadisticas =estadisticas_repository.findOne(id_estadisticas);
+		
+		Cliente cliente = cliente_repository.findByEmail((String) sesion.getAttribute("email"));
+		Rutina rutinaCliente = cliente.getRutina();
+		estadisticas.getEstadisticasRutina().add(rutinaCliente);
+		estadisticas_repository.save(estadisticas);
+		
+		
+		return "/public/estadisticas";
+	}
+	
+	@GetMapping("/estadisticas/{id_estadisticas}/eliminar")
+	public String eliminarArticulo (Model model, @PathVariable long id_estadisticas ){
+		
+		Estadisticas estadisticas = estadisticas_repository.findOne(id_estadisticas);
+		estadisticas_repository.delete(estadisticas);
+		model.addAttribute("estadisticas", estadisticas_repository.findAll());
+		return "/public/estadisticas";
+	}
 	
 
-	@GetMapping("/table")
-	public String estadisticas(Model model) {
+	@GetMapping("/estadisticas/{id_estadisticas}")
+	public String verEstadisticas (Model model, @PathVariable long id_estadisticas){
 		
-				model.addAttribute("estadisticas", estadisticas_repository.findAll());
-				
-			return "/public/table";
+		Estadisticas estadisticas = estadisticas_repository.findOne(id_estadisticas);
+		model.addAttribute("estadisticas", estadisticas);
+		model.addAttribute("rutina",rutina_repository.findByEstadisticas(estadisticas));
+		return "index";
 	}
 
-	@PostMapping("")
-	public String nuevaEstadistica(Model model, Estadisticas estadistica){
-		
-		estadisticas_repository.save(estadistica);
-		return "guardar_estadisticas";
-	}
 }

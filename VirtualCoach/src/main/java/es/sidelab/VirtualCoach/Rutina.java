@@ -1,6 +1,7 @@
 package es.sidelab.VirtualCoach;
 
 import javax.persistence.*;
+import es.sidelab.VirtualCoach.Estadisticas;
 
 @Entity
 public class Rutina {
@@ -15,6 +16,9 @@ public class Rutina {
 	private int duracion;//semanas
 	private float rm;
 	
+
+	@ManyToOne
+	private Estadisticas estadisticas;
 
 	public Rutina(){
 		
@@ -78,4 +82,12 @@ public class Rutina {
 		return rm;
 	}
 
+	
+	public Estadisticas getEstadisticas(){
+		
+		return estadisticas;
+	}
+	public void setEstadisticas(Estadisticas estadisticas){
+		this.estadisticas=estadisticas;
+	}
 }

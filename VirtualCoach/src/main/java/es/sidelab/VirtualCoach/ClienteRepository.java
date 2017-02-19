@@ -8,7 +8,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {	
-	List<Cliente> findBynombre(String nombre);
+
+	List<Cliente> findByNombre(String nombre);
+	Cliente findByEmail (String email);
+	Cliente findByNombreAndContraseña(String nombre,String contraseña);
 	
+
 
 }
