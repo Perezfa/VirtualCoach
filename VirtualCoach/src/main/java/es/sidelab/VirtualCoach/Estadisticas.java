@@ -24,7 +24,7 @@ public class Estadisticas {
 	@Autowired
 	
 
-	public Estadisticas(int id_estadisticas, Date fecha, float marca, float grafico){
+	public Estadisticas(long id_estadisticas, Date fecha, float marca, float grafico){
 		this.id_estadisticas=id_estadisticas;
 		this.fecha=fecha;
 		this.marca=marca;
@@ -51,13 +51,13 @@ public class Estadisticas {
 	}
 
 
-	public void setId_estadisticas(int id_estadisticas){
+	public void setId_estadisticas(long id_estadisticas){
 
 		this.id_estadisticas=id_estadisticas;
 	}
 		
 
-	public int getId_estadisticas(){
+	public long getId_estadisticas(){
 		
 		return id_estadisticas;
 	}

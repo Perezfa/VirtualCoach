@@ -15,6 +15,4 @@ public class VirtualCoachController {
  }
 }
 
-	
->>>>>>> 9fe0ba3e3a2a1540f54c55122d8e91692edd6e49
 
