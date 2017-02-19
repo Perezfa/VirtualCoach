@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: VirtualCoach
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: oskit
+Built-By: Adrian
 Implementation-Vendor-Id: es.urjc.code.daw
 Build-Jdk: 1.8.0_121
 Implementation-URL: https://github.com/Perezfa/VirtualCoach
