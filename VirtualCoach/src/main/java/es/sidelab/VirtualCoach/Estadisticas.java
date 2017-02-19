@@ -51,6 +51,7 @@ public class Estadisticas {
 	}
 
 
+
 	public void setId_estadisticas(long id_estadisticas){
 
 		this.id_estadisticas=id_estadisticas;

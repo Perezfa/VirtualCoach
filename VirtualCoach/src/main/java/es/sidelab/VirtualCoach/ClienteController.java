@@ -16,8 +16,8 @@ public class ClienteController {
 
 	@PostMapping
 	public void cliente(){
-		cliente_repository.save(new Cliente("Adrián", "Pérez", "aperez@gmail.com","22", "C"));
-		cliente_repository.save(new Cliente("Oscar", "Repiso","orb@gmail.com", "21", "C"));
+		cliente_repository.save(new Cliente("Adrián", "Pérez", "aperez@gmail.com","22", "C","12345-asdf"));
+		cliente_repository.save(new Cliente("Oscar", "Repiso","orb@gmail.com", "21", "C","7894-qwerty"));
 
 		
 	}
@@ -26,10 +26,11 @@ public class ClienteController {
 	public String cliente(Model model){
 		
 		model.addAttribute("user",cliente_repository.findByNombre("Oscar"));
+
+		return "public/login";
 		
-		
-		return "/public/login";
 	}
+
 }
 
 
