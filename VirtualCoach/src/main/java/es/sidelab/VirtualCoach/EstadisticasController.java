@@ -24,7 +24,7 @@ public class EstadisticasController {
 	private RutinaRepository rutina_repository;
 	
 	@GetMapping("/estadisticas/{id_estadisticas}/añadido")
-	public String nuevaEstadisticaCliente(Model model, @PathVariable long id_estadisticas, @RequestParam float marca, Estadisticas estadistica, HttpSession sesion){
+	public String nuevaEstadisticaCliente(Model model, @PathVariable long id_estadisticas, @RequestParam float marca, HttpSession sesion){
 		
 		Estadisticas estadisticas =estadisticas_repository.findOne(id_estadisticas);
 		

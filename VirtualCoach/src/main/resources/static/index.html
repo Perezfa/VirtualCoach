@@ -50,12 +50,12 @@
     <hr>
     <div class="tab-content">
         <div id="login" class="tab-pane active">
-            <form action="index" method="post" accept-charset="utf-8">
+            <form action="/inicio" method="post" accept-charset="utf-8">
                 <p class="text-muted text-center">
                    VirtualCoach
                 </p>
-                <input type="text" placeholder="Username" class="form-control top" name="username">
-                <input type="password" placeholder="Password" class="form-control bottom" name="password">
+                <input type="text" placeholder="Usuario" class="form-control top" name="username">
+                <input type="password" placeholder="Contraseña" class="form-control bottom" name="password">
                 <div class="checkbox">
           <label>
 		    <input type="checkbox"> Recuérdame
@@ -73,29 +73,17 @@
             </form>
         </div>
         <div id="signup" class="tab-pane" >
-<<<<<<< HEAD
-            <form action="registro">
-                <input type="text" placeholder="Nombre" name='new_usu_name' class="form-control top">
-                <input type="text" placeholder="Apellidos" name='new_usu_lastname' class="form-control top">
-                <input type="text" placeholder="Usuario" name='new_usu_username' class="form-control top">
-                <input type="text" placeholder="Edad" name='new_usu_age' class="form-control top">
-                <input type="email" placeholder="mail@domain.com" name='new_usu_email' class="form-control middle">
-                <input type="password" placeholder="Contraseña" name='new_usu_pass' class="form-control middle">
-                <input type="password" placeholder="Repetir Contraseña" name='new_usu_rep_pass' class="form-control bottom">
-                <input type="checkbox" name='new_usu_rol' value="C">Cliente</label>
-                <input type="checkbox" name='new_usu_rol' value="E">Entrenador</label> 
-=======
-            <form action="registro" method="post">
-                <input type="text" placeholder="Nombre" name="new_usu_name" class="form-control top">
-                <input type="text" placeholder="Apellidos" name="new_usu_lastname" class="form-control top">
-                 <input type="text" placeholder="Usuario" name="new_usu_username" class="form-control top">
-                <input type="text" placeholder="Edad" name="new_usu_age" class="form-control top">
-                <input type="email" placeholder="mail@domain.com" name="new_usu_email" class="form-control middle">
-                <input type="password" placeholder="Contraseña" name="new_usu_pass" class="form-control middle">
-                <input type="password" placeholder="Repetir Contraseña" name="new_usu_rep_pass" class="form-control bottom">
-                <input type="checkbox" name="new_usu_rol" value="C">Cliente</label>
-                <input type="checkbox" name="new_usu_rol" value="E">Entrenador</label> 
->>>>>>> 801b569a452e9f22aac37fa38a023a929d2a148f
+
+            <form action="registro" method="post" >
+                <input type='text' placeholder='Nombre' name='new_usu_name' class="form-control top">
+                <input type='text' placeholder='Apellidos' name='new_usu_lastname' class="form-control top">
+                 <input type='text' placeholder='Usuario' name='new_usu_username' class="form-control top">
+                <input type='text' placeholder='Edad' name='new_usu_age' class="form-control top">
+                <input type='email' placeholder='mail@domain.com' name='new_usu_email' class="form-control middle">
+                <input type='password' placeholder="Contraseña" name='new_usu_pass' class="form-control middle">
+                <input type='password' placeholder='Repetir Contraseña' name='new_usu_rep_pass' class="form-control bottom">
+                <input type='checkbox' name='new_usu_rol' value='C'>Cliente</label>
+                <input type='checkbox' name='new_usu_rol' value='E'>Entrenador</label> 
                 <button class="btn btn-lg btn-success btn-block" type="submit">Registrar</button>
             </form>
         </div>
