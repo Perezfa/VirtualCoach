@@ -72,20 +72,17 @@
                 <button class="btn btn-lg btn-danger btn-block" type="submit">Recuperar Contraseña</button>
             </form>
         </div>
-        <div id="signup" class="tab-pane">
+        <div id="signup" class="tab-pane" action="registro">
             <form action="index.html">
-                <input type="text" placeholder="username" class="form-control top">
-                <input type="email" placeholder="mail@domain.com" class="form-control middle">
-                <input type="password" placeholder="password" class="form-control middle">
-                <input type="password" placeholder="re-password" class="form-control bottom">
-                         <div class="checkbox">
-                            <label>
-                                <input type="checkbox">Cliente
-                            </label>
-                            <label>
-                                <input type="checkbox">Coach
-                            </label>
-                         </div>
+                <input type="text" placeholder="Nombre" name='new_usu_name' class="form-control top">
+                <input type="text" placeholder="Apellidos" name='new_usu_lastname' class="form-control top">
+                 <input type="text" placeholder="Usuario" name='new_usu_username' class="form-control top">
+                <input type="text" placeholder="Edad" name='new_usu_age' class="form-control top">
+                <input type="email" placeholder="mail@domain.com" name='new_usu_email' class="form-control middle">
+                <input type="password" placeholder="Contraseña" name='new_usu_pass' class="form-control middle">
+                <input type="password" placeholder="Repetir Contraseña" name='new_usu_rep_pass' class="form-control bottom">
+                <input type="checkbox" name='new_usu_rol' value="C">Cliente</label>
+                <input type="checkbox" name='new_usu_rol' value="E">Entrenador</label> 
                 <button class="btn btn-lg btn-success btn-block" type="submit">Registrar</button>
             </form>
         </div>

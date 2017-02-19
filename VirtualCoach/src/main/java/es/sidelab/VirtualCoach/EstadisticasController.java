@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import es.sidelab.VirtualCoach.Cliente;
 import es.sidelab.VirtualCoach.ClienteRepository;
 
@@ -20,15 +22,9 @@ public class EstadisticasController {
 	private ClienteRepository cliente_repository;
 	@Autowired
 	private RutinaRepository rutina_repository;
-
-
-	@RequestMapping("/estadisticas")
-	public String rating(Model model) {
-		return "/public/estadisticas";
-	}
 	
 	@GetMapping("/estadisticas/{id_estadisticas}/añadido")
-	public String nuevaEstadisticaCliente(Model model, @PathVariable long id_estadisticas, Estadisticas estadistica, HttpSession sesion){
+	public String nuevaEstadisticaCliente(Model model, @PathVariable long id_estadisticas, @RequestParam float marca, Estadisticas estadistica, HttpSession sesion){
 		
 		Estadisticas estadisticas =estadisticas_repository.findOne(id_estadisticas);
 		

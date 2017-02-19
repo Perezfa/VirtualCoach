@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Entity
 public class Cliente {
 	private String rol;
+	private String usuario;
 	private String nombre;
 	private String apellido;
 	private String email;
@@ -33,9 +34,10 @@ public class Cliente {
 		
 	}
 
-	public Cliente(String nombre, String edad, String apellido, String email,String contraseña, String rol){
+	public Cliente(String nombre, String edad, String apellido, String email,String contraseña, String rol, String usuario){
 		this.nombre=nombre;
 		this.apellido=apellido;
+		this.usuario=usuario;
 		this.email=email;
 		this.edad=edad;
 		this.contraseña=contraseña;
@@ -71,6 +73,13 @@ public class Cliente {
 	public void setNombre(String nombre){
 		this.nombre=nombre;
 	}
+	public void setUsuario(String usuario){
+		this.usuario=usuario;
+	}
+	public String getUsuario(){
+		return usuario;
+	}
+	
 	public void setContraseña(String contraseña){
 		this.contraseña=contraseña;
 	}
