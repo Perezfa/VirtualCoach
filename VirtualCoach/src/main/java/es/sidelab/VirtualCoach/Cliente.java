@@ -34,7 +34,7 @@ public class Cliente {
 		
 	}
 
-	public Cliente(String nombre, String edad, String apellido, String email,String contraseña, String rol, String usuario){
+	public Cliente(String nombre,String apellido, String usuario, String email, String edad,String contraseña, String rol ){
 		this.nombre=nombre;
 		this.apellido=apellido;
 		this.usuario=usuario;

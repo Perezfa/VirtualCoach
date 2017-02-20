@@ -8,7 +8,7 @@
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Principal</title>
+    <title>Estadisticas</title>
     
     <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
     <meta name="author" content="">
@@ -32,7 +32,16 @@
     <link rel="stylesheet" href="assets/lib/animate.css/animate.css">
 
 
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.min.css">
+        <link rel="stylesheet" href="/assets/lib/inputlimiter/jquery.inputlimiter.css">
+        <link rel="stylesheet" href="/assets/lib/bootstrap-daterangepicker/daterangepicker-bs3.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/themes/default/css/uniform.default.min.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.min.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-tagsinput/1.3.3/jquery.tagsinput.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/css/bootstrap3/bootstrap-switch.min.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.1/css/datepicker3.min.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.0.1/css/bootstrap-colorpicker.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -164,10 +173,9 @@
                                 <!-- /.search-bar -->
                             <div class="main-bar">
                                 <h3>
-              <i class="fa fa-line-chart"></i>&nbsp;
-            Principal
+              <i class="fa fa-pencil"></i>&nbsp;
+            Estadisticas
           </h3>
-          {{nombre_usu}}
                             </div>
                             <!-- /.main-bar -->
                         </header>
@@ -186,7 +194,7 @@
                                 </a>
                         
                                 <div class="media-body">
-                                    <h5 class="media-heading">Hola, bienvenido </h5>
+                                    <h5 class="media-heading">Archie</h5>
                                     <ul class="list-unstyled user-info">
                                         <li><a href="">Administrator</a></li>
                                         <li>Last Access : <br>
@@ -236,133 +244,70 @@
                 <div id="content">
                     <div class="outer">
                         <div class="inner bg-light lter">
-                            <div class="text-center">
-    <ul class="stats_box">
-	<li>
-	    <div class="sparkline bar_week"></div>
-	    <div class="stat_text">
-		<strong>2.345</strong>Avance Semanal
-		<span class="percent down"> <i class="fa fa-caret-down"></i> -16%</span>
-	    </div>
-	</li>
-	<li>
-	    <div class="sparkline line_day"></div>
-	    <div class="stat_text">
-		<strong>165</strong>Hoy
-		<span class="percent up"> <i class="fa fa-caret-up"></i> +23%</span>
-	    </div>
-	</li>
-
-	<li>
-	    <div class="sparkline stacked_month"></div>
-	    <div class="stat_text">
-		<strong>$678.00</strong>Avance Mensual
-		<span class="percent down"> <i class="fa fa-caret-down"></i> -10%</span>
-	    </div>
-	</li>
-    </ul>
-</div>
-<hr>
-<div class="text-center">
-
-    <a class="quick-btn" href="#">
-	<i class="fa fa-bolt fa-2x"></i>
-	<span>Rutina 1</span>
-	<span class="label label-default">2</span>
-    </a>
-    <a class="quick-btn" href="#">
-	<i class="fa fa-check fa-2x"></i>
-	<span>Rutina 2</span>
-	<span class="label label-danger">2</span>
-    </a>
-    <a class="quick-btn" href="#">
-	<i class="fa fa-building-o fa-2x"></i>
-	<span>Rutina 3</span>
-    </a>
-    <a class="quick-btn" href="#">
-	<i class="fa fa-envelope fa-2x"></i>
-	<span>Rutina 4</span>
-	<span class="label label-success">-456</span>
-    </a>
-    <a class="quick-btn" href="#">
-	<i class="fa fa-signal fa-2x"></i>
-	<span>Rutina 5</span>
-	<span class="label label-warning">+25</span>
-    </a>
-</div>
-<hr>
+                            <!--BEGIN INPUT TEXT FIELDS-->
 <div class="row">
-    <div class="col-lg-8">
-	<div class="box">
-	    <header>
-		<h5>Estadisticas</h5>
-	    </header>
-	    <div class="body" id="trigo" style="height: 250px;"></div>
-	</div>
-    </div>
-    <div class="col-lg-4">
-	<div class="box">
-	    <div class="body">
-		<table class="table table-condensed table-hovered sortableTable">
-		    <thead>
-			<tr>
-				<th>Usuario <i class="fa sort"></i></th>
-			    <th>Ejercicio <i class="fa sort"></i></th>
-			    <th>Peso (Kg) <i class="fa sort"></i></th>
-			    <th>Repeticiones<i class="fa sort"></i></th>
-				<th>Tiempo(Serie)<i class="fa sort"></i></th>
+<div class="col-lg-6">
+    <div class="box dark">
+        <header>
+            <div class="icons"><i class="fa fa-edit"></i></div>
+            <h5>Estadisticas</h5>
+            <!-- .toolbar -->
+            <div class="toolbar">
+              <nav style="padding: 8px;">
+                  <a href="javascript:;" class="btn btn-default btn-xs collapse-box">
+                      <i class="fa fa-minus"></i>
+                  </a>
+                  <a href="javascript:;" class="btn btn-default btn-xs full-box">
+                      <i class="fa fa-expand"></i>
+                  </a>
+                  <a href="javascript:;" class="btn btn-danger btn-xs close-box">
+                      <i class="fa fa-times"></i>
+                  </a>
+              </nav>
+            </div>            <!-- /.toolbar -->
+        </header>
+        <div id="div-1" class="body">
+            <form class="form-horizontal">
 
-			</tr>
-		    </thead>
-		    <tbody>
-			<tr class="succes">
-			    <td>Cliente 1</td>
-				<td>Press Banca</td>
-			    <td>45</td>
-				<td>8</td>
-			    <td>00:00:45</td>
-			</tr>
-			<tr class="succes">
-			    <td>Cliente 2</td>
-				<td>Sentadilla</td>
-			    <td>100</td>
-				<td>8</td>
-			    <td>00:00:45</td>
-			</tr>
-			<tr class="succes">
-			    <td>Cliente 3</td>
-				<td>Peso muerto</td>
-			    <td>90</td>
-				<td>8</td>
-			    <td>00:01:00</td>
-			</tr>
-			<tr>
-			    <td>Cliente 4</td>
-			    <td>Press Banca</td>
-				<td>35</td>
-				<td>8</td>
-			    <td>00:01:15</td>
-			</tr>
-			<tr class="warning">
-			    <td>Cliente 5</td>
-				<td>Sentadilla</td>
-			    <td>80</td>
-				<td>8</td>
-			    <td>00:00:55</td>
-			</tr>
-			<tr class="warning">
-			    <td>Cliente 6</td>
-				<td>Biceps</td>
-			    <td>25</td>
-				<td>8</td>
-			    <td>00:00:40</td>
-			</tr>
-		    </tbody>
-		</table>
-	    </div>
-	</div>
+                <div class="form-group" action="/estadisticas/{id_estadisticas}/añadido">
+                    <label for="text1" class="control-label col-lg-4">Marca</label>
+
+                    <div class="col-lg-8">
+                        <input type="text" name="marca" id="text1" placeholder="Marca" class="form-control">
+                    </div>
+                </div>
+                <!-- /.form-group -->
+
+                <div class="form-group" action="/estadisticas/{id_estadisticas}/añadido">
+                    <label for="pass1" class="control-label col-lg-4">Fecha</label>
+
+                    <div class="col-lg-8">
+                        <input class="form-control" name="fecha" type="date" id="pass1"
+                              data-placement="top"/>
+                    </div>
+                </div>
+                <div class="btn">
+                <input type='submit' value='Guardar'/>
+                 </div>
+                
+                <div class="form-group">
+                    <label for="tags" class="control-label col-lg-4">Tags</label>
+
+                    <div class="col-lg-8">
+                        <input name="tags" id="tags" value="foo,bar,baz" class="form-control">
+                    </div>
+                </div>
+                <!-- /.form-group -->
+            </form>
+        </div>
     </div>
 </div>
+
+<!--END TEXT INPUT FIELD-->
+</div>
+<!-- /.row -->
+
+
 
                         </div>
                         <!-- /.inner -->
@@ -462,14 +407,16 @@
             <!--jQuery -->
             <script src="assets/lib/jquery/jquery.js"></script>
 
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.4/js/jquery.tablesorter.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.selection.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.resize.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/Uniform.js/2.1.2/jquery.uniform.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.jquery.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-tagsinput/1.3.3/jquery.tagsinput.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/autosize.js/1.18.17/jquery.autosize.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.1/js/bootstrap-datepicker.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.0.1/js/bootstrap-colorpicker.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 
             <!--Bootstrap -->
             <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
@@ -478,6 +425,9 @@
             <!-- Screenfull -->
             <script src="assets/lib/screenfull/screenfull.js"></script>
 
+                    <script src="/assets/lib/inputlimiter/jquery.inputlimiter.js"></script>
+                    <script src="/assets/lib/validVal/js/jquery.validVal.min.js"></script>
+                    <script src="/assets/lib/bootstrap-daterangepicker/daterangepicker.js"></script>
 
             <!-- Metis core scripts -->
             <script src="assets/js/core.js"></script>
@@ -486,7 +436,7 @@
 
                 <script>
                     $(function() {
-                      Metis.dashboard();
+                      Metis.formGeneral();
                     });
                 </script>
 
