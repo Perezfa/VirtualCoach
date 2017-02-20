@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+@Controller
 public class ClienteController {
 	
 	
@@ -32,10 +33,13 @@ public class ClienteController {
 			
 			//Lo enseñamos donde ponga nombre_usu
 			model.addAttribute("nombre_usu",cliente_repository.findByNombreAndContraseña(new_usu_name, new_usu_pass).toString());
-		}
+			
+			return "registrado";
+		}else
+			return "login";
 		
 		
-		return "registrado";
+		
 	}
 	
 
@@ -48,11 +52,12 @@ public class ClienteController {
 				
 			//Lo enseñamos donde ponga nombre_usu
 			model.addAttribute("nombre_usu",username);
-		}
+			return "index";
+
+		}else
+			return "login";
 		
-		
-		
-		return "index";
+	
 	}
 
 }

@@ -55,5 +55,24 @@ public class EstadisticasController {
 		model.addAttribute("rutina",rutina_repository.findByEstadisticas(estadisticas));
 		return "index";
 	}
+	
+	//Al pulsar el boton Guardar, guardamos la estadistica en la BBDD y la mostramos en algun sitio
+	@RequestMapping("/guardar_estadistica")
+	public String guardarEstadistica(Model model, @RequestParam float marca, @RequestParam String fecha, @RequestParam String  ejercicio){
+		
+		//Orden constructor: fecha,marca,ejercicio
+		estadisticas_repository.save(new Estadisticas(fecha,marca,ejercicio));
+		
+		//Para mostrar, buscamos por fecha y ejercicio
+		//Solo nos va a mostrar las estadisticas que acabemos de guardar, o que sean misma fecha y ejercicio
+		//Si quisieramos mostrar todas habria que buscar por solo fecha, solo ejercicio, o simplemente poner todas
+		
+		//No se si al ser una lista se rellenara la tabla o lo que sea
+		//Descomentar cuanto este el html
+		//model.addAttribute("tabla_estadisticas",estadisticas_repository.findByFechaAndEjercicio(fecha,ejercicio));
+		
+		
+		return "estadisticas";
+	}
 
 }

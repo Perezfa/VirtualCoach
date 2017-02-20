@@ -8,5 +8,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface EstadisticasRepository extends JpaRepository<Estadisticas, Long>{
 	List<Estadisticas> findByfecha(Date fecha);
 	List<Estadisticas>findBymarca(float marca);
+	List<Estadisticas>findByFechaAndEjercicio(String fecha, String ejercicio);
 
 }
