@@ -103,7 +103,7 @@
                                     </a>
                                 </div>
                                 <div class="btn-group">
-                                    <a href="login.html" data-toggle="tooltip" data-original-title="Logout" data-placement="bottom"
+                                    <a href="index.html" data-toggle="tooltip" data-original-title="Logout" data-placement="bottom"
                                        class="btn btn-metis-1 btn-sm">
                                         <i class="fa fa-power-off"></i>
                                     </a>
@@ -185,7 +185,7 @@
                                 </a>
                         
                                 <div class="media-body">
-                                    <h5 class="media-heading">Hola, bienvenido {{nombre_usu}} </h5>
+                                    <h5 class="media-heading">Hola, bienvenido {{usuario}} </h5>
                                     <ul class="list-unstyled user-info">
                                         <li><a href="">Administrator</a></li>
                                         <li>Last Access : <br>
@@ -200,8 +200,10 @@
                                   <li class="nav-header">Menu</li>
                                   <li class="nav-divider"></li>
                                   <li class="">
-                                    <a href="index.html">
-                                      <i class="fa fa-line-chart"></i><span class="link-title">&nbsp;Principal</span>
+                                  <a >
+                                     <form action="/volver_inicio" accept-charset="utf-8">
+                                      <i class="fa fa-line-chart"></i><input type="submit" value="Principal" class="link-title" ></input>
+                                      </form>
                                     </a>
                                   </li>
                                   <li>
@@ -213,19 +215,19 @@
                                     </a>
                                   </li>
                                   <li>
-                                    <a href="table.html">
-                                      <i class="fa fa-trophy"></i>
-                                      <span class="link-title">Rating</span>
+                                    <a>
+                                     <form action="/rating" accept-charset="utf-8">
+                                     <i class="fa fa-trophy"></i><input type="submit" value="Rating" class="link-title" ></input>
+                                      </form>  
                                     </a>
                                   </li>
                                   <li>
                                   </li>
                                   <li>
-                                    <a href="calendar.html">
-                                      <i class="fa fa-calendar"></i>
-                                      <span class="link-title">
-                                    Calendario
-                                  </span>
+                                    <a>
+                                     <form action="/calendario" accept-charset="utf-8">
+                                      <i class="fa fa-calendar"></i><input type="submit" value="Calendario" class="link-title" ></input>
+                                      </form>                       
                                     </a>
                                   </li>
                                 </ul>

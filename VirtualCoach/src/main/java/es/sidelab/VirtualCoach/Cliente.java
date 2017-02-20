@@ -29,7 +29,7 @@ public class Cliente {
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Estadisticas> estadisticas;
 	
-	
+	/*Entidad*/
 	public Cliente(){
 		
 	}
@@ -104,10 +104,8 @@ public class Cliente {
 	}
 	
 	
-	
-
 	@Override
 	public String toString(){
-		return getNombre();
+		return getUsuario();
 	}
 }

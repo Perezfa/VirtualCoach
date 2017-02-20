@@ -10,75 +10,39 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 public class Estadisticas {
+	private String fecha;
+	private String marca;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-
 	private long id_estadisticas;	
-	private Date fecha;
-	private float marca;
-	private float grafico;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	private List<Rutina> estadisticasRutina = new ArrayList<Rutina>();
+	@ManyToOne
+	private Cliente cliente;
 	
-	@Autowired
-	
+	public Estadisticas(){
+		
+	}
 
-	public Estadisticas(long id_estadisticas, Date fecha, float marca, float grafico){
-		this.id_estadisticas=id_estadisticas;
-		this.fecha=fecha;
+	public Estadisticas (String marca, String fecha){
 		this.marca=marca;
-		this.grafico=grafico;
+		this.fecha=fecha;
 	}
 	
-	public Date getFecha(){
+	public String getFecha(){
 		return fecha;
 	}
-	public float getMarca(){
+	public String getMarca(){
 		return marca;
 	}
 	
-	public void setFecha(Date fecha){
+	public void setFecha(String fecha){
 		this.fecha=fecha;
 	}
-	public void setMarca(float marca){
+	public void setMarca(String marca){
 		this.marca=marca;
 	}
 	
-	public float dibujarGraficos(){
-		return grafico;
-		
-	}
 
-
-
-	public void setId_estadisticas(long id_estadisticas){
-
-		this.id_estadisticas=id_estadisticas;
-	}
-		
-
-	public long getId_estadisticas(){
-		
-		return id_estadisticas;
-	}
-	
-	
-	public List<Rutina> getEstadisticasRutina(){
-		
-		return estadisticasRutina;
-	}
-	 public void setEstadisticasRutina(List <Rutina> estadisticasRutina){
-		 
-		 	this.estadisticasRutina= estadisticasRutina;
-	 }
-	 
-	
-	
-	 public static String getFechaActual() {
-		 	Date actual = new Date();
-	        SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
-	        return formateador.format(actual);
-	    }
 
 }
