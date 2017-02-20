@@ -29,10 +29,7 @@ public class VirtualCoachController {
 	private EntrenadorRepository entrenador_repository;
 	
 	
-	@RequestMapping("/login")
-	 public String login(Model model) {
-	 return "/public/login";
-	 }
+	
 	@RequestMapping("/index")
 	 public String index(Model model) {
 	 return "/public/index";
