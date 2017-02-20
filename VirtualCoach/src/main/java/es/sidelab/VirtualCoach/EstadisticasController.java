@@ -37,13 +37,4 @@ public class EstadisticasController {
 	}
 	
 
-	/*@GetMapping("/estadisticas/{id_estadisticas}")
-	public String verEstadisticas (Model model, @PathVariable long id_estadisticas){
-		
-		Estadisticas estadisticas = estadisticas_repository.findOne(id_estadisticas);
-		model.addAttribute("estadisticas", estadisticas);
-		model.addAttribute("rutina",rutina_repository.findByEstadisticas(estadisticas));
-		return "index";
-	}*/
-
 }

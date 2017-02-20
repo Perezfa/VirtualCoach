@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class ClienteController{
+
+public class ClienteController {
 	
 	
 	@Autowired
@@ -28,8 +29,7 @@ public class ClienteController{
 			//Falta poner el valor del checkbox
 	
 			cliente_repository.save(new Cliente(new_usu_name,new_usu_lastname,new_usu_username,new_usu_email,new_usu_age,new_usu_pass,new_usu_rol));
-			
-			//Lo enseñamos donde ponga usu_username
+						//Lo enseñamos donde ponga usu_username
 			model.addAttribute("name",cliente_repository.findByNombre(new_usu_name).toString());
 			
 			return "registrado";
@@ -37,6 +37,7 @@ public class ClienteController{
 			
 			return "contraseña_erronea";
 		}
+
 	}
 	
 	@RequestMapping("/inicio")
@@ -46,6 +47,7 @@ public class ClienteController{
 		Cliente user=cliente_repository.findByUsuarioAndContraseña(username,password);
 		
 		if(user!=null){
+
 			model.addAttribute("usuario",cliente_repository.findByUsuario(username).toString());
 			return "dashboard";
 			
@@ -55,6 +57,7 @@ public class ClienteController{
 			return "usuario_no_encontrado";
 						
 		}
+
 	}
 
 }

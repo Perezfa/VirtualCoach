@@ -8,4 +8,5 @@ public interface EstadisticasRepository extends JpaRepository<Estadisticas, Long
 	List<Estadisticas> findByfecha(String fecha);
 	List<Estadisticas>findBymarca(String marca);
 
+
 }

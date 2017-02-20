@@ -267,7 +267,7 @@
             </div>            <!-- /.toolbar -->
         </header>
         <div id="div-1" class="body">
-            <form class="form-horizontal">
+            <form class="form-horizontal" action="guardar_estadistica">
 
                 <div class="form-group" action="/estadisticas/{id_estadisticas}/añadido">
                     <label for="text1" class="control-label col-lg-4">Marca</label>
@@ -291,10 +291,10 @@
                  </div>
                 
                 <div class="form-group">
-                    <label for="tags" class="control-label col-lg-4">Tags</label>
+                    <label for="tags" class="control-label col-lg-4">Ejercicio</label>
 
                     <div class="col-lg-8">
-                        <input name="tags" id="tags" value="foo,bar,baz" class="form-control">
+                        <input type="text" name="ejercicio" id="ejercicio" class="form-control">
                     </div>
                 </div>
                 <!-- /.form-group -->

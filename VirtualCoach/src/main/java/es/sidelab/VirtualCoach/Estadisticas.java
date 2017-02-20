@@ -24,9 +24,11 @@ public class Estadisticas {
 		
 	}
 
+
 	public Estadisticas (String marca, String fecha){
 		this.marca=marca;
 		this.fecha=fecha;
+
 	}
 	
 	public String getFecha(){
@@ -43,6 +45,5 @@ public class Estadisticas {
 		this.marca=marca;
 	}
 	
-
 
 }
