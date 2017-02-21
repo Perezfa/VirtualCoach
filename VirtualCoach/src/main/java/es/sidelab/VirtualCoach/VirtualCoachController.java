@@ -1,6 +1,7 @@
 package es.sidelab.VirtualCoach;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpSession;
 
 import java.util.List;
 
@@ -20,11 +21,17 @@ public class VirtualCoachController {
 
 	@Autowired
 	private ClienteRepository cliente_repository;
+	@Autowired
+	private EstadisticasRepository estadisticas_repository;
 
-	@GetMapping("/volver_inicio/{usuario}")
-	public String inicio (Model model, @RequestParam String username){
+	@GetMapping("/volver_inicio")
+	public String inicio (Model model, HttpSession Sesion){
 		
-		model.addAttribute("usuario",cliente_repository.findByUsuario(username).toString());
+		String usuario= (String)Sesion.getAttribute("user");
+		model.addAttribute("usuario", usuario);
+		Cliente cliente =cliente_repository.findByUsuario(usuario);
+		List <Estadisticas> estadisticas=estadisticas_repository.findByCliente(cliente);
+		model.addAttribute("estadistica", estadisticas);
 		return "dashboard";
 	}
 	@GetMapping("/calendario")

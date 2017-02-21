@@ -53,9 +53,12 @@
         
         
         <h5>Se ha añadido correctamente las estadisticas.</h5>
-        <p>{{estadistica.marca}},{{estadistica.fecha}}</p>
-        
-
+        <p>		<ul>
+        			{{#estadistica}}
+					<li>{{.}}</li>
+					{{/estadistica}}
+        			</ul>
+		</p>
         </div>
     </div>
     <hr>

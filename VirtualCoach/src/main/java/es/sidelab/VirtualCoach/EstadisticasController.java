@@ -53,10 +53,8 @@ public class EstadisticasController {
 	 * la pantalla de "estadisticas añadidas" sino que se meustren directamente todas al añadir una nueva
 	 */
 	
-	
-	
 	@PostMapping("/añadirestadisticas")
-	public String AñadirYEnseñarEstadistica(Model model, Estadisticas estadistica, HttpSession sesion){
+	public String AñadirEstadistica(Model model, Estadisticas estadistica, HttpSession sesion){
 		
 		//Username, no nombre real
 		String usuario= (String) sesion.getAttribute("user");
@@ -65,13 +63,21 @@ public class EstadisticasController {
 		estadistica.setCliente(cliente);
 		//Guardamos la nueva estadistica
 		estadisticas_repository.save(estadistica);
-		//Buscamos todas las estadisticas de ese usuario
-		List<Estadisticas> estadisticas_user=estadisticas_repository.findByCliente(cliente);
 		
+		model.addAttribute("estadistica",estadistica);
 		
-		model.addAttribute("estadistica",estadistica.toString());
+		return "estadisticas_añadidas";
+	}
 		
-		return "estadisticas";
+		@PostMapping("/mostrarestadistica")
+		public String MostrarEstadistica(Model model, Estadisticas estadistica, HttpSession sesion){
+			//Buscamos todas las estadisticas de ese usuario
+			String usuario= (String) sesion.getAttribute("user");
+			Cliente cliente=cliente_repository.findByUsuario(usuario);
+			List<Estadisticas> estadisticas_user=estadisticas_repository.findByCliente(cliente);
+			model.addAttribute("estadistica",estadistica);
+		
+			return "dashboard";
 	}
 	
 	

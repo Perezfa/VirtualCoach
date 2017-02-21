@@ -204,37 +204,40 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- #menu -->
+                       <!-- #menu -->
                         <ul id="menu" class="bg-blue dker">
                                   <li class="nav-header">Menu</li>
                                   <li class="nav-divider"></li>
-                                  <li class="">
-                                    <a href="index.html">
-                                      <i class="fa fa-line-chart"></i><span class="link-title">&nbsp;Principal</span>
-                                    </a>
+                                  <li>
+                                  <a href="/volver_inicio" >
+                                   <i class="fa fa-line-chart"></i>
+                                   <span class="link-title">
+                                   Principal
+                                   </span> 
+                                  </a>
                                   </li>
                                   <li>
                                     <a href="estadisticas.html">
                                       <i class="fa fa-hand-rock-o"></i>
                                       <span class="link-title">
                                     Estadisticas
+                        	  		</span>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="/rating">
+                                      <i class="fa fa-trophy"></i>
+                                      <span class="link-title">
+                                    Rating
                         	  </span>
                                     </a>
                                   </li>
-                                  <li>
-                                    <a href="table.html">
-                                      <i class="fa fa-trophy"></i>
-                                      <span class="link-title">Rating</span>
-                                    </a>
-                                  </li>
-                                  <li>
-                                  </li>
-                                  <li>
-                                    <a href="calendar.html">
+                                   <li>
+                                    <a href="/calendario">
                                       <i class="fa fa-calendar"></i>
                                       <span class="link-title">
                                     Calendario
-                                  </span>
+                        	  </span>
                                     </a>
                                   </li>
                                 </ul>
@@ -288,16 +291,7 @@
                 </div>
                 <div class="btn">
                 <input type='submit' value='Guardar'/>
-                 </div>
-                 
-                 <p>Estadísticas de usuario:</p>
-					<ul>
-					{{#estadistica}}
-					<li>{{.}}</li>
-					{{/estadistica}}
-					</ul>
-					
-					                
+                 </div>		                
                 <div class="form-group">
                     <label for="tags" class="control-label col-lg-4">Ejercicio</label>
 
