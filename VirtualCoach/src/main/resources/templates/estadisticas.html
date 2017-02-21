@@ -289,7 +289,15 @@
                 <div class="btn">
                 <input type='submit' value='Guardar'/>
                  </div>
-                
+                 
+                 <p>Estadísticas de usuario:</p>
+					<ul>
+					{{#estadistica}}
+					<li>{{.}}</li>
+					{{/estadistica}}
+					</ul>
+					
+					                
                 <div class="form-group">
                     <label for="tags" class="control-label col-lg-4">Ejercicio</label>
 

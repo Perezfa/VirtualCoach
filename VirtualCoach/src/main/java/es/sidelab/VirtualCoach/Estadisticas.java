@@ -44,6 +44,16 @@ public class Estadisticas {
 	public void setMarca(String marca){
 		this.marca=marca;
 	}
+	public void setCliente(Cliente cliente){
+		this.cliente=cliente;
+	}
+	public String getCliente(){
+		return cliente.toString();
+	}
 	
+	@Override
+	public String toString(){
+		return getCliente()+" "+ getFecha()+" "+getMarca();
+	}
 
 }
