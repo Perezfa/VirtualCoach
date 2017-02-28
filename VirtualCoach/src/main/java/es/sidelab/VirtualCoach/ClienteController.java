@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -18,7 +19,7 @@ public class ClienteController {
 	private ClienteRepository cliente_repository;
 
 	
-	@RequestMapping("/registro")
+	@PostMapping("/registro_nuevo")
 	public String Registrarse(Model model, 
 			@RequestParam String new_usu_username,@RequestParam String new_usu_lastname,@RequestParam String new_usu_email
 			,@RequestParam String new_usu_name, @RequestParam String new_usu_age,@RequestParam String new_usu_rol,

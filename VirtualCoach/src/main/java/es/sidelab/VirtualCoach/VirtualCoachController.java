@@ -34,6 +34,10 @@ public class VirtualCoachController {
 		model.addAttribute("estadistica", estadisticas);
 		return "dashboard";
 	}
+	@GetMapping("/")
+	public String registro(Model model){
+		return "registro";
+	}
 	@GetMapping("/calendario")
 	public String calendario (Model model){
 		return "calendar";
