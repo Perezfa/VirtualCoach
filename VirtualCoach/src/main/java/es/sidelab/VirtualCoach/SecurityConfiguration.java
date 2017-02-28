@@ -13,7 +13,7 @@ public class SecurityConfiguration extends  WebSecurityConfigurerAdapter {
 		// TODO Auto-generated method stub
 		
 		//Páginas publicas
-		http.authorizeRequests().antMatchers("/").permitAll();
+		http.authorizeRequests().antMatchers("/", "/assets/**", "/rtl/**", "/rating", "/registrado", "/usuario_no_encontrado").permitAll();
 		//Todas las demas son privadas
 		http.authorizeRequests().anyRequest().authenticated();
 		
@@ -23,8 +23,12 @@ public class SecurityConfiguration extends  WebSecurityConfigurerAdapter {
 	    http.formLogin().defaultSuccessUrl("/dashboard");
 	    http.formLogin().failureUrl("/usuario_no_encontrado");
 
-		
+	 // Disable CSRF at the moment
+		 http.csrf().disable();
+
 	}
+	
+	
 	
 
 }
