@@ -23,6 +23,14 @@ public class VirtualCoachController {
 	private ClienteRepository cliente_repository;
 	@Autowired
 	private EstadisticasRepository estadisticas_repository;
+	
+	@PostConstruct
+	
+	public void init(){
+		
+		cliente_repository.save(new Cliente ("Adrián","Pérez","123","perezoner@gmail.com", "23","123", "C"));
+		cliente_repository.save(new Cliente ("Óscar","Repiso","456","orb@gmail.com", "23","456", "E"));
+	}
 
 	@GetMapping("/volver_inicio")
 	public String inicio (Model model, HttpSession Sesion){
@@ -36,7 +44,7 @@ public class VirtualCoachController {
 	}
 	@GetMapping("/")
 	public String registro(Model model){
-		return "registro";
+		return "login";
 	}
 	@GetMapping("/calendario")
 	public String calendario (Model model){

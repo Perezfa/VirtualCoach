@@ -13,7 +13,7 @@ public class SecurityConfiguration extends  WebSecurityConfigurerAdapter {
 		// TODO Auto-generated method stub
 		
 		//Páginas publicas
-		http.authorizeRequests().antMatchers("/", "/assets/**", "/rtl/**", "/rating", "/registrado", "/usuario_no_encontrado").permitAll();
+		http.authorizeRequests().antMatchers("/", "/assets/**", "/rtl/**", "/rating", "/registrado", "/usuario_no_encontrado", "/registro").permitAll();
 		//Todas las demas son privadas
 		http.authorizeRequests().anyRequest().authenticated();
 		
