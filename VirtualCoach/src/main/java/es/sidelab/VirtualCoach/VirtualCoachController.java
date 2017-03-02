@@ -28,7 +28,6 @@ public class VirtualCoachController {
 	
 	public void init(){
 		
-		cliente_repository.save(new Cliente ("Adrián","Pérez","123","perezoner@gmail.com", "23","123", "C"));
 		cliente_repository.save(new Cliente ("Óscar","Repiso","456","orb@gmail.com", "23","456", "E"));
 	}
 
@@ -43,9 +42,10 @@ public class VirtualCoachController {
 		return "dashboard";
 	}
 	@GetMapping("/")
-	public String registro(Model model){
+	public String login(Model model){
 		return "login";
 	}
+	
 	@GetMapping("/calendario")
 	public String calendario (Model model){
 		return "calendar";
