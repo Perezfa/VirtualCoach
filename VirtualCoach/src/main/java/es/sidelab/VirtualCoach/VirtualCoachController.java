@@ -23,6 +23,13 @@ public class VirtualCoachController {
 	private ClienteRepository cliente_repository;
 	@Autowired
 	private EstadisticasRepository estadisticas_repository;
+	
+	@PostConstruct
+	
+	public void init(){
+		
+		cliente_repository.save(new Cliente ("Óscar","Repiso","456","orb@gmail.com", "23","456", "E"));
+	}
 
 	@GetMapping("/volver_inicio")
 	public String inicio (Model model, HttpSession Sesion){
@@ -35,9 +42,10 @@ public class VirtualCoachController {
 		return "dashboard";
 	}
 	@GetMapping("/")
-	public String registro(Model model){
-		return "registro";
+	public String login(Model model){
+		return "login";
 	}
+	
 	@GetMapping("/calendario")
 	public String calendario (Model model){
 		return "calendar";
