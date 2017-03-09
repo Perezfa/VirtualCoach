@@ -1,7 +1,6 @@
 package es.sidelab.VirtualCoach;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -11,8 +10,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
+import org.springframework.stereotype.Component;
+@Component
 public class ClienteRepositoryAuthenticationProvider implements AuthenticationProvider {
+	
 	@Autowired
 	private ClienteRepository clienteRepository;
 
