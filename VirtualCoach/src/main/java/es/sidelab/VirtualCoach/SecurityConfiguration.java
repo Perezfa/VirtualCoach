@@ -30,7 +30,6 @@ public class SecurityConfiguration extends  WebSecurityConfigurerAdapter {
 	    http.formLogin().failureUrl("/usuario_no_encontrado");
 
 	 // Disable CSRF at the moment
-		 http.csrf().disable();
 
 	}
 	

@@ -1,6 +1,8 @@
 package es.sidelab.VirtualCoach;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import java.util.List;
@@ -9,12 +11,16 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 @Controller
 public class VirtualCoachController {
@@ -23,12 +29,25 @@ public class VirtualCoachController {
 	private ClienteRepository cliente_repository;
 	@Autowired
 	private EstadisticasRepository estadisticas_repository;
+	@Autowired
+	private EntrenadorRepository entrenador_repository;
 	
-	@PostConstruct
 	
-	public void init(){
+	
+		@PostConstruct
+		public void init(){
+			//Entrenador 1
+			entrenador_repository.save(new Entrenador("Pedro","Gonzalez","27","E"));
+			//Entrenador 2
+			entrenador_repository.save(new Entrenador("Juan","Pérez","25","E"));
+			//Entrenador 3
+			entrenador_repository.save(new Entrenador("David","Marchante","25","E"));
+			//Entrenador 4
+			entrenador_repository.save(new Entrenador("Pedro J.","Benito","41","E"));
+			//Entrenador 5
+			entrenador_repository.save(new Entrenador("Julio","Badillo","35","E"));
+
 		
-		cliente_repository.save(new Cliente ("Óscar","Repiso","456","orb@gmail.com", "23","456", "E"));
 	}
 
 	@GetMapping("/volver_inicio")
@@ -42,8 +61,25 @@ public class VirtualCoachController {
 		return "dashboard";
 	}
 	@GetMapping("/")
-	public String login(Model model){
+	public String login(Model model,  HttpServletRequest request){
+		
+		Entrenador entrenador1=entrenador_repository.findBynombre("Pedro");
+		Entrenador entrenador2=entrenador_repository.findBynombre("Juan");
+		Entrenador entrenador3=entrenador_repository.findBynombre("David");
+		Entrenador entrenador4=entrenador_repository.findBynombre("Pedro J.");
+		Entrenador entrenador5=entrenador_repository.findBynombre("Julio");
+
+		
+		model.addAttribute("Entrenador1",entrenador1);
+		model.addAttribute("Entrenador2",entrenador2);
+		model.addAttribute("Entrenador3",entrenador3);
+		model.addAttribute("Entrenador4",entrenador4);
+		model.addAttribute("Entrenador5",entrenador5);
 		return "login";
+	}
+	@GetMapping("/estadisticas")
+	public String estadisticas(Model model,  HttpServletRequest request){
+		return "estadisticas";
 	}
 	
 	@GetMapping("/calendario")
@@ -54,5 +90,4 @@ public class VirtualCoachController {
 	public String rating (Model model){
 		return "table";
 	}
-	
 }

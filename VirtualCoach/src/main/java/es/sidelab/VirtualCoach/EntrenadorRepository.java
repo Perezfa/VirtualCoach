@@ -6,8 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EntrenadorRepository extends JpaRepository<Entrenador, Long>  {
 	
-	List<Entrenador> findBynombre(String nombre);
-	List <Entrenador> findByapellido(String apellido);
-	List <Entrenador> findByrol(String rol);
+	Entrenador findBynombre(String nombre);
+	Entrenador findByapellido(String apellido);
+	Entrenador findByrol(String rol);
+	Entrenador findById(Long id_entrenador);
 
 }

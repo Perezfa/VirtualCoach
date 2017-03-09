@@ -34,7 +34,7 @@ public class Cliente {
 		
 	}
 
-	public Cliente(String nombre,String apellido, String usuario, String email, String edad,String contraseña, String rol ){
+	public Cliente(String nombre,String apellido, String usuario, String email, String edad,String contraseña, String rol, Entrenador entrenador ){
 		this.nombre=nombre;
 		this.apellido=apellido;
 		this.usuario=usuario;
@@ -42,6 +42,7 @@ public class Cliente {
 		this.edad=edad;
 		this.contraseña=contraseña;
 		this.rol=rol;
+		this.entrenador=entrenador;
 		
 	}
 	public String getEmail(){
@@ -64,9 +65,6 @@ public class Cliente {
 		this.entrenador=entrenador;
 	}
 	public Entrenador getEntrenador(){
-		return entrenador;
-	}
-	public Entrenador mostrarEntrenador(){
 		return entrenador;
 	}
 	
