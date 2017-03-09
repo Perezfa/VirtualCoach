@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
@@ -19,7 +18,8 @@ public class SecurityConfiguration extends  WebSecurityConfigurerAdapter {
 		
 		//Páginas publicas
 
-		http.authorizeRequests().antMatchers("/","/assets/**", "/rtl/**", "/rating", "/registrado", "/usuario_no_encontrado","/registro_nuevo","/contraseña_erronea","/inicio").permitAll();
+		http.authorizeRequests().antMatchers("/","/assets/**", "/rtl/**", "/rating", "/usuario_no_encontrado","/registro_nuevo","/contraseña_erronea","/inicio").permitAll();
+
 		//Todas las demas son privadas
 		http.authorizeRequests().anyRequest().authenticated();
 		
