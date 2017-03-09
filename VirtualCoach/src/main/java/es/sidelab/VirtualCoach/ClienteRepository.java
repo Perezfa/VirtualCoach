@@ -2,11 +2,10 @@ package es.sidelab.VirtualCoach;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 
 
 
-public interface ClienteRepository extends CrudRepository<Cliente, Long> {	
+public interface ClienteRepository extends JpaRepository<Cliente, Long> {	
 
 	Cliente findByEmail (String email);
 	Cliente findByUsuarioAndContraseña(String usuario,String contraseña);
