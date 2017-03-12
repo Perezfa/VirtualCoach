@@ -1,6 +1,7 @@
 package es.sidelab.VirtualCoach;
 
 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +55,6 @@ public class ClienteController {
 		if(user!=null){
 			//Buscamos por nombre de usuario y no nombre real
 			String usuario=cliente_repository.findByUsuario(username).getUsuario();
-
 			model.addAttribute("usuario",usuario);
 			sesion.setAttribute("user",usuario);
 			return "dashboard";

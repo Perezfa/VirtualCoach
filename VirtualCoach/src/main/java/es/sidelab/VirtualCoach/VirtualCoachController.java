@@ -36,6 +36,8 @@ public class VirtualCoachController {
 	
 		@PostConstruct
 		public void init(){
+			//Administrador
+			cliente_repository.save(new Cliente("Oscar","Repiso","oscar","oscarrepiso@gmail.com","21","admin","ROLE_ADMIN",null));
 			//Entrenador 1
 			entrenador_repository.save(new Entrenador("Pedro","Gonzalez","27","E"));
 			//Entrenador 2
