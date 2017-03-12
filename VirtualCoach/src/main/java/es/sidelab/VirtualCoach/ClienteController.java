@@ -25,14 +25,14 @@ public class ClienteController {
 	public String Registrarse(Model model, 
 			@RequestParam String new_usu_username,@RequestParam String new_usu_lastname,@RequestParam String new_usu_email
 			,@RequestParam String new_usu_name, @RequestParam String new_usu_age,
-			@RequestParam String new_usu_pass, @RequestParam String new_usu_rep_pass,@RequestParam Long id_entrenador){
+			@RequestParam String new_usu_pass, @RequestParam String new_usu_rep_pass,@RequestParam String nombre){
 		
 		
 		//Si las contraseñan coinciden podemos crear usu
 		//Más adelante tambien habria que poner metodo para saber que ese nombre de usu ya esta cogido o no
 		if(new_usu_pass.equals(new_usu_rep_pass)){
 			//Falta poner el valor del checkbox
-			Entrenador entrenador = entrenador_repository.findById(id_entrenador);
+			Entrenador entrenador = entrenador_repository.findBynombre(nombre);
 			cliente_repository.save(new Cliente(new_usu_name,new_usu_lastname,new_usu_username,new_usu_email,new_usu_age,new_usu_pass,"C", entrenador));
 						//Lo enseñamos donde ponga usu_username
 			model.addAttribute("name",cliente_repository.findByNombre(new_usu_name).toString());
