@@ -18,11 +18,11 @@ public class Cliente {
 	private long id_cliente;
 	
 	//Un cliente solo tiene un entrenador, pero un entrenador n clientes
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Entrenador entrenador;
 	
 	//Un cliente solo tiene 1 rutina, pero 1 rutina n clientes
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Rutina rutina;
 	
 	//Si borramos un cliente se borran sus estadisticas.
