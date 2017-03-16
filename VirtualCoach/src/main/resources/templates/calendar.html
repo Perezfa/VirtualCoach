@@ -8,7 +8,7 @@
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Principal</title>
+    <title>Calendar</title>
     
     <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
     <meta name="author" content="">
@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="assets/lib/animate.css/animate.css">
 
 
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.9.0/fullcalendar.min.css">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -164,8 +164,8 @@
                                 <!-- /.search-bar -->
                             <div class="main-bar">
                                 <h3>
-              <i class="fa fa-line-chart"></i>&nbsp;
-            Principal
+              <i class="fa fa-calendar"></i>&nbsp;
+            Calendar
           </h3>
                             </div>
                             <!-- /.main-bar -->
@@ -199,33 +199,40 @@
                         <ul id="menu" class="bg-blue dker">
                                   <li class="nav-header">Menu</li>
                                   <li class="nav-divider"></li>
-                                  <li class="">
-                                    <a href="index.html">
-                                      <i class="fa fa-line-chart"></i><span class="link-title">&nbsp;Principal</span>
-                                    </a>
+                                  <li>
+                                  <a href="/volver_inicio" >
+                                   <i class="fa fa-line-chart"></i>
+                                   <span class="link-title">
+                                   Principal
+                                   </span> 
+                                  </a>
                                   </li>
                                   <li>
                                     <a href="estadisticas.html">
                                       <i class="fa fa-hand-rock-o"></i>
                                       <span class="link-title">
                                     Estadisticas
+<<<<<<< HEAD:VirtualCoach/src/main/resources/templates/public/calendar.html
+                        	  </span>
+=======
+                        	  		</span>
+>>>>>>> 31c133c79686a4805599892cd358bc0ceea562c3:VirtualCoach/src/main/resources/templates/calendar.html
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="/rating">
+                                      <i class="fa fa-trophy"></i>
+                                      <span class="link-title">
+                                    Rating
                         	  </span>
                                     </a>
                                   </li>
-                                  <li>
-                                    <a href="table.html">
-                                      <i class="fa fa-trophy"></i>
-                                      <span class="link-title">Rating</span>
-                                    </a>
-                                  </li>
-                                  <li>
-                                  </li>
-                                  <li>
-                                    <a href="calendar.html">
+                                   <li>
+                                    <a href="/calendario">
                                       <i class="fa fa-calendar"></i>
                                       <span class="link-title">
                                     Calendario
-                                  </span>
+                        	  </span>
                                     </a>
                                   </li>
                                 </ul>
@@ -235,132 +242,84 @@
                 <div id="content">
                     <div class="outer">
                         <div class="inner bg-light lter">
-                            <div class="text-center">
-    <ul class="stats_box">
-	<li>
-	    <div class="sparkline bar_week"></div>
-	    <div class="stat_text">
-		<strong>2.345</strong>Avance Semanal
-		<span class="percent down"> <i class="fa fa-caret-down"></i> -16%</span>
-	    </div>
-	</li>
-	<li>
-	    <div class="sparkline line_day"></div>
-	    <div class="stat_text">
-		<strong>165</strong>Hoy
-		<span class="percent up"> <i class="fa fa-caret-up"></i> +23%</span>
-	    </div>
-	</li>
+                            <div class="box">
+  <header>
+      <h5>Calendario</h5>
+  </header>
+  <div class="body">
+      <div class="row">
+	  <div class="col-lg-3">
+	      <div class="well well-sm">
+		  <div id="add-event-form">
+		      <fieldset>
+			  <legend>Añadir Entrenamiento</legend>
+			  <span class="help-block">Titulo Entrenamiento</span>
+			  <input id="title" name="title" type="text" placeholder="event title" class="form-control input-small">
 
-	<li>
-	    <div class="sparkline stacked_month"></div>
-	    <div class="stat_text">
-		<strong>$678.00</strong>Avance Mensual
-		<span class="percent down"> <i class="fa fa-caret-down"></i> -10%</span>
-	    </div>
-	</li>
-    </ul>
-</div>
-<hr>
-<div class="text-center">
+			  <div class="radio">
+			    <label>
+				<input type="radio" name="priority" value="label label-default" checked>
+				<span class="label label-default">default</span>
+			    </label>
+			  </div>
+			  <div class="radio">
+			    <label>
+				<input type="radio" name="priority" value="label label-primary">
+				<span class="label label-primary">primary</span>
+			    </label>
+			  </div>
+			  <div class="radio">
+			    <label>
+				<input type="radio" name="priority" value="label label-warning">
+				<span class="label label-warning">warning</span>
+			    </label>
+			  </div>
+			  <div class="radio">
+			    <label>
+				<input type="radio" name="priority" value="label label-success">
+				<span class="label label-success">success</span>
+			    </label>
+			  </div>
+			  <div class="radio">
+			    <label>
+				<input type="radio" name="priority" value="label label-info">
+				<span class="label label-info">info</span>
+			    </label>
+			  </div>
+			  <div class="radio">
+			    <label>
+				<input type="radio" name="priority" value="label label-danger">
+				<span class="label label-danger">danger</span>
+			    </label>
+			  </div>
+			  <br>
+			  <button id="add-event" type="button" class="btn btn-sm btn-default">Add Event</button>
+		      </fieldset>
+		  </div>
 
-    <a class="quick-btn" href="#">
-	<i class="fa fa-bolt fa-2x"></i>
-	<span>Rutina 1</span>
-	<span class="label label-default">2</span>
-    </a>
-    <a class="quick-btn" href="#">
-	<i class="fa fa-check fa-2x"></i>
-	<span>Rutina 2</span>
-	<span class="label label-danger">2</span>
-    </a>
-    <a class="quick-btn" href="#">
-	<i class="fa fa-building-o fa-2x"></i>
-	<span>Rutina 3</span>
-    </a>
-    <a class="quick-btn" href="#">
-	<i class="fa fa-envelope fa-2x"></i>
-	<span>Rutina 4</span>
-	<span class="label label-success">-456</span>
-    </a>
-    <a class="quick-btn" href="#">
-	<i class="fa fa-signal fa-2x"></i>
-	<span>Rutina 5</span>
-	<span class="label label-warning">+25</span>
-    </a>
-</div>
-<hr>
-<div class="row">
-    <div class="col-lg-8">
-	<div class="box">
-	    <header>
-		<h5>Estadisticas</h5>
-	    </header>
-	    <div class="body" id="trigo" style="height: 250px;"></div>
-	</div>
-    </div>
-    <div class="col-lg-4">
-	<div class="box">
-	    <div class="body">
-		<table class="table table-condensed table-hovered sortableTable">
-		    <thead>
-			<tr>
-				<th>Usuario <i class="fa sort"></i></th>
-			    <th>Ejercicio <i class="fa sort"></i></th>
-			    <th>Peso (Kg) <i class="fa sort"></i></th>
-			    <th>Repeticiones<i class="fa sort"></i></th>
-				<th>Tiempo(Serie)<i class="fa sort"></i></th>
+	      </div>
+	      <div class="well well-sm">
+		  <h4>Draggable Events</h4>
+		  <ul id='external-events' class="list-unstyled">
+		      <li class="external-event"><span class="label label-default">My Event 1</span></li>
+		      <li class="external-event"><span class="label label-primary">My Event 2</span></li>
+		      <li class="external-event"><span class="label label-danger">My Event 3</span></li>
+		      <li class="external-event"><span class="label label-success">My Event 4</span></li>
+		      <li class="external-event"><span class="label label-warning">My Event 5</span></li>
+		      <li class="external-event"><span class="label label-info">My Event 6</span></li>
+		  </ul>
 
-			</tr>
-		    </thead>
-		    <tbody>
-			<tr class="succes">
-			    <td>Cliente 1</td>
-				<td>Press Banca</td>
-			    <td>45</td>
-				<td>8</td>
-			    <td>00:00:45</td>
-			</tr>
-			<tr class="succes">
-			    <td>Cliente 2</td>
-				<td>Sentadilla</td>
-			    <td>100</td>
-				<td>8</td>
-			    <td>00:00:45</td>
-			</tr>
-			<tr class="succes">
-			    <td>Cliente 3</td>
-				<td>Peso muerto</td>
-			    <td>90</td>
-				<td>8</td>
-			    <td>00:01:00</td>
-			</tr>
-			<tr>
-			    <td>Cliente 4</td>
-			    <td>Press Banca</td>
-				<td>35</td>
-				<td>8</td>
-			    <td>00:01:15</td>
-			</tr>
-			<tr class="warning">
-			    <td>Cliente 5</td>
-				<td>Sentadilla</td>
-			    <td>80</td>
-				<td>8</td>
-			    <td>00:00:55</td>
-			</tr>
-			<tr class="warning">
-			    <td>Cliente 6</td>
-				<td>Biceps</td>
-			    <td>25</td>
-				<td>8</td>
-			    <td>00:00:40</td>
-			</tr>
-		    </tbody>
-		</table>
-	    </div>
-	</div>
-    </div>
+
+		  <div class="checkbox anim-checkbox h4">
+		      <input type="checkbox" id="drop-remove" class="danger">
+		      <label for="drop-remove">remove after drop</label>
+		  </div>
+
+	      </div>
+	  </div>
+	  <div id="calendar" class="col-lg-9"></div>
+      </div>
+  </div>
 </div>
 
                         </div>
@@ -461,14 +420,9 @@
             <!--jQuery -->
             <script src="assets/lib/jquery/jquery.js"></script>
 
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.4/js/jquery.tablesorter.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.selection.min.js"></script>
-                    <script src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.resize.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.9.0/fullcalendar.min.js"></script>
 
             <!--Bootstrap -->
             <script src="assets/lib/bootstrap/js/bootstrap.js"></script>
@@ -485,7 +439,7 @@
 
                 <script>
                     $(function() {
-                      Metis.dashboard();
+                      Metis.MetisCalendar();
                     });
                 </script>
 

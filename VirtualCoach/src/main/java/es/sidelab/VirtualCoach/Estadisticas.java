@@ -1,17 +1,23 @@
 package es.sidelab.VirtualCoach;
 
+<<<<<<< HEAD
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+=======
+>>>>>>> 31c133c79686a4805599892cd358bc0ceea562c3
 
 import javax.persistence.*;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 public class Estadisticas {
+	private String fecha;
+	private String marca;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+<<<<<<< HEAD
 
 	private long id_estadisticas;	
 	private Date fecha;
@@ -32,12 +38,32 @@ public class Estadisticas {
 	}
 	
 	public Date getFecha(){
+=======
+	private long id_estadisticas;	
+	
+	@ManyToOne
+	private Cliente cliente;
+	
+	public Estadisticas(){
+		
+	}
+
+
+	public Estadisticas (String marca, String fecha){
+		this.marca=marca;
+		this.fecha=fecha;
+
+	}
+	
+	public String getFecha(){
+>>>>>>> 31c133c79686a4805599892cd358bc0ceea562c3
 		return fecha;
 	}
-	public float getMarca(){
+	public String getMarca(){
 		return marca;
 	}
 	
+<<<<<<< HEAD
 	public void setFecha(Date fecha){
 		this.fecha=fecha;
 	}
@@ -80,5 +106,24 @@ public class Estadisticas {
 	        SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
 	        return formateador.format(actual);
 	    }
+=======
+	public void setFecha(String fecha){
+		this.fecha=fecha;
+	}
+	public void setMarca(String marca){
+		this.marca=marca;
+	}
+	public void setCliente(Cliente cliente){
+		this.cliente=cliente;
+	}
+	public String getCliente(){
+		return cliente.toString();
+	}
+	
+	@Override
+	public String toString(){
+		return getCliente()+" "+ getFecha()+" "+getMarca();
+	}
+>>>>>>> 31c133c79686a4805599892cd358bc0ceea562c3
 
 }

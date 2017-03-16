@@ -11,11 +11,6 @@ public class CalendarioController {
 	private RutinaRepository rutina_repository;
 
 	
-	@RequestMapping("/calendar")
-	public String rating(Model model) {
-		
-			
-			return "/public/calendar";
-}
+
 
 }
