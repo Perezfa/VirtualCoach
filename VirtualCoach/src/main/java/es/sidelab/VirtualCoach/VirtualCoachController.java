@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -99,6 +100,8 @@ public class VirtualCoachController {
 =======
 		@PostConstruct
 		public void init(){
+			//Administrador
+			cliente_repository.save(new Cliente("Oscar","Repiso","oscar","oscarrepiso@gmail.com","21","admin","ROLE_ADMIN",null));
 			//Entrenador 1
 			entrenador_repository.save(new Entrenador("Pedro","Gonzalez","27","E"));
 			//Entrenador 2
@@ -126,18 +129,12 @@ public class VirtualCoachController {
 	@GetMapping("/")
 	public String login(Model model,  HttpServletRequest request){
 		
-		Entrenador entrenador1=entrenador_repository.findBynombre("Pedro");
-		Entrenador entrenador2=entrenador_repository.findBynombre("Juan");
-		Entrenador entrenador3=entrenador_repository.findBynombre("David");
-		Entrenador entrenador4=entrenador_repository.findBynombre("Pedro J.");
-		Entrenador entrenador5=entrenador_repository.findBynombre("Julio");
+		List<Entrenador> entrenador=entrenador_repository.findAll();
+	
 
+		model.addAttribute("Entrenador",entrenador);
+	
 		
-		model.addAttribute("Entrenador1",entrenador1);
-		model.addAttribute("Entrenador2",entrenador2);
-		model.addAttribute("Entrenador3",entrenador3);
-		model.addAttribute("Entrenador4",entrenador4);
-		model.addAttribute("Entrenador5",entrenador5);
 		return "login";
 	}
 	@GetMapping("/estadisticas")
