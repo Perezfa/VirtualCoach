@@ -2,22 +2,26 @@ package es.sidelab.VirtualCoach;
 
 import javax.annotation.PostConstruct;
 
+import java.util.List;
 
-
-
+import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class VirtualCoachController {
-<<<<<<< HEAD
-=======
 
 	@Autowired
 	private ClienteRepository cliente_repository;
+	@Autowired 
+	private EstadisticasRepository estadistica_repository;
 	
 	@Autowired
 	private RutinaRepository rutina_repository;
@@ -26,47 +30,53 @@ public class VirtualCoachController {
 	
 	
 	
-	
-	@PostConstruct
-	public void cliente(){
-		cliente_repository.save(new Cliente("Adrián", "Pérez", "22", "C"));
-		cliente_repository.save(new Cliente("Oscar", "Repiso", "21", "C"));
-
-		
-	}
-	
-	@PostConstruct
-	public void entrenador(){
-	//	entrenador_repository.save(new Entrenador("Óscar", "Repiso", "2", "E"));
-		
-	}
->>>>>>> 2aa78c82fc12bf0bb0651a45055dbaf31629cb90
-	
-	@RequestMapping("/index")
-	public String index() {
-		
-	return "/public/index";
- }
-}
-
-	
-<<<<<<< HEAD
-
-	
-=======
-	@Controller
-	public class GreetingController {
-		@RequestMapping("/index")
-		public String greeting(Model model) {
-			
+	@RequestMapping("/login")
+	public String cliente(Model model){
 				
-				return "/public/index";
-	 }
+		return "/public/login";
 	}
+	
+	@PostMapping("/Registro")
+	public String Registrarse(Model model, 
+			@RequestParam String new_usu_username,@RequestParam String new_usu_lastname,@RequestParam String new_usu_email
+			,@RequestParam String new_usu_age,@RequestParam String new_usu_rol,
+			@RequestParam String new_usu_pass, @RequestParam String new_usu_rep_pass){
+		
+		
+		//Si las contraseñan coinciden podemos crear usu
+		//Más adelante tambien habria que poner metodo para saber que ese nombre de usu ya esta cogido o no
+		if(new_usu_pass.equals(new_usu_rep_pass)){
+			//Falta poner el valor del checkbox
+	
+			cliente_repository.save(new Cliente(new_usu_username,new_usu_lastname,new_usu_email,new_usu_age,new_usu_pass,new_usu_rol));
+			
+			//Lo enseñamos donde ponga nombre_usu
+			model.addAttribute("nombre_usu",cliente_repository.findByNombreAndContraseña(new_usu_username, new_usu_pass).toString());
+		}
+		
+		
+		return "/public/index";
+	}
+	
+
+	@PostMapping("/Entrar")
+	public String Entrar(Model model, 
+			@RequestParam String username,@RequestParam String password){
+		
+		//Chequeamos si existe el usuario
+		Cliente user=cliente_repository.findByNombreAndContraseña(username,password);
+		if(user!=null){
+				
+			//Lo enseñamos donde ponga nombre_usu
+			model.addAttribute("nombre_usu",user.toString());
+		}
+		
+		
+		return "/public/index";
+	}
+	
+	
+
 
 	
 }
-
-	
->>>>>>> 2aa78c82fc12bf0bb0651a45055dbaf31629cb90
-

@@ -1,7 +1,9 @@
 package es.sidelab.VirtualCoach;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,30 +12,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class Estadisticas {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	
-<<<<<<< HEAD
-	private int id_estadisticas;	
-=======
-	private String id_estadisticas;	
->>>>>>> 2aa78c82fc12bf0bb0651a45055dbaf31629cb90
+
+	private long id_estadisticas;	
 	private Date fecha;
 	private float marca;
 	private float grafico;
 	
+	@ManyToMany(cascade = CascadeType.ALL)
+	private List<Rutina> estadisticasRutina = new ArrayList<Rutina>();
+	
 	@Autowired
 	
-	public Estadisticas(int id_estadisticas, Date fecha, float marca, float grafico){
-		
-<<<<<<< HEAD
-=======
-	}
-	public Estadisticas(String id_estadisticas, Date fecha, float marca, float grafico){
-		
->>>>>>> 2aa78c82fc12bf0bb0651a45055dbaf31629cb90
+
+	public Estadisticas(long id_estadisticas, Date fecha, float marca, float grafico){
 		this.id_estadisticas=id_estadisticas;
 		this.fecha=fecha;
 		this.marca=marca;
 		this.grafico=grafico;
+	}
+	
+	public Date getFecha(){
+		return fecha;
+	}
+	public float getMarca(){
+		return marca;
 	}
 	
 	public void setFecha(Date fecha){
@@ -42,39 +44,41 @@ public class Estadisticas {
 	public void setMarca(float marca){
 		this.marca=marca;
 	}
-	public Date getFecha(){
-		return fecha;
-	}
-	public float getMarca(){
-		return marca;
-	}
+	
 	public float dibujarGraficos(){
 		return grafico;
 		
 	}
-<<<<<<< HEAD
-	public void setId_estadisticas(int id_estadisticas){
-=======
-	public void setId_estadisticas(String id_estadisticas){
->>>>>>> 2aa78c82fc12bf0bb0651a45055dbaf31629cb90
-		
+
+
+
+	public void setId_estadisticas(long id_estadisticas){
+
 		this.id_estadisticas=id_estadisticas;
 	}
-	
-<<<<<<< HEAD
-	public int getId_estadisticas(){
+		
+
+	public long getId_estadisticas(){
 		
 		return id_estadisticas;
 	}
+	
+	
+	public List<Rutina> getEstadisticasRutina(){
+		
+		return estadisticasRutina;
+	}
+	 public void setEstadisticasRutina(List <Rutina> estadisticasRutina){
+		 
+		 	this.estadisticasRutina= estadisticasRutina;
+	 }
+	 
+	
+	
 	 public static String getFechaActual() {
 		 	Date actual = new Date();
 	        SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
 	        return formateador.format(actual);
 	    }
-=======
-	public String getId_estadisticas(){
-		
-		return id_estadisticas;
-	}
->>>>>>> 2aa78c82fc12bf0bb0651a45055dbaf31629cb90
+
 }
