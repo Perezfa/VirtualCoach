@@ -85,12 +85,10 @@
                 <input type='password' placeholder='Repetir Contraseña' name='new_usu_rep_pass' class="form-control bottom">
 				    <div class="form-group">
 				      <label for="sel1">Selecciona tu entrenador:</label>
-				      <select class="form-control" id="sel1">
-				        <option value=" {{Entrenador1}}" name='entrenador'>{{Entrenador1.nombre}} {{Entrenador1.apellido}}</option>
-				        <option value=" {{Entrenador2.nombre}}" name='nombre'>{{Entrenador2.nombre}} {{Entrenador2.apellido}}</option>
-				        <option value=" {{Entrenador3.nombre}}" name='nombre'>{{Entrenador3.nombre}} {{Entrenador3.apellido}}</option>
-				        <option value=" {{Entrenador4.nombre}}" name='nombre'>{{Entrenador4.nombre}} {{Entrenador4.apellido}}</option>
-				        <option value=" {{Entrenador5.nombre}}" name='nombre'>{{Entrenador5.nombre}} {{Entrenador5.apellido}}</option>
+				      <select class="form-control" name='id'>
+				      {{#Entrenador}}
+				        <option value="{{id}}" > {{nombre}} {{apellido}}</option>
+				      {{/Entrenador}}
 				      </select>
                 <button class="btn btn-lg btn-success btn-block" type="submit">Registrar</button>
 				<input type="hidden" name="_csrf" value="{{token}}"/>

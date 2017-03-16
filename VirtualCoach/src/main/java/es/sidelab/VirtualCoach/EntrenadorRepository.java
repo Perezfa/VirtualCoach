@@ -9,5 +9,6 @@ public interface EntrenadorRepository extends JpaRepository<Entrenador, Long>  {
 	Entrenador findBynombre(String nombre);
 	Entrenador findByapellido(String apellido);
 	Entrenador findByrol(String rol);
+	//Entrenador findById(long id);
 
 }
