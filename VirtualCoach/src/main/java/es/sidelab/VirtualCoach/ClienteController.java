@@ -21,13 +21,7 @@ public class ClienteController {
 	@Autowired
 	private EntrenadorRepository entrenador_repository;
 
-<<<<<<< HEAD
-	@PostMapping
-	public void cliente(){
-		cliente_repository.save(new Cliente("Adrián", "Pérez", "aperez@gmail.com","22", "C","12345-asdf"));
-		cliente_repository.save(new Cliente("Oscar", "Repiso","orb@gmail.com", "21", "C","7894-qwerty"));
 
-=======
 	
 	@PostMapping("/registro_nuevo")
 	public String Registrarse(Model model, 
@@ -35,7 +29,7 @@ public class ClienteController {
 			,@RequestParam String new_usu_name, @RequestParam String new_usu_age,
 			@RequestParam String new_usu_pass, @RequestParam String new_usu_rep_pass,@RequestParam long id){
 		
->>>>>>> 31c133c79686a4805599892cd358bc0ceea562c3
+
 		
 		//Si las contraseñan coinciden podemos crear usu
 		//Más adelante tambien habria que poner metodo para saber que ese nombre de usu ya esta cogido o no
@@ -56,15 +50,6 @@ public class ClienteController {
 
 	}
 	
-<<<<<<< HEAD
-	@GetMapping("/login")
-	public String cliente(Model model){
-		
-		model.addAttribute("user",cliente_repository.findByNombre("Oscar"));
-
-		return "public/login";
-		
-=======
 	@RequestMapping("/inicio")
 	public String Entrar(Model model,@RequestParam String username,@RequestParam String password, HttpSession sesion){
 		
@@ -85,7 +70,6 @@ public class ClienteController {
 						
 		}
 
->>>>>>> 31c133c79686a4805599892cd358bc0ceea562c3
 	}
 
 }

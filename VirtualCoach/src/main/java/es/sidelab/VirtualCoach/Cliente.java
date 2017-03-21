@@ -30,25 +30,19 @@ public class Cliente {
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Estadisticas> estadisticas;
 	
-<<<<<<< HEAD
-	
-=======
+
 	/*Entidad*/
->>>>>>> 31c133c79686a4805599892cd358bc0ceea562c3
+
 	public Cliente(){
 		
 	}
 
-<<<<<<< HEAD
-	public Cliente(String nombre, String edad, String apellido, String email,String contraseña, String rol){
-		this.nombre=nombre;
-		this.apellido=apellido;
-=======
+
 	public Cliente(String nombre,String apellido, String usuario, String email, String edad,String contraseña, String rol, Entrenador entrenador ){
 		this.nombre=nombre;
 		this.apellido=apellido;
 		this.usuario=usuario;
->>>>>>> 31c133c79686a4805599892cd358bc0ceea562c3
+
 		this.email=email;
 		this.edad=edad;
 		this.contraseña=contraseña;
@@ -85,8 +79,7 @@ public class Cliente {
 	public void setNombre(String nombre){
 		this.nombre=nombre;
 	}
-<<<<<<< HEAD
-=======
+
 	public void setApellido(String apellido){
 		this.nombre=apellido;
 	}
@@ -97,7 +90,7 @@ public class Cliente {
 		return usuario;
 	}
 	
->>>>>>> 31c133c79686a4805599892cd358bc0ceea562c3
+
 	public void setContraseña(String contraseña){
 		this.contraseña=contraseña;
 	}
@@ -125,16 +118,8 @@ public class Cliente {
 	}
 	
 	
-<<<<<<< HEAD
-	
-
-	@Override
-	public String toString(){
-		return getNombre();
-=======
 	@Override
 	public String toString(){
 		return getUsuario();
->>>>>>> 31c133c79686a4805599892cd358bc0ceea562c3
 	}
 }

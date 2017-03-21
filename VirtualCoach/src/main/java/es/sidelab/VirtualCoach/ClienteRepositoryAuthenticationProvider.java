@@ -38,11 +38,11 @@ public class ClienteRepositoryAuthenticationProvider implements AuthenticationPr
 			 throw new BadCredentialsException("Wrong password");
 			 }
 		
-		List<GrantedAuthority> rol=new ArrayList<>();
-		rol.add(new SimpleGrantedAuthority(cliente.getRol()));
-
-		
-			 return new UsernamePasswordAuthenticationToken(cliente.getUsuario(), password, rol);
+		List<GrantedAuthority> roles = new ArrayList<>();
+		 for (String role : cliente.getRol()) {
+			 roles.add(new SimpleGrantedAuthority(role));
+			 }
+		 return new UsernamePasswordAuthenticationToken(cliente.getUsuario(), password, roles);
 			 }
 
 	@Override
