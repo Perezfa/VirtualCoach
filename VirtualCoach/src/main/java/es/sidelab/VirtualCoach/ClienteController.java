@@ -1,10 +1,14 @@
 package es.sidelab.VirtualCoach;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,19 +27,21 @@ public class ClienteController {
 
 	
 	@PostMapping("/registro_nuevo")
-	public String Registrarse(Model model, 
-			@RequestParam String new_usu_username,@RequestParam String new_usu_lastname,@RequestParam String new_usu_email
-			,@RequestParam String new_usu_name, @RequestParam String new_usu_age,
-			@RequestParam String new_usu_pass, @RequestParam String new_usu_rep_pass,Entrenador entrenador){
+	public String Registrarse(Model model,Cliente cliente, @RequestParam String new_usu_pass, @RequestParam String new_usu_rep_pass, @RequestParam long id, HttpSession sesion){
 		
 		
 		//Si las contraseñan coinciden podemos crear usu
 		//Más adelante tambien habria que poner metodo para saber que ese nombre de usu ya esta cogido o no
 		if(new_usu_pass.equals(new_usu_rep_pass)){
-			//Falta poner el valor del checkbox
-			cliente_repository.save(new Cliente(new_usu_name,new_usu_lastname,new_usu_username,new_usu_email,new_usu_age,new_usu_pass,"C", entrenador));
-						//Lo enseñamos donde ponga usu_username
-			model.addAttribute("name",cliente_repository.findByNombre(new_usu_name).toString());
+			List<String> rol = new ArrayList<String>();
+			rol.add("ROLE_USER");
+			cliente.setRol(rol);
+			Entrenador entrenador= entrenador_repository.findOne(id);
+			cliente.setEntrenador(entrenador);
+			String password =cliente.getContraseña();
+			cliente.setContraseña(new BCryptPasswordEncoder().encode(password));
+			cliente_repository.save(cliente);
+
 			
 			return "registrado";
 		}else{

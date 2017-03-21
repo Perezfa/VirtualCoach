@@ -18,7 +18,7 @@ public class SecurityConfiguration extends  WebSecurityConfigurerAdapter {
 		
 		//Páginas publicas
 
-		http.authorizeRequests().antMatchers("/","/assets/**", "/rtl/**", "/rating", "/usuario_no_encontrado","/registro_nuevo","/contraseña_erronea","/inicio").permitAll();
+		http.authorizeRequests().antMatchers("/","/assets/**", "/rating", "/usuario_no_encontrado","/registro_nuevo","/contraseña_erronea","/inicio").permitAll();
 
 		//Todas las demas son privadas
 		http.authorizeRequests().anyRequest().authenticated();
@@ -33,14 +33,15 @@ public class SecurityConfiguration extends  WebSecurityConfigurerAdapter {
 
 	}
 	
-	 @Override
-	 protected void configure(AuthenticationManagerBuilder auth)
-	 throws Exception {
-
-	 auth.authenticationProvider(authenticationProvider);
+	
+		 @Override
+		 protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+			
+			auth.authenticationProvider(authenticationProvider);
+		}
 
 	
-	 }
+	 
 	
 
 }

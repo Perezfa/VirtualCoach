@@ -22,33 +22,30 @@ public class ClienteRepositoryAuthenticationProvider implements AuthenticationPr
 	
 	@Autowired
 	private ClienteRepository clienteRepository;
-	@Autowired
-	private EntrenadorRepository entrenador_repository;;
 
 	@Override
-	public Authentication authenticate(Authentication arg0) throws AuthenticationException {
-		
-		Cliente cliente=clienteRepository.findByUsuario(arg0.getName());
-		
-		if(cliente==null){
-			throw new BadCredentialsException("User not found");
-		}
-		String password= (String) arg0.getCredentials();
-		if (!new BCryptPasswordEncoder().matches(password, cliente.getContraseña())) {
+	 public Authentication authenticate(Authentication auth){
+		 Cliente cliente = clienteRepository.findByUsuario(auth.getName());
+		 if (cliente == null) {
+			 throw new BadCredentialsException("User not found");
+		 }
+		 String password = (String) auth.getCredentials();
+		 if (!new BCryptPasswordEncoder().matches(password, cliente.getContraseña())) {
 			 throw new BadCredentialsException("Wrong password");
-			 }
-		
-		List<GrantedAuthority> rol=new ArrayList<>();
-		rol.add(new SimpleGrantedAuthority(cliente.getRol()));
 
-		
-			 return new UsernamePasswordAuthenticationToken(cliente.getUsuario(), password, rol);
-			 }
+		 }
 
+		 List<GrantedAuthority> roles = new ArrayList<>();
+		 for (String role : cliente.getRol()) {
+			 roles.add(new SimpleGrantedAuthority(role));
+			 }
+		 return new UsernamePasswordAuthenticationToken(cliente.getUsuario(), password, roles);
+	 }
+	 
 	@Override
-	public boolean supports(Class<?> arg0) {
+	public boolean supports(Class<?> authenticationObject) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 }
