@@ -29,7 +29,6 @@ public class ClienteController {
 			,@RequestParam String new_usu_name, @RequestParam String new_usu_age,
 			@RequestParam String new_usu_pass, @RequestParam String new_usu_rep_pass,@RequestParam long id){
 		
-
 		
 		//Si las contraseñan coinciden podemos crear usu
 		//Más adelante tambien habria que poner metodo para saber que ese nombre de usu ya esta cogido o no
@@ -49,7 +48,7 @@ public class ClienteController {
 		}
 
 	}
-	
+
 	@RequestMapping("/inicio")
 	public String Entrar(Model model,@RequestParam String username,@RequestParam String password, HttpSession sesion){
 		
@@ -69,6 +68,7 @@ public class ClienteController {
 			return "usuario_no_encontrado";
 						
 		}
+
 
 	}
 

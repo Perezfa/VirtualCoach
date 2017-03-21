@@ -31,12 +31,11 @@ public class Cliente {
 	private List<Estadisticas> estadisticas;
 	
 
-	/*Entidad*/
+
 
 	public Cliente(){
 		
 	}
-
 
 	public Cliente(String nombre,String apellido, String usuario, String email, String edad,String contraseña, String rol, Entrenador entrenador ){
 		this.nombre=nombre;
@@ -117,9 +116,11 @@ public class Cliente {
 		return contraseña;
 	}
 	
-	
+
+
 	@Override
 	public String toString(){
 		return getUsuario();
+
 	}
 }

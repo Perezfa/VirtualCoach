@@ -22,6 +22,7 @@ public class EstadisticasController {
 	@Autowired
 	private ClienteRepository cliente_repository;
 
+
 	/*
 	@PostMapping("/añadirestadisticas")
 	public String nuevaEstadisticaCliente(Model model, Estadisticas estadistica, HttpSession sesion){
@@ -77,6 +78,7 @@ public class EstadisticasController {
 			model.addAttribute("estadistica",estadistica);
 		
 			return "dashboard";
+
 	}
 	
 	

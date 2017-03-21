@@ -36,7 +36,7 @@ public class VirtualCoachController {
 	@Autowired
 	private EntrenadorRepository entrenador_repository;
 	
-	
+
 		@PostConstruct
 		public void init(){
 			//Administrador
