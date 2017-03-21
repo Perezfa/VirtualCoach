@@ -1,12 +1,13 @@
 package es.sidelab.VirtualCoach;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
 
 @Entity
 public class Cliente {
-	private String rol;
+	private ArrayList<String> rol;
 	private String usuario;
 	private String nombre;
 	private String apellido;
@@ -51,7 +52,10 @@ public class Cliente {
 		this.email=email;
 		this.edad=edad;
 		this.contraseña=contraseña;
-		this.rol=rol;
+		this.rol = new ArrayList<String>();
+		if(rol!=null){
+			this.rol.add(rol);
+		}
 		this.entrenador=entrenador;
 		
 	}
@@ -101,10 +105,10 @@ public class Cliente {
 	public void setEdad(String edad){
 		this.edad=edad;
 	}
-	public void setRol(String rol){
+	public void setRol(ArrayList<String> rol){
 		this.rol=rol;
 	}
-	public String getRol(){
+	public ArrayList<String> getRol(){
 		return rol;
 	}
 	public String getNombre(){
