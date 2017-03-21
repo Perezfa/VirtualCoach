@@ -16,31 +16,38 @@ public class SecurityConfiguration extends  WebSecurityConfigurerAdapter {
 	
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		// TODO Auto-generated method stub
 		
 		//Páginas publicas
 
-		http.authorizeRequests().antMatchers("/","/assets/**", "/rating", "/usuario_no_encontrado","/registro_nuevo","/contraseña_erronea").permitAll();
+		http.authorizeRequests().antMatchers("/","/login","/assets/**", "/rating", "/usuario_no_encontrado","/registro_nuevo","/contraseña_erronea").permitAll();
 
 		//Todas las demas son privadas
 		http.authorizeRequests().anyRequest().authenticated();
 		
-	    http.formLogin().loginPage("/");
+	    http.formLogin().loginPage("/login");
 	    http.formLogin().usernameParameter("username");
 	    http.formLogin().passwordParameter("password");
 	    http.formLogin().defaultSuccessUrl("/dashboard");
 	    http.formLogin().failureUrl("/usuario_no_encontrado");
 
-	
+	    // Logout
+        http.logout().logoutUrl("/logout");
+        http.logout().logoutSuccessUrl("/");
 
 	}
 	
 	
-		 @Override
-		 protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-			
-			auth.authenticationProvider(authenticationProvider);
-			 
+	//Si queremos poner administradores
+			@Override
+			 protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+				
+				// Users
+				 auth.inMemoryAuthentication().withUser("user").password("pass")
+				 .roles("USER");
+
+				 auth.inMemoryAuthentication().withUser("admin").password("adminpass")
+				 .roles("USER", "ADMIN");
+
 		 }
 	
 	 

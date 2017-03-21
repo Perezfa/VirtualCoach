@@ -67,13 +67,27 @@ public class VirtualCoachController {
 		return "dashboard";
 	}
 	@GetMapping("/")
-	public String login(Model model,  HttpServletRequest request){
+	public String index(){
 		
-		List<Entrenador> entrenador=entrenador_repository.findAll();
-		model.addAttribute("Entrenador",entrenador);
-	
-		return "login";
+		return "index";
 	}
+	  @GetMapping("/login")
+	    public String login(Model model,  HttpServletRequest request) {
+		  List<Entrenador> entrenador=entrenador_repository.findAll();
+		  model.addAttribute("Entrenador",entrenador);
+	    	return "login";
+	    }
+	  
+	@GetMapping("/dashboard")
+	public String dashboard(Model model,  HttpServletRequest request){
+		model.addAttribute("admin", request.isUserInRole("ADMIN"));
+		return "dashboard";
+	}
+	@GetMapping("/usuario_no_encontrado")
+	public String loginerror(){
+		return "usuario_no_encontrado";
+	}
+	
 	@GetMapping("/estadisticas")
 	public String estadisticas(Model model,  HttpServletRequest request){
 		return "estadisticas";

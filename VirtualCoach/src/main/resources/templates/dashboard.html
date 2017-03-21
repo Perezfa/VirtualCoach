@@ -85,25 +85,10 @@
                                     </a>
                                 </div>
                                 <div class="btn-group">
-                                    <a data-placement="bottom" data-original-title="E-mail" data-toggle="tooltip"
-                                       class="btn btn-default btn-sm">
-                                        <i class="fa fa-envelope"></i>
-                                        <span class="label label-warning">5</span>
-                                    </a>
-                                    <a data-placement="bottom" data-original-title="Messages" href="#" data-toggle="tooltip"
-                                       class="btn btn-default btn-sm">
-                                        <i class="fa fa-comments"></i>
-                                        <span class="label label-danger">4</span>
-                                    </a>
-                                    <a data-toggle="modal" data-original-title="Help" data-placement="bottom"
-                                       class="btn btn-default btn-sm"
-                                       href="#helpModal">
-                                        <i class="fa fa-question"></i>
-                                    </a>
-                                </div>
-                                <div class="btn-group">
-                                    <a href="index.html" data-toggle="tooltip" data-original-title="Logout" data-placement="bottom"
-                                       class="btn btn-metis-1 btn-sm">
+                                <form action="/logout" method="post">
+									<button  class="btn btn-metis-1 btn-sm"type="submit" value="Sign Out" /><a style="color:#000;"data-original-title="Logout" data-toggle="tooltip">
+									<input type="hidden" name="_csrf" value="{{token}}"/>
+								</form>
                                         <i class="fa fa-power-off"></i>
                                     </a>
                                 </div>
@@ -184,9 +169,9 @@
                                 </a>
                         
                                 <div class="media-body">
-                                    <h5 class="media-heading">Hola, bienvenido {{usuario}} </h5>
+                                    <h5 class="media-heading">Hola, bienvenido </h5>
                                     <ul class="list-unstyled user-info">
-                                        <li><a href="">Entrenador: {{nombreEntrenador}}</a></li>
+                                        <li><a href="">Entrenador: </a></li>
                                         <li>Last Access : <br>
                                             <small><i class="fa fa-calendar"></i>&nbsp;16 Mar 16:32</small>
                                         </li>
@@ -213,10 +198,6 @@
                                       <span class="link-title">
                                     Estadisticas
                         	  		</span>
-<<<<<<< HEAD
-
-=======
->>>>>>> 99094bedf038fa85c6e72268f7b97e1103160c6d
                                     </a>
                                   </li>
                                   <li>

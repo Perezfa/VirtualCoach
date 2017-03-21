@@ -47,7 +47,7 @@ public class Cliente {
 	}
 	
 
-	public Cliente(String nombre,String apellido, String usuario, String email, String edad,String contraseña, String... rol){
+	public Cliente(String nombre,String apellido, String usuario, String email, String edad,String contraseña){
 
 		this.nombre=nombre;
 		this.apellido=apellido;
@@ -55,9 +55,12 @@ public class Cliente {
 		this.email=email;
 		this.edad=edad;
 		this.contraseña=contraseña;
-		this.rol = new ArrayList<>(Arrays.asList(rol));
+		List<String> rol = new ArrayList<String>();
+		rol.add("ROLE_USER");
+		this.rol = rol;
+		}
 	
-	}
+	
 	public String getEmail(){
 		return email;
 	}
@@ -67,12 +70,6 @@ public class Cliente {
 	
 	public long getId(){
 		return id_cliente;
-	}
-	public void setRutina(Rutina rutina){
-		this.rutina=rutina;
-	}
-	public Rutina getRutina(){
-		return rutina;
 	}
 	public void setEntrenador(Entrenador entrenador){
 		this.entrenador=entrenador;
@@ -110,6 +107,7 @@ public class Cliente {
 	public void setRol(List<String> rol) {
 		this.rol = rol;
 	}
+	
 	public String getNombre(){
 		return nombre;
 	}

@@ -5,9 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,10 +45,9 @@ public class ClienteController {
 			Entrenador entrenador=entrenador_repository.findOne(id);
 			//seteamos entrenador
 			cliente.setEntrenador(entrenador);
-			//Le metemos el rol
-			//cliente.setRol("ROLE_USER");
-			//Le metemos contraseña codificada
-			//cliente.setContraseña(new BCryptPasswordEncoder().encode(contraseña));
+			List<String> rol = new ArrayList<String>();
+			rol.add("ROLE_USER");
+			cliente.setRol(rol);
 			
 
 			cliente_repository.save(cliente);
@@ -61,29 +63,24 @@ public class ClienteController {
 
 	}
 
-	@RequestMapping("/inicio")
-	public String Entrar(Model model,@RequestParam String username,@RequestParam String password, HttpSession sesion){
+	@RequestMapping("/login")
+	public String Entrar(Model model,@RequestParam String username,@RequestParam String password, HttpSession sesion, HttpServletRequest request){
 		
 		//Chequeamos si existe el usuario
 		Cliente user=cliente_repository.findByUsuarioAndContraseña(username,password);
 		
-		if(user!=null){
+	
 			//Buscamos por nombre de usuario y no nombre real
 			String usuario=cliente_repository.findByUsuario(username).getUsuario();
 			model.addAttribute("usuario",usuario);
 			sesion.setAttribute("user",usuario);
+			model.addAttribute("admin",request.isUserInRole("ADMIN"));
 			return "dashboard";
 			
-		}else{
-			
-			
-			return "usuario_no_encontrado";
-						
 		}
 
 
 	}
 
-}
 
 
