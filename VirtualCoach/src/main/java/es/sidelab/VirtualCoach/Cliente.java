@@ -10,7 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Entity
 public class Cliente {
 
-	private ArrayList<String> rol;
+	private ArrayList<String> rol= new ArrayList<String>();
 
 	private String usuario;
 	private String nombre;
@@ -47,12 +47,9 @@ public class Cliente {
 		this.nombre=nombre;
 		this.apellido=apellido;
 		this.usuario=usuario;
-
 		this.email=email;
 		this.edad=edad;
 		this.contraseña=contraseña;
-
-		this.rol = new ArrayList<String>();
 	
 	}
 	public String getEmail(){
@@ -100,8 +97,8 @@ public class Cliente {
 	public void setEdad(String edad){
 		this.edad=edad;
 	}
-	public void setRol(ArrayList<String> rol){
-		this.rol=rol;
+	public void setRol(String rol){
+		this.rol.add(rol);
 	}
 	public ArrayList<String> getRol(){
 		return rol;

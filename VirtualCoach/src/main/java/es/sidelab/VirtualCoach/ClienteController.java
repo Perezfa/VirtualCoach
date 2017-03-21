@@ -31,18 +31,23 @@ public class ClienteController {
 
 	public String Registrarse(Model model,Cliente cliente, @RequestParam String new_usu_rep_pass,@RequestParam long id){
 
-		
+		String contraseña=cliente.getContraseña();
 		
 		//Si las contraseñan coinciden podemos crear usu
 		//Más adelante tambien habria que poner metodo para saber que ese nombre de usu ya esta cogido o no
-		if(cliente.getContraseña().equals(new_usu_rep_pass)){
+		if(contraseña.equals(new_usu_rep_pass)){
 
 			Entrenador entrenador=entrenador_repository.findOne(id);
+			//seteamos entrenador
+			cliente.setEntrenador(entrenador);
+			//Le metemos el rol
+			cliente.setRol("ROLE_USER");
+			//Le metemos contraseña codificada
+			cliente.setContraseña(new BCryptPasswordEncoder().encode(contraseña));
 			
-			//Falta poner el valor del checkbox
 			cliente_repository.save(cliente);
 						//Lo enseñamos donde ponga usu_username
-			model.addAttribute("name",cliente_repository.findByNombre(cliente.getUsuario()).toString());
+			model.addAttribute("name",cliente.getUsuario().toString());
 
 			
 			return "registrado";
@@ -57,7 +62,7 @@ public class ClienteController {
 	public String Entrar(Model model,@RequestParam String username,@RequestParam String password, HttpSession sesion){
 		
 		//Chequeamos si existe el usuario
-		Cliente user=cliente_repository.findByUsuarioAndContraseña(username,password);
+		Cliente user=cliente_repository.findByUsuarioAndContraseña(username,new BCryptPasswordEncoder().encode(password));
 		
 		if(user!=null){
 			//Buscamos por nombre de usuario y no nombre real

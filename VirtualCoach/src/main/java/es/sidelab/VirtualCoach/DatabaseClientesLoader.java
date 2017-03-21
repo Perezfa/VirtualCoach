@@ -12,7 +12,8 @@ public class DatabaseClientesLoader {
  @PostConstruct
  private void initDatabase() {
 
-
+	 clienteRepository.save(new Cliente("Adrian","Pérez","123","perezoner@gmail.com","123","123"));
+	 
  }
 }
 
