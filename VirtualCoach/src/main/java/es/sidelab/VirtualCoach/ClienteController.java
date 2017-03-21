@@ -29,25 +29,28 @@ public class ClienteController {
 	
 	@PostMapping("/registro_nuevo")
 
-	public String Registrarse(Model model, 
-			@RequestParam String new_usu_username,@RequestParam String new_usu_lastname,@RequestParam String new_usu_email
-			,@RequestParam String new_usu_name, @RequestParam String new_usu_age,
-			@RequestParam String new_usu_pass, @RequestParam String new_usu_rep_pass,@RequestParam long id){
+	public String Registrarse(Model model,Cliente cliente, @RequestParam String new_usu_rep_pass,@RequestParam long id){
 
-		
+		String contraseña=cliente.getContraseña();
 		
 		//Si las contraseñan coinciden podemos crear usu
 		//Más adelante tambien habria que poner metodo para saber que ese nombre de usu ya esta cogido o no
-		if(new_usu_pass.equals(new_usu_rep_pass)){
-			
+
+		if(contraseña.equals(new_usu_rep_pass)){
+
 
 			Entrenador entrenador=entrenador_repository.findOne(id);
+			//seteamos entrenador
+			cliente.setEntrenador(entrenador);
+			//Le metemos el rol
+			//cliente.setRol("ROLE_USER");
+			//Le metemos contraseña codificada
+			//cliente.setContraseña(new BCryptPasswordEncoder().encode(contraseña));
 			
-			//Falta poner el valor del checkbox
-			Cliente cliente=new Cliente(new_usu_name,new_usu_lastname,new_usu_username,new_usu_email,new_usu_age,new_usu_pass);
+
 			cliente_repository.save(cliente);
 						//Lo enseñamos donde ponga usu_username
-			model.addAttribute("name",cliente_repository.findByNombre(new_usu_name).toString());
+			model.addAttribute("name",cliente.getUsuario().toString());
 
 			
 			return "registrado";

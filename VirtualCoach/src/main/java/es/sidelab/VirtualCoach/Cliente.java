@@ -1,6 +1,7 @@
 package es.sidelab.VirtualCoach;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.*;
@@ -10,7 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Entity
 public class Cliente {
 
-	private ArrayList<String> rol;
+	
 
 	private String usuario;
 	private String nombre;
@@ -34,6 +35,8 @@ public class Cliente {
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Estadisticas> estadisticas;
 	
+	@ElementCollection(fetch = FetchType.EAGER)
+	private List<String> rol;
 
 
 
@@ -43,17 +46,17 @@ public class Cliente {
 		
 	}
 	
-	public Cliente(String nombre,String apellido, String usuario, String email, String edad,String contraseña){
+
+	public Cliente(String nombre,String apellido, String usuario, String email, String edad,String contraseña, String... rol){
+
 		this.nombre=nombre;
 		this.apellido=apellido;
 		this.usuario=usuario;
-
 		this.email=email;
 		this.edad=edad;
 		this.contraseña=contraseña;
-		this.rol = new ArrayList<String>();
+		this.rol = new ArrayList<>(Arrays.asList(rol));
 	
-		
 	}
 	public String getEmail(){
 		return email;
@@ -100,11 +103,12 @@ public class Cliente {
 	public void setEdad(String edad){
 		this.edad=edad;
 	}
-	public void setRol(ArrayList<String> rol){
-		this.rol=rol;
-	}
-	public ArrayList<String> getRol(){
+	public List<String> getRol() {
 		return rol;
+	}
+
+	public void setRol(List<String> rol) {
+		this.rol = rol;
 	}
 	public String getNombre(){
 		return nombre;

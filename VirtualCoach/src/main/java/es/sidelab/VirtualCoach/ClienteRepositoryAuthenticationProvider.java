@@ -25,23 +25,24 @@ public class ClienteRepositoryAuthenticationProvider implements AuthenticationPr
 
 	@Override
 	 public Authentication authenticate(Authentication auth){
-		 Cliente cliente = clienteRepository.findByUsuario(auth.getName());
-		 if (cliente == null) {
-			 throw new BadCredentialsException("User not found");
-		 }
-		 String password = (String) auth.getCredentials();
-		 if (!new BCryptPasswordEncoder().matches(password, cliente.getContraseña())) {
-			 throw new BadCredentialsException("Wrong password");
+		Cliente user = clienteRepository.findByNombre(auth.getName());
 
-			 }
-		
+		if (user == null) {
+			throw new BadCredentialsException("User not found");
+		}
 
-		 List<GrantedAuthority> roles = new ArrayList<>();
-		 for (String role : cliente.getRol()) {
-			 roles.add(new SimpleGrantedAuthority(role));
-			 }
-		 return new UsernamePasswordAuthenticationToken(cliente.getUsuario(), password, roles);
-	 }
+		String password = (String) auth.getCredentials();
+		if (!new BCryptPasswordEncoder().matches(password, user.getContraseña())) {
+			throw new BadCredentialsException("Wrong password");
+		}
+
+		List<GrantedAuthority> roles = new ArrayList<>();
+		for (String role : user.getRol()) {
+			roles.add(new SimpleGrantedAuthority(role));
+		}
+
+		return new UsernamePasswordAuthenticationToken(user.getNombre(), password, roles);
+	}
 	 
 	@Override
 	public boolean supports(Class<?> authenticationObject) {

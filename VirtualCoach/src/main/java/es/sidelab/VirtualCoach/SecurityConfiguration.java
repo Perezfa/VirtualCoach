@@ -3,10 +3,12 @@ package es.sidelab.VirtualCoach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
+@EnableGlobalMethodSecurity(securedEnabled = true)
 public class SecurityConfiguration extends  WebSecurityConfigurerAdapter {
 	
 	@Autowired
@@ -18,7 +20,7 @@ public class SecurityConfiguration extends  WebSecurityConfigurerAdapter {
 		
 		//Páginas publicas
 
-		http.authorizeRequests().antMatchers("/","/assets/**", "/rating", "/usuario_no_encontrado","/registro_nuevo","/contraseña_erronea","/inicio").permitAll();
+		http.authorizeRequests().antMatchers("/","/assets/**", "/rating", "/usuario_no_encontrado","/registro_nuevo","/contraseña_erronea").permitAll();
 
 		//Todas las demas son privadas
 		http.authorizeRequests().anyRequest().authenticated();
@@ -38,8 +40,8 @@ public class SecurityConfiguration extends  WebSecurityConfigurerAdapter {
 		 protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 			
 			auth.authenticationProvider(authenticationProvider);
-		}
-
+			 
+		 }
 	
 	 
 	
