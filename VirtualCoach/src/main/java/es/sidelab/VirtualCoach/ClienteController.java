@@ -41,9 +41,9 @@ public class ClienteController {
 			//seteamos entrenador
 			cliente.setEntrenador(entrenador);
 			//Le metemos el rol
-			cliente.setRol("ROLE_USER");
+			//cliente.setRol("ROLE_USER");
 			//Le metemos contraseña codificada
-			cliente.setContraseña(new BCryptPasswordEncoder().encode(contraseña));
+			//cliente.setContraseña(new BCryptPasswordEncoder().encode(contraseña));
 			
 			cliente_repository.save(cliente);
 						//Lo enseñamos donde ponga usu_username
@@ -62,7 +62,7 @@ public class ClienteController {
 	public String Entrar(Model model,@RequestParam String username,@RequestParam String password, HttpSession sesion){
 		
 		//Chequeamos si existe el usuario
-		Cliente user=cliente_repository.findByUsuarioAndContraseña(username,new BCryptPasswordEncoder().encode(password));
+		Cliente user=cliente_repository.findByUsuarioAndContraseña(username,password);
 		
 		if(user!=null){
 			//Buscamos por nombre de usuario y no nombre real
