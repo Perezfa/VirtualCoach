@@ -1,6 +1,9 @@
 package es.sidelab.VirtualCoach;
 
-
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import javax.persistence.*;
 
 @Entity
@@ -10,6 +13,7 @@ public class Estadisticas {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+
 	private long id_estadisticas;	
 	
 	@ManyToOne
@@ -27,12 +31,14 @@ public class Estadisticas {
 	}
 	
 	public String getFecha(){
+
 		return fecha;
 	}
 	public String getMarca(){
 		return marca;
 	}
 	
+
 	public void setFecha(String fecha){
 		this.fecha=fecha;
 	}
@@ -50,5 +56,6 @@ public class Estadisticas {
 	public String toString(){
 		return getCliente()+" "+ getFecha()+" "+getMarca();
 	}
+
 
 }

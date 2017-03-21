@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -22,18 +23,20 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+
 @Controller
 public class VirtualCoachController {
 
 	@Autowired
 	private ClienteRepository cliente_repository;
+
+
 	@Autowired
 	private EstadisticasRepository estadisticas_repository;
 	@Autowired
 	private EntrenadorRepository entrenador_repository;
 	
-	
-	
+
 		@PostConstruct
 		public void init(){
 	
@@ -65,9 +68,10 @@ public class VirtualCoachController {
 	public String login(Model model,  HttpServletRequest request){
 		
 		List<Entrenador> entrenador=entrenador_repository.findAll();
-		
+	
 
 		model.addAttribute("Entrenador",entrenador);
+	
 		return "login";
 	}
 	@GetMapping("/estadisticas")
@@ -83,4 +87,5 @@ public class VirtualCoachController {
 	public String rating (Model model){
 		return "table";
 	}
+
 }

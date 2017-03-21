@@ -25,22 +25,28 @@ public class ClienteController {
 	@Autowired
 	private EntrenadorRepository entrenador_repository;
 
+
 	
 	@PostMapping("/registro_nuevo")
-	public String Registrarse(Model model,Cliente cliente, @RequestParam String new_usu_pass, @RequestParam String new_usu_rep_pass, @RequestParam long id, HttpSession sesion){
+
+	public String Registrarse(Model model, 
+			@RequestParam String new_usu_username,@RequestParam String new_usu_lastname,@RequestParam String new_usu_email
+			,@RequestParam String new_usu_name, @RequestParam String new_usu_age,
+			@RequestParam String new_usu_pass, @RequestParam String new_usu_rep_pass,@RequestParam long id){
+
 		
 		
 		//Si las contraseñan coinciden podemos crear usu
 		//Más adelante tambien habria que poner metodo para saber que ese nombre de usu ya esta cogido o no
 		if(new_usu_pass.equals(new_usu_rep_pass)){
-			List<String> rol = new ArrayList<String>();
-			rol.add("ROLE_USER");
-			cliente.setRol(rol);
-			Entrenador entrenador= entrenador_repository.findOne(id);
-			cliente.setEntrenador(entrenador);
-			String password =cliente.getContraseña();
-			cliente.setContraseña(new BCryptPasswordEncoder().encode(password));
+
+			Entrenador entrenador=entrenador_repository.findOne(id);
+			
+			//Falta poner el valor del checkbox
+			Cliente cliente=new Cliente(new_usu_name,new_usu_lastname,new_usu_username,new_usu_email,new_usu_age,new_usu_pass,"C");
 			cliente_repository.save(cliente);
+						//Lo enseñamos donde ponga usu_username
+			model.addAttribute("name",cliente_repository.findByNombre(new_usu_name).toString());
 
 			
 			return "registrado";
@@ -50,7 +56,7 @@ public class ClienteController {
 		}
 
 	}
-	
+
 	@RequestMapping("/inicio")
 	public String Entrar(Model model,@RequestParam String username,@RequestParam String password, HttpSession sesion){
 		
@@ -70,6 +76,7 @@ public class ClienteController {
 			return "usuario_no_encontrado";
 						
 		}
+
 
 	}
 

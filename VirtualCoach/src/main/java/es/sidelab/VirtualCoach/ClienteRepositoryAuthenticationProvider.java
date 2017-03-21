@@ -33,7 +33,8 @@ public class ClienteRepositoryAuthenticationProvider implements AuthenticationPr
 		 if (!new BCryptPasswordEncoder().matches(password, cliente.getContraseña())) {
 			 throw new BadCredentialsException("Wrong password");
 
-		 }
+			 }
+		
 
 		 List<GrantedAuthority> roles = new ArrayList<>();
 		 for (String role : cliente.getRol()) {

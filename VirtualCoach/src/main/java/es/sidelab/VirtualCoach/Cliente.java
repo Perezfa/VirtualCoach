@@ -9,6 +9,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Entity
 public class Cliente {
+
+	private ArrayList<String> rol;
+
 	private String usuario;
 	private String nombre;
 	private String apellido;
@@ -20,7 +23,7 @@ public class Cliente {
 	private long id_cliente;
 	
 	//Un cliente solo tiene un entrenador, pero un entrenador n clientes
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	private Entrenador entrenador;
 	
 	//Un cliente solo tiene 1 rutina, pero 1 rutina n clientes
@@ -31,11 +34,11 @@ public class Cliente {
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Estadisticas> estadisticas;
 	
-	@ElementCollection(fetch = FetchType.EAGER)
-	private List<String> rol;
-	
-	
-	/*Entidad*/
+
+
+
+
+
 	public Cliente(){
 		
 	}
@@ -44,82 +47,88 @@ public class Cliente {
 		this.nombre=nombre;
 		this.apellido=apellido;
 		this.usuario=usuario;
+
 		this.email=email;
 		this.edad=edad;
-		this.contraseña = new BCryptPasswordEncoder().encode(contraseña);
+		this.contraseña=contraseña;
+
 		this.rol = new ArrayList<String>();
 		if(rol!=null){
 			this.rol.add(rol);
 		}
-		this.entrenador = new Entrenador();
+		this.entrenador=entrenador;
+		
+	}
+	public String getEmail(){
+		return email;
+	}
+	public void setEmail(String email){
+		this.email=email;
+	} 
+	
+	public long getId(){
+		return id_cliente;
+	}
+	public void setRutina(Rutina rutina){
+		this.rutina=rutina;
+	}
+	public Rutina getRutina(){
+		return rutina;
+	}
+	public void setEntrenador(Entrenador entrenador){
+		this.entrenador=entrenador;
+	}
+	public Entrenador getEntrenador(){
+		return entrenador;
 	}
 	
-		public String getEmail(){
-			return email;
-		}
-		public void setEmail(String email){
-			this.email=email;
-		} 
-		
-		public long getId(){
-			return id_cliente;
-		}
-		public void setRutina(Rutina rutina){
-			this.rutina=rutina;
-		}
-		public Rutina getRutina(){
-			return rutina;
-		}
-		public void setEntrenador(Entrenador entrenador){
-			this.entrenador=entrenador;
-		}
-		public Entrenador getEntrenador(){
-			return entrenador;
-		}
-		
-		public void setNombre(String nombre){
-			this.nombre=nombre;
-		}
-		public void setApellido(String apellido){
-			this.nombre=apellido;
-		}
-		public void setUsuario(String usuario){
-			this.usuario=usuario;
-		}
-		public String getUsuario(){
-			return usuario;
-		}
-		
-		public void setContraseña(String contraseña){
-			this.contraseña=contraseña;
-		}
-		
-		public void setEdad(String edad){
-			this.edad=edad;
-		}
-		public List<String> getRol() {
-			return rol;
-		}
-
-		public void setRol(List<String> rol) {
-			this.rol = rol;
-		}
-		public String getNombre(){
-			return nombre;
-		}
-		public String getApellido(){
-			return apellido;
-		}
-		public String getEdad(){
-			return edad;
-		}
-		public String getContraseña(){
-			return contraseña;
-		}
-		
-		
-		@Override
-		public String toString(){
-			return getUsuario();
-		}
+	public void setNombre(String nombre){
+		this.nombre=nombre;
 	}
+
+	public void setApellido(String apellido){
+		this.nombre=apellido;
+	}
+	public void setUsuario(String usuario){
+		this.usuario=usuario;
+	}
+	public String getUsuario(){
+		return usuario;
+	}
+	
+
+	public void setContraseña(String contraseña){
+		this.contraseña=contraseña;
+	}
+	
+	public void setEdad(String edad){
+		this.edad=edad;
+	}
+	public void setRol(ArrayList<String> rol){
+		this.rol=rol;
+	}
+	public ArrayList<String> getRol(){
+		return rol;
+	}
+	public String getNombre(){
+		return nombre;
+	}
+	public String getApellido(){
+		return apellido;
+	}
+	public String getEdad(){
+		return edad;
+	}
+	public String getContraseña(){
+		return contraseña;
+	}
+	
+
+
+	@Override
+	public String toString(){
+		return getUsuario();
+
+	}
+}
+
