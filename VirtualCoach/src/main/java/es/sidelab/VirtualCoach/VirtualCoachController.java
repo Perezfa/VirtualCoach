@@ -54,6 +54,8 @@ public class VirtualCoachController {
 		
 	}
 
+	
+	
 	@GetMapping("/volver_inicio")
 	public String inicio (Model model, HttpSession Sesion){
 		
@@ -68,8 +70,6 @@ public class VirtualCoachController {
 	public String login(Model model,  HttpServletRequest request){
 		
 		List<Entrenador> entrenador=entrenador_repository.findAll();
-	
-
 		model.addAttribute("Entrenador",entrenador);
 	
 		return "login";
@@ -83,8 +83,15 @@ public class VirtualCoachController {
 	public String calendario (Model model){
 		return "calendar";
 	}
+	
 	@GetMapping("/rating")
-	public String rating (Model model){
+	public String mostrarRating (Model model, HttpSession sesion){
+		
+		String usuario= (String) sesion.getAttribute("user");
+		Cliente cliente=cliente_repository.findByUsuario(usuario);
+		List<Estadisticas> estadisticas_user=estadisticas_repository.findByCliente(cliente);
+		model.addAttribute("cliente",cliente);
+		model.addAttribute("estadisticas", estadisticas_user);
 		return "table";
 	}
 
