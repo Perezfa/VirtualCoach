@@ -43,7 +43,7 @@ public class Cliente {
 		
 	}
 	
-	public Cliente(String nombre,String apellido, String usuario, String email, String edad,String contraseña, String rol){
+	public Cliente(String nombre,String apellido, String usuario, String email, String edad,String contraseña){
 		this.nombre=nombre;
 		this.apellido=apellido;
 		this.usuario=usuario;
@@ -53,11 +53,7 @@ public class Cliente {
 		this.contraseña=contraseña;
 
 		this.rol = new ArrayList<String>();
-		if(rol!=null){
-			this.rol.add(rol);
-		}
-		this.entrenador=entrenador;
-		
+	
 	}
 	public String getEmail(){
 		return email;
