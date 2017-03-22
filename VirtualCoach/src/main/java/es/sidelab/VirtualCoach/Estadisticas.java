@@ -10,6 +10,7 @@ import javax.persistence.*;
 public class Estadisticas {
 	private String fecha;
 	private String marca;
+	private String ejercicio;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -24,9 +25,10 @@ public class Estadisticas {
 	}
 
 
-	public Estadisticas (String marca, String fecha){
+	public Estadisticas (String marca, String fecha, String ejercicio){
 		this.marca=marca;
 		this.fecha=fecha;
+		this.ejercicio=ejercicio;
 
 	}
 	
@@ -37,7 +39,14 @@ public class Estadisticas {
 	public String getMarca(){
 		return marca;
 	}
+	public String getEjercicio(){
+		return ejercicio;
+	}
 	
+
+	public void setEjercicio(String ejercicio){
+		this.ejercicio=ejercicio;
+	}
 
 	public void setFecha(String fecha){
 		this.fecha=fecha;
@@ -54,7 +63,7 @@ public class Estadisticas {
 	
 	@Override
 	public String toString(){
-		return getCliente()+" "+ getFecha()+" "+getMarca();
+		return getCliente()+" "+ getFecha()+" "+getMarca()+" "+getEjercicio();
 	}
 
 

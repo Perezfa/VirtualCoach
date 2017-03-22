@@ -1,5 +1,8 @@
 package es.sidelab.VirtualCoach;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +19,7 @@ public class DatabaseClientesLoader {
 	 
 	 Cliente cliente=new Cliente("Adrian","Pérez","123","perezoner@gmail.com","23","123","USER");
 	 clienteRepository.save(cliente);
+
 	 
  }
 }
