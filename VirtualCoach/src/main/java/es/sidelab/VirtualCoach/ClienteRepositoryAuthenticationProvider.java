@@ -25,7 +25,8 @@ public class ClienteRepositoryAuthenticationProvider implements AuthenticationPr
 
 	@Override
 	 public Authentication authenticate(Authentication auth){
-		Cliente user = clienteRepository.findByNombre(auth.getName());
+		
+		Cliente user = clienteRepository.findByUsuario(auth.getName());
 
 		if (user == null) {
 			throw new BadCredentialsException("User not found");

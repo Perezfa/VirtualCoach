@@ -23,24 +23,6 @@ public class EstadisticasController {
 	private ClienteRepository cliente_repository;
 
 
-
-	/*
-	@PostMapping("/añadirestadisticas")
-	public String nuevaEstadisticaCliente(Model model, Estadisticas estadistica, HttpSession sesion){
-		
-		//Username, no nombre real
-		String usuario= (String) sesion.getAttribute("user");
-		Cliente cliente=cliente_repository.findByUsuario(usuario);
-		//A la estadistica le metemos el Id del usuario
-		estadistica.setCliente(cliente);
-		
-		estadisticas_repository.save(estadistica);
-		model.addAttribute("estadistica",estadistica);
-		
-		return "estadisticas_añadidas";
-	}*/
-	
-
 	@RequestMapping("/eliminar_estadisticas")
 	public String eliminarArticulo (Model model, @PathVariable long id_estadisticas ){
 		
@@ -61,15 +43,21 @@ public class EstadisticasController {
 		//Username, no nombre real
 		String usuario= (String) sesion.getAttribute("user");
 		Cliente cliente=cliente_repository.findByUsuario(usuario);
+		
+		if(cliente!=null){
 		//A la estadistica le metemos el Id del usuario
 		estadistica.setCliente(cliente);
 		//Guardamos la nueva estadistica
 		estadisticas_repository.save(estadistica);
 		
 		model.addAttribute("estadistica",estadistica);
-		
-		
 		return "estadisticas_añadidas";
+
+		}else{
+			return "usuario_no_encontrado";
+		}
+		
+		
 	}
 		
 		@PostMapping("/mostrarestadistica")
