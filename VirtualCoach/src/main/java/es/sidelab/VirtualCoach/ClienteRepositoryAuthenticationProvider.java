@@ -25,7 +25,7 @@ public class ClienteRepositoryAuthenticationProvider implements AuthenticationPr
 
 	@Override
 	 public Authentication authenticate(Authentication auth){
-		
+
 		Cliente user = clienteRepository.findByUsuario(auth.getName());
 
 		if (user == null) {
