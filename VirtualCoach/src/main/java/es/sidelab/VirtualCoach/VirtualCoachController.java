@@ -12,6 +12,8 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -72,15 +74,25 @@ public class VirtualCoachController {
 		return "index";
 	}
 	  @GetMapping("/login")
-	    public String login(Model model,  HttpServletRequest request) {
+	    public String login(Model model,  HttpSession sesion, HttpServletRequest request) {
 		  List<Entrenador> entrenador=entrenador_repository.findAll();
 		  model.addAttribute("Entrenador",entrenador);
+		//Chequeamos si existe el usuario
+			//Cliente user=cliente_repository.findByUsuarioAndContraseña(username,password);
+			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+			String usuario_name = authentication.getName();
+			sesion = request.getSession();
+		
+				//Buscamos por nombre de usuario y no nombre real
+				model.addAttribute("usuario",usuario_name);
+				sesion.setAttribute("user",usuario_name);
+				model.addAttribute("admin",request.isUserInRole("ROLE_ADMIN"));
 	    	return "login";
 	    }
 	  
 	@GetMapping("/dashboard")
 	public String dashboard(Model model,  HttpServletRequest request){
-		model.addAttribute("admin", request.isUserInRole("ADMIN"));
+		model.addAttribute("admin", request.isUserInRole("ROLE_ADMIN"));
 		return "dashboard";
 	}
 	@GetMapping("/usuario_no_encontrado")

@@ -36,7 +36,7 @@ public class Cliente {
 	private List<Estadisticas> estadisticas;
 	
 	@ElementCollection(fetch = FetchType.EAGER)
-	private List<String> rol;
+	private List<String> roles;
 
 
 
@@ -47,17 +47,15 @@ public class Cliente {
 	}
 	
 
-	public Cliente(String nombre,String apellido, String usuario, String email, String edad,String contraseña){
+	public Cliente(String nombre,String apellido, String usuario, String email, String edad,String contraseña,String...roles){
 
 		this.nombre=nombre;
 		this.apellido=apellido;
 		this.usuario=usuario;
 		this.email=email;
 		this.edad=edad;
-		this.contraseña=contraseña;
-		List<String> rol = new ArrayList<String>();
-		rol.add("ROLE_USER");
-		this.rol = rol;
+		this.contraseña = new BCryptPasswordEncoder().encode(contraseña);
+		this.roles = new ArrayList<>(Arrays.asList(roles));
 		}
 	
 	
@@ -101,11 +99,11 @@ public class Cliente {
 		this.edad=edad;
 	}
 	public List<String> getRol() {
-		return rol;
+		return roles;
 	}
 
 	public void setRol(List<String> rol) {
-		this.rol = rol;
+		this.roles=rol;
 	}
 	
 	public String getNombre(){

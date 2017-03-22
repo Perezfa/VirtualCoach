@@ -45,11 +45,7 @@ public class ClienteController {
 			Entrenador entrenador=entrenador_repository.findOne(id);
 			//seteamos entrenador
 			cliente.setEntrenador(entrenador);
-			List<String> rol = new ArrayList<String>();
-			rol.add("ROLE_USER");
-			cliente.setRol(rol);
-			
-
+			cliente.setContraseña(new BCryptPasswordEncoder().encode(contraseña));
 			cliente_repository.save(cliente);
 						//Lo enseñamos donde ponga usu_username
 			model.addAttribute("name",cliente.getUsuario().toString());
@@ -63,21 +59,22 @@ public class ClienteController {
 
 	}
 
-	@RequestMapping("/login")
+/*	@RequestMapping("/inicio")
 	public String Entrar(Model model,@RequestParam String username,@RequestParam String password, HttpSession sesion, HttpServletRequest request){
 		
 		//Chequeamos si existe el usuario
-		Cliente user=cliente_repository.findByUsuarioAndContraseña(username,password);
-		
+		//Cliente user=cliente_repository.findByUsuarioAndContraseña(username,password);
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String usuario_name = authentication.getName();
+		sesion = request.getSession();
 	
 			//Buscamos por nombre de usuario y no nombre real
-			String usuario=cliente_repository.findByUsuario(username).getUsuario();
-			model.addAttribute("usuario",usuario);
-			sesion.setAttribute("user",usuario);
+			model.addAttribute("usuario",usuario_name);
+			sesion.setAttribute("user",usuario_name);
 			model.addAttribute("admin",request.isUserInRole("ADMIN"));
 			return "dashboard";
 			
-		}
+		}*/
 
 
 	}

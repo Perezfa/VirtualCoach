@@ -9,11 +9,13 @@ import org.springframework.stereotype.Component;
 public class DatabaseClientesLoader {
  @Autowired
  private ClienteRepository clienteRepository;
+ private EntrenadorRepository entr_repo;
+ 
  @PostConstruct
  private void initDatabase() {
-
-
-	 clienteRepository.save(new Cliente("Adrian","Pérez","123","perezoner@gmail.com","123","123"));
+	 
+	 Cliente cliente=new Cliente("Adrian","Pérez","123","perezoner@gmail.com","23","123","USER");
+	 clienteRepository.save(cliente);
 	 
  }
 }

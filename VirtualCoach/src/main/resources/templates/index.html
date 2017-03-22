@@ -57,13 +57,15 @@
                 <p class="text-muted text-center">
                    Su entrenador personal en la nube.
                 </p>
-                <form action="/login">
-    <button class="btn btn-lg btn-success btn-block" type="submit">Entrar</button>
-</form>
+ 	<form action="/login">
+    	<button class="btn btn-lg btn-success btn-block" type="submit">Entrar</button>
+    	<!-- <input type="hidden" name="_csrf" value="{{token}}"/> -->
+	</form>
         </div>
    
-<form action="/rating">
+<form action="/rating"  >
     <button class="btn btn-lg btn-warning btn-block" type="submit">Rating</button>
+  <!--  <input type="hidden" name="_csrf" value="{{token}}"/> --> 
 </form>
   </div>
 

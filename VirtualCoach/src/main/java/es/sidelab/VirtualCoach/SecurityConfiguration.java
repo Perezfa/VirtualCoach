@@ -37,17 +37,10 @@ public class SecurityConfiguration extends  WebSecurityConfigurerAdapter {
 	}
 	
 	
-	//Si queremos poner administradores
 			@Override
 			 protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-				
-				// Users
-				 auth.inMemoryAuthentication().withUser("user").password("pass")
-				 .roles("USER");
-
-				 auth.inMemoryAuthentication().withUser("admin").password("adminpass")
-				 .roles("USER", "ADMIN");
-
+				//auth.authenticationProvider(authenticationProvider);
+				auth.inMemoryAuthentication().withUser("123").password("123").roles("USER");
 		 }
 	
 	 
