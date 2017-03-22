@@ -46,7 +46,7 @@ public class ClienteController {
 			//seteamos entrenador
 			cliente.setEntrenador(entrenador);
 			List<String> rol = new ArrayList<String>();
-			rol.add("ROLE_USER");
+			rol.add("USER");
 			cliente.setRol(rol);
 			
 

@@ -50,7 +50,9 @@ public class VirtualCoachController {
 			entrenador_repository.save(new Entrenador("Pedro J.","Benito","41","E"));
 			//Entrenador 5
 			entrenador_repository.save(new Entrenador("Julio","Badillo","35","E"));
-
+			
+			
+			
 		
 	}
 
@@ -73,8 +75,8 @@ public class VirtualCoachController {
 	}
 	  @GetMapping("/login")
 	    public String login(Model model,  HttpServletRequest request) {
-		  List<Entrenador> entrenador=entrenador_repository.findAll();
-		  model.addAttribute("Entrenador",entrenador);
+		 List<Entrenador> entrenador=entrenador_repository.findAll();
+		 model.addAttribute("Entrenador", entrenador);
 	    	return "login";
 	    }
 	  

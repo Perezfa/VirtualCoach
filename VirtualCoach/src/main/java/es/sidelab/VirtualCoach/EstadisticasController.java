@@ -56,7 +56,7 @@ public class EstadisticasController {
 	 */
 	
 	@PostMapping("/añadirestadisticas")
-	public String AñadirEstadistica(Model model, Estadisticas estadistica, HttpSession sesion){
+	public String AñadirEstadistica(Model model,Estadisticas estadistica, HttpSession sesion){
 		
 		//Username, no nombre real
 		String usuario= (String) sesion.getAttribute("user");
@@ -67,6 +67,7 @@ public class EstadisticasController {
 		estadisticas_repository.save(estadistica);
 		
 		model.addAttribute("estadistica",estadistica);
+		
 		
 		return "estadisticas_añadidas";
 	}
