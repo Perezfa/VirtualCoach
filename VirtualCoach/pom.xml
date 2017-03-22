@@ -5,10 +5,11 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-	<groupId>es.urjc.code.daw</groupId>
+	<groupId>es.sidelab</groupId>
 	<artifactId>VirtualCoach</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
+	
 	<name>VirtualCoach</name>
 	<url>https://github.com/Perezfa/VirtualCoach</url>
 	
@@ -21,10 +22,19 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<start-class>es.sidelab.VirtualCoach.Application</start-class>
+		<main-class>es.sidelab.VirtualCoach.Application</main-class>
 	</properties>
 	
+	
+	
 	<dependencies>
+	<dependency>
+		 <groupId>org.springframework.boot</groupId>
+		 <artifactId>spring-boot-starter-data-jpa</artifactId>
+	 </dependency>
  		<dependency>
  			<groupId>org.springframework.boot</groupId>
  			<artifactId>spring-boot-starter-web</artifactId>
@@ -33,29 +43,22 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
  			<groupId>org.springframework.boot</groupId>
  			<artifactId>spring-boot-starter-mustache</artifactId>
  		</dependency>
- 		 <dependency>
+ 		<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-devtools</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+	</dependency>
+ 	<dependency>
 		 <groupId>org.springframework.boot</groupId>
 		 <artifactId>spring-boot-starter-security</artifactId>
  	 </dependency>
-
 		<dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
      </dependency>
-  
-     <dependency>
-		 <groupId>org.springframework.boot</groupId>
-		 <artifactId>spring-boot-starter-data-jpa</artifactId>
-	 </dependency>
-     <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-     </dependency>
-     <dependency>
-     	<groupId>org.springframework.boot</groupId>
-     	<artifactId>spring-boot-devtools</artifactId>
-     </dependency>
-
 	</dependencies>
 	</project>

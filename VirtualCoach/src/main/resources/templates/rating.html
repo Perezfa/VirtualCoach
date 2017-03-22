@@ -72,9 +72,42 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a href="/" class="navbar-brand"><img src="assets/img/logo.png" alt=""></a>
+                                <a href="/volver_inicio" class="navbar-brand"><img src="assets/img/logo.png" alt=""></a>
                     
                             </header>
+                    
+                    
+                    
+                           <div class="topnav">
+                                <div class="btn-group">
+                                    <a data-placement="bottom" data-original-title="Fullscreen" data-toggle="tooltip"
+                                       class="btn btn-default btn-sm" id="toggleFullScreen">
+                                        <i class="glyphicon glyphicon-fullscreen"></i>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                <form action="/logout" method="post">
+									<button  class="btn btn-metis-1 btn-sm"type="submit" value="Sign Out" /><a style="color:#000;"data-original-title="Logout" data-toggle="tooltip">
+									<input type="hidden" name="_csrf" value="{{token}}"/>
+								</form>
+                                        <i class="fa fa-power-off"></i>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a data-placement="bottom" data-original-title="Show / Hide Left" data-toggle="tooltip"
+                                       class="btn btn-primary btn-sm toggle-left" id="menu-toggle">
+                                        <i class="fa fa-bars"></i>
+                                    </a>
+                                    <a data-placement="bottom" data-original-title="Show / Hide Right" data-toggle="tooltip"
+                                       class="btn btn-default btn-sm toggle-right">
+                                        <span class="glyphicon glyphicon-comment"></span>
+                                    </a>
+                                </div>
+                    
+                            </div>
+                    
+                    
+                    
                             <!-- <div class="collapse navbar-collapse navbar-ex1-collapse">
                     
                                 <!-- .nav 
@@ -125,24 +158,63 @@
                 </div>
                 <!-- /#top -->
                    <div id="left">
+                        <div class="media user-media bg-dark dker">
+                            <div class="user-media-toggleHover">
+                                <span class="fa fa-user"></span>
+                            </div>
+                            <div class="user-wrapper bg-dark">
+                                <a class="user-link" href="">
+                                    <img class="media-object img-thumbnail user-img" alt="User Picture" src="assets/img/user.gif">
+                                    <span class="label label-danger user-label">16</span>
+                                </a>
+                        
+                                <div class="media-body">
+                                    <h5 class="media-heading">Hola, bienvenido {{usuario}}</h5>
+
+                                    <ul class="list-unstyled user-info">
+                                        <li><a href="">Entrenador: </a></li>
+                                        <li>Last Access : <br>
+                                            <small><i class="fa fa-calendar"></i>&nbsp;16 Mar 16:32</small>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                         <!-- #menu -->
                         <ul id="menu" class="bg-blue dker">
                                   <li class="nav-header">Menu</li>
                                   <li class="nav-divider"></li>
                                   <li>
-                                  <a href="/login" >
+                                  <a href="/volver_inicio" >
                                    <i class="fa fa-line-chart"></i>
                                    <span class="link-title">
-                                   Iniciar Sesión / Registarse
+                                   Principal
                                    </span> 
                                   </a>
+                                  </li>
+                                  <li>
+
+                                    <a href="/estadisticas">
+                                      <i class="fa fa-hand-rock-o"></i>
+                                      <span class="link-title">
+                                    Estadisticas
+                        	  		</span>
+                                    </a>
                                   </li>
                                   <li>
                                     <a href="/rating">
                                       <i class="fa fa-trophy"></i>
                                       <span class="link-title">
                                     Rating
-                        			</span>
+                        	  </span>
+                                    </a>
+                                  </li>
+                                   <li>
+                                    <a href="/calendario">
+                                      <i class="fa fa-calendar"></i>
+                                      <span class="link-title">
+                                    Calendario
+                        	  </span>
                                     </a>
                                   </li>
                                 </ul>

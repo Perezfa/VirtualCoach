@@ -90,17 +90,23 @@ public class VirtualCoachController {
 	}
 	
 	@GetMapping("/estadisticas")
-	public String estadisticas(Model model,  HttpServletRequest request){
+	public String estadisticas(Model model,  HttpSession Sesion){
+		String usuario= (String)Sesion.getAttribute("user");
+		model.addAttribute("usuario", usuario);
+		CargarEstadisticas(usuario, model);
 		return "estadisticas";
 	}
 	
 	@GetMapping("/calendario")
-	public String calendario (Model model){
+	public String calendario (Model model, HttpSession Sesion){
+		String usuario= (String)Sesion.getAttribute("user");
+		model.addAttribute("usuario", usuario);
+		CargarEstadisticas(usuario, model);
 		return "calendar";
 	}
 	
-	@GetMapping("/rating")
-	public String mostrarRating (Model model, HttpSession sesion){
+	@GetMapping("/publica")
+	public String mostrarpublica (Model model, HttpSession sesion){
 		
 		String usuario= (String) sesion.getAttribute("user");
 		Cliente cliente=cliente_repository.findByUsuario(usuario);
@@ -109,6 +115,15 @@ public class VirtualCoachController {
 		model.addAttribute("estadisticas", estadisticas_user);
 		return "table";
 	}
+	@GetMapping("/rating")
+	public String mostrarRating (Model model, HttpSession Sesion){
+		
+		String usuario= (String)Sesion.getAttribute("user");
+		model.addAttribute("usuario", usuario);
+		CargarEstadisticas(usuario, model);
+		return "rating";
+	}
+	
 	
 
 	public void CargarEstadisticas( String usuario, Model model){

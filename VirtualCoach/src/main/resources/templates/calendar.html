@@ -72,7 +72,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt=""></a>
+                                <a href="/volver_inicio" class="navbar-brand"><img src="assets/img/logo.png" alt=""></a>
                     
                             </header>
                     
@@ -86,25 +86,10 @@
                                     </a>
                                 </div>
                                 <div class="btn-group">
-                                    <a data-placement="bottom" data-original-title="E-mail" data-toggle="tooltip"
-                                       class="btn btn-default btn-sm">
-                                        <i class="fa fa-envelope"></i>
-                                        <span class="label label-warning">5</span>
-                                    </a>
-                                    <a data-placement="bottom" data-original-title="Messages" href="#" data-toggle="tooltip"
-                                       class="btn btn-default btn-sm">
-                                        <i class="fa fa-comments"></i>
-                                        <span class="label label-danger">4</span>
-                                    </a>
-                                    <a data-toggle="modal" data-original-title="Help" data-placement="bottom"
-                                       class="btn btn-default btn-sm"
-                                       href="#helpModal">
-                                        <i class="fa fa-question"></i>
-                                    </a>
-                                </div>
-                                <div class="btn-group">
-                                    <a href="login.html" data-toggle="tooltip" data-original-title="Logout" data-placement="bottom"
-                                       class="btn btn-metis-1 btn-sm">
+                                <form action="/logout" method="post">
+									<button  class="btn btn-metis-1 btn-sm"type="submit" value="Sign Out" /><a style="color:#000;"data-original-title="Logout" data-toggle="tooltip">
+									<input type="hidden" name="_csrf" value="{{token}}"/>
+								</form>
                                         <i class="fa fa-power-off"></i>
                                     </a>
                                 </div>
@@ -185,9 +170,10 @@
                                 </a>
                         
                                 <div class="media-body">
-                                    <h5 class="media-heading">Archie</h5>
+                                    <h5 class="media-heading">Hola, bienvenido {{usuario}}</h5>
+
                                     <ul class="list-unstyled user-info">
-                                        <li><a href="">Administrator</a></li>
+                                        <li><a href="">Entrenador: </a></li>
                                         <li>Last Access : <br>
                                             <small><i class="fa fa-calendar"></i>&nbsp;16 Mar 16:32</small>
                                         </li>
@@ -208,15 +194,12 @@
                                   </a>
                                   </li>
                                   <li>
-                                    <a href="estadisticas.html">
+
+                                    <a href="/estadisticas">
                                       <i class="fa fa-hand-rock-o"></i>
                                       <span class="link-title">
                                     Estadisticas
-<<<<<<< HEAD:VirtualCoach/src/main/resources/templates/public/calendar.html
-                        	  </span>
-=======
                         	  		</span>
->>>>>>> 31c133c79686a4805599892cd358bc0ceea562c3:VirtualCoach/src/main/resources/templates/calendar.html
                                     </a>
                                   </li>
                                   <li>
