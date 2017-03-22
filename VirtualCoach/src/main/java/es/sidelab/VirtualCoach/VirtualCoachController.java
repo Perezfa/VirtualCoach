@@ -57,19 +57,33 @@ public class VirtualCoachController {
 			
 		
 	}
+		@GetMapping("/volver_inicio")
+		public String inicio (Model model, HttpSession Sesion){
+			
+			String usuario= (String)Sesion.getAttribute("user");
+			model.addAttribute("usuario", usuario);
+			CargarEstadisticas(usuario, model);
+			return "dashboard";
+		}
 
 	
 	
-	@GetMapping("/volver_inicio")
-	public String inicio (Model model, HttpSession Sesion){
-		
-		String usuario= (String)Sesion.getAttribute("user");
-		model.addAttribute("usuario", usuario);
-		Cliente cliente =cliente_repository.findByUsuario(usuario);
-		List <Estadisticas> estadisticas=estadisticas_repository.findByCliente(cliente);
-		model.addAttribute("estadistica", estadisticas);
-		return "dashboard";
-	}
+		@GetMapping("/dashboard")
+		public String dashboard(Model model, HttpSession sesion, HttpServletRequest request){
+			model.addAttribute("admin", request.isUserInRole("ROLE_ADMIN"));
+				//Chequeamos si existe el usuario
+					//Cliente user=cliente_repository.findByUsuarioAndContraseña(username,password);
+					Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+					String usuario_name = authentication.getName();
+					sesion = request.getSession();
+				
+						//Buscamos por nombre de usuario y no nombre real
+						model.addAttribute("usuario",usuario_name);
+						sesion.setAttribute("user",usuario_name);
+						model.addAttribute("admin",request.isUserInRole("ROLE_ADMIN"));
+						CargarEstadisticas(usuario_name, model);
+			return "dashboard";
+		}
 	@GetMapping("/")
 	public String index(){
 		
@@ -77,28 +91,13 @@ public class VirtualCoachController {
 	}
 	  @GetMapping("/login")
 
-	    public String login(Model model,  HttpSession sesion, HttpServletRequest request) {
+	    public String login(Model model, Cliente cliente) {
 		  List<Entrenador> entrenador=entrenador_repository.findAll();
 		  model.addAttribute("Entrenador",entrenador);
-		//Chequeamos si existe el usuario
-			//Cliente user=cliente_repository.findByUsuarioAndContraseña(username,password);
-			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-			String usuario_name = authentication.getName();
-			sesion = request.getSession();
 		
-				//Buscamos por nombre de usuario y no nombre real
-				model.addAttribute("usuario",usuario_name);
-				sesion.setAttribute("user",usuario_name);
-				model.addAttribute("admin",request.isUserInRole("ROLE_ADMIN"));
-
 	    	return "login";
 	    }
 	  
-	@GetMapping("/dashboard")
-	public String dashboard(Model model,  HttpServletRequest request){
-		model.addAttribute("admin", request.isUserInRole("ROLE_ADMIN"));
-		return "dashboard";
-	}
 	@GetMapping("/usuario_no_encontrado")
 	public String loginerror(){
 		return "usuario_no_encontrado";
@@ -123,6 +122,14 @@ public class VirtualCoachController {
 		model.addAttribute("cliente",cliente);
 		model.addAttribute("estadisticas", estadisticas_user);
 		return "table";
+	}
+	
+	public void CargarEstadisticas( String usuario, Model model){
+		Cliente cliente=cliente_repository.findByUsuario(usuario);
+		List <Estadisticas> estadisticas=estadisticas_repository.findByCliente(cliente);
+		model.addAttribute("estadistica", estadisticas);
+		
+		
 	}
 
 }

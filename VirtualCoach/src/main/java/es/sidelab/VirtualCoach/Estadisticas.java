@@ -57,8 +57,8 @@ public class Estadisticas {
 	public void setCliente(Cliente cliente){
 		this.cliente=cliente;
 	}
-	public String getCliente(){
-		return cliente.toString();
+	public Cliente getCliente(){
+		return cliente;
 	}
 	
 	@Override
