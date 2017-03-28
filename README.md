@@ -56,6 +56,66 @@
 
 ![](imagenes/Entidad_Relacion.png "Entidad_Relacion")
 - - -
+### **¿Cómo desplegar VirtualCoach en Azure?**
+
+Generar un certificado .pem para acceder a la máquina virtual:
+```
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout azureus.key -out azureus-cert.pem
+```
+Proteger la clave privada:
+```
+ chmod 0600 azureus.key
+```
+Crearemos una maquina virtual en Azure con una imagen preestablecida Ubuntu Server 16.04 y usando el certificado creado anteriormente.
+
+Para acceder desde la herramienta Git ejecutamos el commando ssh:
+```
+ssh /path/to/azureus.key azureuser@ip_publica
+```
+Una vez dentro de la maquina virtual, instalaremos Java 1.8:
+```
+ sudo add-apt-repository ppa:openjdk-r/ppa
+ sudo apt-get update
+ sudo apt-get install openjdk-8-jre
+```
+Tras esto guardamos una imágen para poder crear mas Máquinas Virtuales solo de Java
+
+Instalamos  MySQL:
+```
+ sudo apt-get update
+ sudo apt-get install -y mysql -server
+```
+Y configuramos la base de datos, solo es necesario ejecutar el primer comando, si no queremos establecer un usuario con privilegios de Administrador, el usuario root, ya tiene estos privilegios:
+
+```
+
+  mysql -u root -p;
+
+```
+
+  Una vez dentro:
+```
+      mysql> create database "nombre";
+      mysql> create user 'usuario'@'%' identified by 'nombre';
+      mysql> grant all privileges on nombre.* to 'usuario'@'%';
+      mysql> flush privileges;
+      mysql> exit;
+```
+Crear el ejecutable de nuestra aplicacion, haciendo Run as > Maven Install en el STS.
+
+Subir el ejecutable desde nuestro equipo a la Maquina Virtual, mediante el siguiente comando:
+```
+scp -i /path/to/azureus.key aplicacion.jar azureuser@<ip publica>:/home/azureuser/
+```
+Para ejecutar la aplicación deberemos acceder a nuestra Maquina Virtual:
+ssh /path/to/azureus.key azureuser@"ip publica"
+
+Ejecutar la aplicacion desde la maquina virtual:
+```
+java -jar aplicacion.jar(si la base de datos en la Maquina Virtual tiene un usuario/contraseña diferente a la creada en local debemos ejecutar este comando con --spring.datasource.username="nombre_usuario/spring.datasource.password=contraseña")
+```
+Acceder via web a la aplicación:
+https://<ip publica>:<puerto publico>
 ### **Mapa Navegación:** 
 
 El mapa de navegación se ha realizado mediante la herramienta de FluidUi, una herramienta para generación de Mockups, por lo tanto esta aplicación pude 

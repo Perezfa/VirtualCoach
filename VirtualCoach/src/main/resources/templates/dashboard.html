@@ -42,7 +42,7 @@
 <![endif]-->
 
     <!--For Development Only. Not required -->
-    <script>
+      <script>
         less = {
             env: "development",
             relativeUrls: false,
@@ -63,7 +63,7 @@
       data.addColumn('string', 'Element');
       data.addColumn('number', 'Percentage');
       data.addRows([
-        ['Dias', "{{#Estadisticas}} {{marca}} {{/Estadisticas}}"],
+        ['Dias', 25.5],
         ['Dias Completos', 0.21],
         ['Other', 0.01]
       ]);
@@ -276,7 +276,6 @@
 </div>
 <hr>
 <div class="row">
-
     <div class="col-lg-8">
 	<div class="box">
 	    <div class="body">
@@ -291,7 +290,31 @@
 			</tr>
 		    </thead>
 		    <tbody>
-			<tr class="succes">
+			<tr>
+			
+					<ul>
+        			{{#estadistica}}
+					<tr><td>{{usuario}}</td>
+					<td>{{ejercicio}}</td>
+					<td>{{fecha}}</td>
+					<td>{{marca}}</td></tr>
+					{{/estadistica}}
+        			</ul>
+        			
+			</tr>
+			<tr>
+			
+					<ul>
+        			{{#estadistica}}
+					<tr><td>{{usuario}}</td>
+					<td>{{ejercicio}}</td>
+					<td>{{fecha}}</td>
+					<td>{{marca}}</td></tr>
+					{{/estadistica}}
+        			</ul>
+        			
+			</tr>
+			<tr>
 			
 					<ul>
         			{{#estadistica}}
