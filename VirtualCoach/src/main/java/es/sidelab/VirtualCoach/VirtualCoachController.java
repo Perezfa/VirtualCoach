@@ -123,14 +123,14 @@ public class VirtualCoachController {
 		CargarEstadisticas(usuario, model);
 		return "rating";
 	}
-	@GetMapping("/email")
+	/*@GetMapping("/email")
 	public String enviarEmail (Model model){
 		
-		SocketClient email=new SocketClient(6969,"127.0.0.1");
+		SocketClient email=new SocketClient();
 		email.enviarDatos("Hola");
 		
 		return "dato_enviado";
-	}
+	}*/
 	
 	
 	

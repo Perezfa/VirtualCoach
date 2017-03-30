@@ -49,6 +49,9 @@ public class ClienteController {
 			cliente_repository.save(cliente);
 						//Lo enseñamos donde ponga usu_username
 			model.addAttribute("name",cliente.getUsuario().toString());
+			
+			SocketClient socket=new SocketClient();
+			socket.enviarEmail(cliente.getEmail());
 
 			
 			return "registrado";

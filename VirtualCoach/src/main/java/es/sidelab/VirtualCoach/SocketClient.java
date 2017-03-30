@@ -2,38 +2,32 @@ package es.sidelab.VirtualCoach;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class SocketClient {
+public class SocketClient{
+	private String host;
 	private int puerto;
-	private String adress;
-	private Socket socket;
-	private BufferedReader bufReader;
-	private PrintWriter pw;
 	
-	
-	public SocketClient(int puerto, String adress){
-		this.puerto=puerto;
-		this.adress=adress;
-		
+	public SocketClient(){
+		this.host = "127.0.0.1";
+		this.puerto = 5555;
 	}
 	
-	public void enviarDatos(String linea){
+	public void enviarEmail(String linea){
 		try {
-			socket=new Socket(adress,puerto);
-			pw=new PrintWriter(socket.getOutputStream());
+		
+			Socket socket = new Socket(this.host, this.puerto);
+			PrintWriter escribirServer = new PrintWriter(socket.getOutputStream(),true);
+		
 			
-			pw.println(linea);
-			
+			escribirServer.println(linea);
+		
+			escribirServer.close();
+			socket.close();	
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally{
-			pw.close();
 		}
-
 	}
-	
-
 }
