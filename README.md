@@ -56,6 +56,12 @@
 
 ![](imagenes/Entidad_Relacion.png "Entidad_Relacion")
 - - -
+### **Diagrama de Clases y Templates:**  
+
+  Adjuntamos un pequeño Diagrama de Clases y Templates de la Aplicación.
+  
+  ![](imagenes/DiagramaClasesTemplates.png "Diagrama")
+- - -
 ### **¿Cómo desplegar VirtualCoach en Azure?**
 
 Generar un certificado .pem para acceder a la máquina virtual:
