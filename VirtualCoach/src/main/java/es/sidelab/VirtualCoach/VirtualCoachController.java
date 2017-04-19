@@ -61,14 +61,16 @@ public class VirtualCoachController {
 		//Chequeamos si existe el usuario
 		//Cliente user=cliente_repository.findByUsuarioAndContraseña(username,password);
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		String usuario_name = authentication.getName();
+		String usuario = authentication.getName();
 		sesion = request.getSession();
 		
+	
+		
 		//Buscamos por nombre de usuario y no nombre real
-		model.addAttribute("usuario",usuario_name);
-		sesion.setAttribute("user",usuario_name);
+		model.addAttribute("usuario",usuario);
+		sesion.setAttribute("user",usuario);
 		model.addAttribute("admin",request.isUserInRole("ROLE_ADMIN"));
-		CargarEstadisticas(usuario_name, model);
+		CargarEstadisticas(usuario, model);
 				
 		return "dashboard";
 	}
@@ -136,7 +138,7 @@ public class VirtualCoachController {
 	
 
 	public void CargarEstadisticas( String usuario, Model model){
-		Cliente cliente=cliente_repository.findByNombre(usuario);
+		Cliente cliente=cliente_repository.findByUsuario(usuario);
 		List <Estadisticas> estadisticas=estadisticas_repository.findByCliente(cliente);
 		model.addAttribute("estadistica", estadisticas);
 		
