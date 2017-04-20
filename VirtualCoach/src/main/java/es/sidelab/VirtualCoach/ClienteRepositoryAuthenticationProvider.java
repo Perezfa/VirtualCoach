@@ -42,7 +42,7 @@ public class ClienteRepositoryAuthenticationProvider implements AuthenticationPr
 			roles.add(new SimpleGrantedAuthority(role));
 		}
 
-		return new UsernamePasswordAuthenticationToken(user.getNombre(), password, roles);
+		return new UsernamePasswordAuthenticationToken(user.getUsuario(), password, roles);
 	}
 	 
 	@Override
