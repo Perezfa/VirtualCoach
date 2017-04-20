@@ -110,11 +110,7 @@ public class VirtualCoachController {
 	@GetMapping("/publica")
 	public String mostrarpublica (Model model, HttpSession sesion){
 		
-		String usuario= (String) sesion.getAttribute("user");
-		Cliente cliente=cliente_repository.findByUsuario(usuario);
-		List<Estadisticas> estadisticas_user=estadisticas_repository.findByCliente(cliente);
-		model.addAttribute("cliente",cliente);
-		model.addAttribute("estadisticas", estadisticas_user);
+		
 		return "table";
 	}
 	@GetMapping("/rating")

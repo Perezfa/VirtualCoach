@@ -166,21 +166,22 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Edad</th>
-                        <th>Entrenador</th>
+                        <th>Fecha</th>
                         <th>Marca</th>
                         <th>Avance(%)</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {{#cliente}}
-                            <tr>
-                                <td>{{usuario}}</td>
-                                <td>{{edad}}</td>
-                                <td>{{email}}</td>
-                                <td>{{estadisticas}}</td>
-                                <td>X</td>
-                            </tr>
-                            {{/cliente}}
+                    <tr>
+                   <ul>
+        			{{#estadistica}}
+					<tr><td>{{usuario}}</td>
+					<td>{{ejercicio}}</td>
+					<td>{{fecha}}</td>
+					<td>{{marca}}</td></tr>
+					{{/estadistica}}
+        			</ul>
+        			</tr>
                     </tbody>                </table>
             </div>
         </div>
