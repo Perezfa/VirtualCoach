@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Entity
 public class Estadisticas {
 	private String fecha;
-	private String marca;
+	private long marca;
 	private String ejercicio;
 	
 	@Id
@@ -25,7 +25,7 @@ public class Estadisticas {
 	}
 
 
-	public Estadisticas (String marca, String fecha, String ejercicio){
+	public Estadisticas (long marca, String fecha, String ejercicio){
 		this.marca=marca;
 		this.fecha=fecha;
 		this.ejercicio=ejercicio;
@@ -36,7 +36,7 @@ public class Estadisticas {
 
 		return fecha;
 	}
-	public String getMarca(){
+	public long getMarca(){
 		return marca;
 	}
 	public String getEjercicio(){
@@ -51,7 +51,7 @@ public class Estadisticas {
 	public void setFecha(String fecha){
 		this.fecha=fecha;
 	}
-	public void setMarca(String marca){
+	public void setMarca(long marca){
 		this.marca=marca;
 	}
 	public void setCliente(Cliente cliente){

@@ -50,17 +50,19 @@ public class VirtualCoachController {
 	  
 	  List<Entrenador> entrenador=entrenador_repository.findAll();
 	  model.addAttribute("Entrenador",entrenador);
+	  
 
 	  return "login";
     }
 	
 	
 	@GetMapping("/dashboard")
-	public String dashboard(Model model, HttpSession sesion, HttpServletRequest request){
+	public String dashboard(Model model, HttpSession sesion,HttpServletRequest request){
 		model.addAttribute("admin", request.isUserInRole("ROLE_ADMIN"));
 		//Chequeamos si existe el usuario
 		//Cliente user=cliente_repository.findByUsuarioAndContraseña(username,password);
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
 		String usuario = authentication.getName();
 		sesion = request.getSession();
 		
@@ -121,18 +123,7 @@ public class VirtualCoachController {
 		CargarEstadisticas(usuario, model);
 		return "rating";
 	}
-	/*@GetMapping("/email")
-	public String enviarEmail (Model model){
-		
-		SocketClient email=new SocketClient();
-		email.enviarDatos("Hola");
-		
-		return "dato_enviado";
-	}*/
 	
-	
-	
-
 	public void CargarEstadisticas( String usuario, Model model){
 		Cliente cliente=cliente_repository.findByUsuario(usuario);
 		List <Estadisticas> estadisticas=estadisticas_repository.findByCliente(cliente);
@@ -140,5 +131,13 @@ public class VirtualCoachController {
 		
 		
 	}
-
+	
+	public void Charts( String usuario,long marca, Model model){
+		Cliente cliente=cliente_repository.findByUsuario(usuario);
+		List <Estadisticas> estadistica=estadisticas_repository.findBymarca(marca);
+		model.addAttribute("marca",marca);
+		
+		
+	}
+	
 }

@@ -19,7 +19,7 @@ public class SecurityConfiguration extends  WebSecurityConfigurerAdapter {
 		
 		//Páginas publicas
 
-		http.authorizeRequests().antMatchers("/","/login","/assets/**", "/publica", "/usuario_no_encontrado","/registro_nuevo","/contraseña_erronea", "/mostrarestadisticasgoogle").permitAll();
+		http.authorizeRequests().antMatchers("/","/login","/assets/**", "/publica","/email", "/usuario_no_encontrado","/registro_nuevo","/contraseña_erronea").permitAll();
 
 		//Todas las demas son privadas
 		http.authorizeRequests().anyRequest().authenticated();

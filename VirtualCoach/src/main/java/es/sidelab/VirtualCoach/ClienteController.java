@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
+
 @Controller
 
 public class ClienteController {
@@ -34,7 +35,7 @@ public class ClienteController {
 	
 	@PostMapping("/registro_nuevo")
 
-	public String Registrarse(Model model,Cliente cliente, @RequestParam String new_usu_rep_pass,@RequestParam long id){
+	public String Registrarse(Model model,Cliente cliente,@RequestParam String new_usu_rep_pass,@RequestParam long id){
 
 		String contraseña=cliente.getContraseña();
 		String nom_usu_new=cliente.getUsuario();
@@ -76,24 +77,6 @@ public class ClienteController {
 		}
 
 	}
-
-/*	@RequestMapping("/inicio")
-	public String Entrar(Model model,@RequestParam String username,@RequestParam String password, HttpSession sesion, HttpServletRequest request){
-		
-		//Chequeamos si existe el usuario
-		//Cliente user=cliente_repository.findByUsuarioAndContraseña(username,password);
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		String usuario_name = authentication.getName();
-		sesion = request.getSession();
-	
-			//Buscamos por nombre de usuario y no nombre real
-			model.addAttribute("usuario",usuario_name);
-			sesion.setAttribute("user",usuario_name);
-			model.addAttribute("admin",request.isUserInRole("ADMIN"));
-			return "dashboard";
-			
-		}*/
-
 
 	}
 
