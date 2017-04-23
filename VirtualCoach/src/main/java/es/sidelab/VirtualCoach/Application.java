@@ -29,8 +29,9 @@ public class Application
     public Config config() {
     Config config = new Config();
     JoinConfig joinConfig = config.getNetworkConfig().getJoin();
+    
     joinConfig.getMulticastConfig().setEnabled(false);
-    joinConfig.getTcpIpConfig().setEnabled(true).setMembers(Collections.singletonList("127.0.0.1"));
+    joinConfig.getTcpIpConfig().setEnabled(true).setMembers(Collections.singletonList("52.232.45.72"));
     return config;
     }
 
