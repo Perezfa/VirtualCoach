@@ -58,7 +58,9 @@ public class ClienteController {
 							//Lo enseñamos donde ponga usu_username
 				model.addAttribute("name",cliente.getUsuario().toString());
 				try{
-					new SendEmail().send(cliente.getEmail(), "registro","Gracias por registrarte en VirtualCoach");
+					SendEmail sendEmail=new SendEmail();
+					String respuesta= sendEmail.send(cliente.getEmail(), "registro","Gracias por registrarte en VirtualCoach");
+					System.out.println(respuesta);
 				}catch(Exception e){
 					e.printStackTrace();
 				}

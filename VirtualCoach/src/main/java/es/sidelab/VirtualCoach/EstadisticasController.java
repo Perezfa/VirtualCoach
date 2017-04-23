@@ -42,7 +42,7 @@ public class EstadisticasController {
 		
 		//Username, no nombre real
 		String usuario= (String) sesion.getAttribute("user");
-		Cliente cliente=cliente_repository.findByNombre(usuario);
+		Cliente cliente=cliente_repository.findByUsuario(usuario);
 		//A la estadistica le metemos el Id del usuario
 		estadistica.setCliente(cliente);
 		model.addAttribute("usuario", usuario);
