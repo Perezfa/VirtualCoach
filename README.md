@@ -44,6 +44,10 @@
       Diferentes tipos de rutina, dependiendo del objetivo deseado, puediendo diferenciar entre rutinas de fuerza, resistencia, etc.
 
   - - -
+
+### **Servicio Interno.**
+El servicio interno envía por medio de API REST un e-mail al cliente, nada más registrarse, indicando que el registro ha sido correcto. El e-mail destino es la dirección que utiliza el cliente para registarse. También se implementa un método para validar el -mail, y de no ser una dirección correcta no se efectuará el regitro ni el envío.
+
 ### **Diagrama de Clases:**  
 
   Adjuntamos un pequeño Diagrama de Clases de la Aplicación, aunque lo dejamos abierto para posibles modificaciones en el futuro como puede ser agregar metodos,
