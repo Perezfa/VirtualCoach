@@ -54,24 +54,7 @@ public class EstadisticasController {
 		
 		return "estadisticas_añadidas";
 	}
-		@PostMapping("/mostrarestadistica")
-		public String MostrarEstadistica(Model model, Estadisticas estadistica, HttpSession sesion){
-			//Buscamos todas las estadisticas de ese usuario
-			String usuario= (String) sesion.getAttribute("user");
-			Cliente cliente=cliente_repository.findByNombre(usuario);
-			model.addAttribute("usuario", usuario);
-			List<Estadisticas> estadisticas_user=estadisticas_repository.findByCliente(cliente);
-			model.addAttribute("estadistica",estadistica);
-			String marca=(String) sesion.getAttribute("marca");
-			model.addAttribute("marca",marca);
-			String ejercicio=(String) sesion.getAttribute("ejercicio");
-			model.addAttribute("ejercicio",ejercicio);
-			String fecha=(String) sesion.getAttribute("fecha");
-			model.addAttribute("fecha",fecha);
-			
-			return "dashboard";
-
-	}
+	
 	
 	
 	
