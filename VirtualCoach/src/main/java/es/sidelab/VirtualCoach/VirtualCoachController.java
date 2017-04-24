@@ -111,7 +111,8 @@ public class VirtualCoachController {
 	
 	@GetMapping("/publica")
 	public String mostrarpublica (Model model, HttpSession sesion){
-		
+	List <Estadisticas> estadistica =estadisticas_repository.findAll();
+	model.addAttribute("estadistica",estadistica);
 		
 		return "table";
 	}
