@@ -6,7 +6,8 @@
 ### **Descripción:** 
   
   **VirtualCoach** es una herramienta para la gestión y optimización del rendimiento deportivo, en la cual el entrenador podrá monitorizar tus entrenamientos y adaptarlos para conseguir nuestros objetivos de forma más eficiente.
-  <[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/J7c65uvIAcE/0.jpg)](https://youtu.be/J7c65uvIAcE)
+  Visualice el siguiente video haciendo click en el:
+  [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/J7c65uvIAcE/0.jpg)](https://youtu.be/J7c65uvIAcE)
 
   Para el uso de la herramienta el Coach debe introducir los datos necesarios de cada entrenamiento.  
 
