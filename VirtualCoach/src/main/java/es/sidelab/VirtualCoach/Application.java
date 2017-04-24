@@ -14,9 +14,8 @@ import org.springframework.session.hazelcast.config.annotation.web.http.EnableHa
 
 import com.hazelcast.config.Config;
 import com.hazelcast.config.JoinConfig;
-
-@EnableHazelcastHttpSession
 @EnableCaching
+@EnableHazelcastHttpSession
 @SpringBootApplication
 public class Application 
 {
@@ -31,7 +30,8 @@ public class Application
     JoinConfig joinConfig = config.getNetworkConfig().getJoin();
     
     joinConfig.getMulticastConfig().setEnabled(false);
-    joinConfig.getTcpIpConfig().setEnabled(true).setMembers(Collections.singletonList("52.232.45.72"));
+    joinConfig.getTcpIpConfig().addMember( "100.79.252.95" ).addMember( "100.79.180.38" )
+    .setEnabled( true );
     return config;
     }
 

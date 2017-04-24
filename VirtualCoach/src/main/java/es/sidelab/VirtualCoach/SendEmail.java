@@ -6,7 +6,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 public class SendEmail {
-	private static final String URL="http://100.79.240.78:8080/registro_nuevo";
+	private static final String URL="http://100.79.228.53:8080/registro_nuevo";
 	
 	public String send(String direccion, String subject, String body){
 		RestTemplate restTemplate = new RestTemplate();
