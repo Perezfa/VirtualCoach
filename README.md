@@ -7,7 +7,12 @@
   
   **VirtualCoach** es una herramienta para la gestión y optimización del rendimiento deportivo, en la cual el entrenador podrá monitorizar tus entrenamientos y adaptarlos para conseguir nuestros objetivos de forma más eficiente.
   Visualice el siguiente video haciendo click en el:
-  [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/J7c65uvIAcE/0.jpg)](https://youtu.be/J7c65uvIAcE)
+
+
+  
+  [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/J7c65uvIAcE/0.jpg)]
+  (https://youtu.be/J7c65uvIAcE)
+
 
   Para el uso de la herramienta el Coach debe introducir los datos necesarios de cada entrenamiento.  
 
@@ -48,7 +53,7 @@
   - - -
 
 ### **Servicio Interno.**
-El servicio interno envía por medio de API REST un e-mail al cliente, nada más registrarse, indicando que el registro ha sido correcto. El e-mail destino es la dirección que utiliza el cliente para registarse. También se implementa un método para validar el -mail, y de no ser una dirección correcta no se efectuará el regitro ni el envío.
+El servicio interno envía por medio de API REST un e-mail al cliente, nada más registrarse, indicando que el registro ha sido correcto. El e-mail destino es la dirección que utiliza el cliente para registarse. También se implementa un método para validar el e-mail, y de no ser una dirección correcta no se efectuará el regitro ni el envío.
 
 ### **Diagrama de Clases:**  
 

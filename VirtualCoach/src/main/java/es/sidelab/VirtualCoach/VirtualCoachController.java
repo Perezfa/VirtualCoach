@@ -62,7 +62,6 @@ public class VirtualCoachController {
 		//Chequeamos si existe el usuario
 		//Cliente user=cliente_repository.findByUsuarioAndContraseña(username,password);
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
 		String usuario = authentication.getName();
 		sesion = request.getSession();
 		
@@ -73,7 +72,6 @@ public class VirtualCoachController {
 		sesion.setAttribute("user",usuario);
 		model.addAttribute("admin",request.isUserInRole("ROLE_ADMIN"));
 		CargarEstadisticas(usuario, model);
-				
 		return "dashboard";
 	}
 	
